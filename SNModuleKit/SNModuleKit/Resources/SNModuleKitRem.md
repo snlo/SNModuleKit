@@ -1,27 +1,10 @@
-# 公共模块
+# 模块化架构框架
 
 #### 目录：
 
 - Resources
-- MVVM
-- Utils
-- Macro
-- Actions
 - Categories
-- Mediator
-- Vender
 
 #### Resources
-
-#### MVVM
-
-#### Utils
-
-#### Macro
-
-#### Actions
-
 #### Categories
-
-#### Vender
 
