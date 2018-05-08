@@ -15,9 +15,8 @@
 		5E0395AE1FB4AF2E00A5DFC2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395AD1FB4AF2E00A5DFC2 /* main.m */; };
 		5E0395B81FB4AF2E00A5DFC2 /* SNModuleKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395B71FB4AF2E00A5DFC2 /* SNModuleKitTests.m */; };
 		5E0395C31FB4AF2E00A5DFC2 /* SNModuleKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395C21FB4AF2E00A5DFC2 /* SNModuleKitUITests.m */; };
-		5EB0007920993AC5003E8AF8 /* SNModuleKit.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0FFD220993AC4003E8AF8 /* SNModuleKit.md */; };
 		5EB004CA20A21351003E8AF8 /* UIColor+SNModuleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */; };
-		5EB004CC20A21D32003E8AF8 /* SNModuleKitImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB004CB20A21D32003E8AF8 /* SNModuleKitImage.xcassets */; };
+		5EB004D420A21FBA003E8AF8 /* ImageSNModuleKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5EB004D320A21FBA003E8AF8 /* ImageSNModuleKit.bundle */; };
 		5ECA36AF209846A300E96217 /* ModulePublic.md in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36AE209846A300E96217 /* ModulePublic.md */; };
 		5ECA36B62098491D00E96217 /* Target_Public.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36B52098491D00E96217 /* Target_Public.m */; };
 		5ECA36C120984BED00E96217 /* ViewmodelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C020984BED00E96217 /* ViewmodelPublic.m */; };
@@ -68,9 +67,8 @@
 		5E0396521FB4D0CA00A5DFC2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5EB004C820A21351003E8AF8 /* UIColor+SNModuleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SNModuleKit.h"; sourceTree = "<group>"; };
 		5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SNModuleKit.m"; sourceTree = "<group>"; };
-		5EB004CB20A21D32003E8AF8 /* SNModuleKitImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SNModuleKitImage.xcassets; sourceTree = "<group>"; };
+		5EB004D320A21FBA003E8AF8 /* ImageSNModuleKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ImageSNModuleKit.bundle; sourceTree = "<group>"; };
 		5EB0FFCE20993AC4003E8AF8 /* SNModuleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNModuleKit.h; sourceTree = "<group>"; };
-		5EB0FFD220993AC4003E8AF8 /* SNModuleKit.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SNModuleKit.md; sourceTree = "<group>"; };
 		5ECA36AE209846A300E96217 /* ModulePublic.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ModulePublic.md; sourceTree = "<group>"; };
 		5ECA36B12098485B00E96217 /* PublicProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicProtocol.h; sourceTree = "<group>"; };
 		5ECA36B22098489F00E96217 /* PublicUtilsHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicUtilsHeader.h; sourceTree = "<group>"; };
@@ -211,18 +209,9 @@
 		5EB0FFCF20993AC4003E8AF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				5EB0FFD020993AC4003E8AF8 /* Images */,
-				5EB0FFD220993AC4003E8AF8 /* SNModuleKit.md */,
+				5EB004D320A21FBA003E8AF8 /* ImageSNModuleKit.bundle */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		5EB0FFD020993AC4003E8AF8 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				5EB004CB20A21D32003E8AF8 /* SNModuleKitImage.xcassets */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		5EB0FFDB20993AC4003E8AF8 /* Categories */ = {
@@ -492,11 +481,10 @@
 			files = (
 				5ECA36AF209846A300E96217 /* ModulePublic.md in Resources */,
 				5E0395AB1FB4AF2E00A5DFC2 /* LaunchScreen.storyboard in Resources */,
+				5EB004D420A21FBA003E8AF8 /* ImageSNModuleKit.bundle in Resources */,
 				5E0395A81FB4AF2E00A5DFC2 /* Assets.xcassets in Resources */,
 				5E0395A61FB4AF2E00A5DFC2 /* Main.storyboard in Resources */,
 				5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */,
-				5EB0007920993AC5003E8AF8 /* SNModuleKit.md in Resources */,
-				5EB004CC20A21D32003E8AF8 /* SNModuleKitImage.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
