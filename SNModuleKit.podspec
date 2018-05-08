@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "0.7.8"
+s.version      = "0.7.9"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
