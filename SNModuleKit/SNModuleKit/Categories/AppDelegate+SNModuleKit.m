@@ -8,6 +8,8 @@
 
 #import "AppDelegate+SNModuleKit.h"
 
+#import <Aspects.h>
+
 @implementation AppDelegate (SNModuleKit)
 
 - (instancetype)init
