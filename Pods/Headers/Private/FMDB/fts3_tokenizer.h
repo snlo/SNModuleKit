@@ -1,0 +1,1 @@
+../../../FMDB/src/extra/fts3/fts3_tokenizer.h

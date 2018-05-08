@@ -1,0 +1,2 @@
+# SNAnimations
+动画构建者，CABasicAnimation的封装和转场动画的管理

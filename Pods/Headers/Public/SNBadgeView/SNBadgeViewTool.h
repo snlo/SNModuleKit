@@ -1,0 +1,1 @@
+../../../SNBadgeView/SNBadgeView/SNBadgeView/SNBadgeViewTool.h
