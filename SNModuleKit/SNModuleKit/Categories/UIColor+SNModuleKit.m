@@ -9,6 +9,9 @@
 #import "UIColor+SNModuleKit.h"
 
 #import <SNBadgeViewTool.h>
+#import <SNNetworking.h>
+#import <SNPhotoCameraViewController.h>
+#import <SNTool.h>
 
 @implementation UIColor (SNModuleKit)
 
