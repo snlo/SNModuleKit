@@ -8,6 +8,9 @@
 
 #import "AppDelegate+SNModuleKit.h"
 
+#import <SNNetworking.h>
+#import <SNPhotoCameraViewController.h>
+#import <SNTool.h>
 #import <Aspects.h>
 
 @implementation AppDelegate (SNModuleKit)

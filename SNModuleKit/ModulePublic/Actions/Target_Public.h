@@ -7,8 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
-
+#import <UIKit/UIKit.h>
 
 @interface Target_Public : NSObject
 
