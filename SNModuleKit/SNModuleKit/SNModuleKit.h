@@ -10,7 +10,7 @@
 #define SNModuleKit_h
 
 //扩展
-#import "AppDelegate+SNModuleKit.h"
+#import "UIColor+SNModuleKit.h"
 
 //内部lib
 #import <SNScanViewController.h>

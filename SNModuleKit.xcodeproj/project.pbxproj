@@ -17,13 +17,13 @@
 		5E0395C31FB4AF2E00A5DFC2 /* SNModuleKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395C21FB4AF2E00A5DFC2 /* SNModuleKitUITests.m */; };
 		5EB0007820993AC5003E8AF8 /* SNModuleKitImage.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0FFD120993AC4003E8AF8 /* SNModuleKitImage.xcassets */; };
 		5EB0007920993AC5003E8AF8 /* SNModuleKit.md in Resources */ = {isa = PBXBuildFile; fileRef = 5EB0FFD220993AC4003E8AF8 /* SNModuleKit.md */; };
+		5EB004CA20A21351003E8AF8 /* UIColor+SNModuleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */; };
 		5ECA36AF209846A300E96217 /* ModulePublic.md in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36AE209846A300E96217 /* ModulePublic.md */; };
 		5ECA36B62098491D00E96217 /* Target_Public.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36B52098491D00E96217 /* Target_Public.m */; };
 		5ECA36C120984BED00E96217 /* ViewmodelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C020984BED00E96217 /* ViewmodelPublic.m */; };
 		5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C320984BFD00E96217 /* ModelPublic.m */; };
 		5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C620984C3D00E96217 /* PublicViewController.m */; };
 		5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36C720984C3D00E96217 /* PublicViewController.xib */; };
-		9832B60220A1ABAD00BDC97C /* AppDelegate+SNModuleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 9832B60120A1ABAD00BDC97C /* AppDelegate+SNModuleKit.m */; };
 		9C67D09704BDDB837EAA312A /* libPods-SNModuleKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */; };
 		ED1190E97C6DDF5007A7EA05 /* libPods-SNModuleKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */; };
 		F9BC9CF40B159A0E17F4338E /* libPods-SNModuleKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1238E610F450A637305FCCC0 /* libPods-SNModuleKit.a */; };
@@ -66,6 +66,8 @@
 		5E0395C21FB4AF2E00A5DFC2 /* SNModuleKitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNModuleKitUITests.m; sourceTree = "<group>"; };
 		5E0395C41FB4AF2E00A5DFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E0396521FB4D0CA00A5DFC2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		5EB004C820A21351003E8AF8 /* UIColor+SNModuleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SNModuleKit.h"; sourceTree = "<group>"; };
+		5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SNModuleKit.m"; sourceTree = "<group>"; };
 		5EB0FFCE20993AC4003E8AF8 /* SNModuleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNModuleKit.h; sourceTree = "<group>"; };
 		5EB0FFD120993AC4003E8AF8 /* SNModuleKitImage.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SNModuleKitImage.xcassets; sourceTree = "<group>"; };
 		5EB0FFD220993AC4003E8AF8 /* SNModuleKit.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SNModuleKit.md; sourceTree = "<group>"; };
@@ -89,8 +91,6 @@
 		5ECA36C720984C3D00E96217 /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6BB833A830FC2D97F44867 /* Pods-SNModuleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit.debug.xcconfig"; sourceTree = "<group>"; };
-		9832B60020A1ABAD00BDC97C /* AppDelegate+SNModuleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AppDelegate+SNModuleKit.h"; sourceTree = "<group>"; };
-		9832B60120A1ABAD00BDC97C /* AppDelegate+SNModuleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "AppDelegate+SNModuleKit.m"; sourceTree = "<group>"; };
 		A7DE2F86137FD881069FE85F /* Pods-SNModuleKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62560C0A811BD78706582D4 /* Pods-SNModuleKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -228,8 +228,8 @@
 		5EB0FFDB20993AC4003E8AF8 /* Categories */ = {
 			isa = PBXGroup;
 			children = (
-				9832B60020A1ABAD00BDC97C /* AppDelegate+SNModuleKit.h */,
-				9832B60120A1ABAD00BDC97C /* AppDelegate+SNModuleKit.m */,
+				5EB004C820A21351003E8AF8 /* UIColor+SNModuleKit.h */,
+				5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -580,12 +580,12 @@
 			files = (
 				5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */,
 				5ECA36B62098491D00E96217 /* Target_Public.m in Sources */,
-				9832B60220A1ABAD00BDC97C /* AppDelegate+SNModuleKit.m in Sources */,
 				5ECA36C120984BED00E96217 /* ViewmodelPublic.m in Sources */,
 				5E0395A31FB4AF2E00A5DFC2 /* ViewController.m in Sources */,
 				5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */,
 				5E0395AE1FB4AF2E00A5DFC2 /* main.m in Sources */,
 				5E0395A01FB4AF2E00A5DFC2 /* AppDelegate.m in Sources */,
+				5EB004CA20A21351003E8AF8 /* UIColor+SNModuleKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
