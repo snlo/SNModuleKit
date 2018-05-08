@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "0.8.7"
+s.version      = "0.8.8"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -117,7 +117,7 @@ ss.source_files = 'SNModuleKit/SNModuleKit/Categories/*.{h,m}'
 end
 
 s.subspec 'Resources' do |ss|
-ss.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitImages.bundle'
+ss.source_files = 'SNModuleKit/SNModuleKit/Resources/*.bundle'
 
 end
 
