@@ -18,9 +18,11 @@ PODS:
   - FMDB/FTS (2.7.2):
     - FMDB/standard
   - FMDB/standard (2.7.2)
+  - IQKeyboardManager (6.0.3)
   - Masonry (1.1.0)
   - MBProgressHUD (1.1.0)
   - ReactiveObjC (3.1.0)
+  - SAMKeychain (1.5.3)
   - SNAnimations (0.0.1)
   - SNBadgeView (0.0.2)
   - SNDBManager (0.0.4):
@@ -33,7 +35,8 @@ PODS:
     - AFNetworking
   - SNPhotoCarmeraViewController (0.0.3)
   - SNPopupViewController (0.0.2)
-  - SNSacnViewController (0.0.2)
+  - SNScanViewController (0.0.4):
+    - SNTool
   - SNTool (0.0.2):
     - MBProgressHUD
   - SNUIKit (0.0.4):
@@ -42,6 +45,9 @@ PODS:
     - ReactiveObjC
 
 DEPENDENCIES:
+  - Aspects
+  - IQKeyboardManager
+  - SAMKeychain
   - SNAnimations
   - SNBadgeView
   - SNDBManager
@@ -52,18 +58,20 @@ DEPENDENCIES:
   - SNNetworking
   - SNPhotoCarmeraViewController
   - SNPopupViewController
-  - SNSacnViewController
+  - SNScanViewController
   - SNTool
   - SNUIKit
 
 SPEC REPOS:
-  https://github.com/cocoapods/specs.git:
+  https://github.com/CocoaPods/Specs.git:
     - AFNetworking
     - Aspects
     - FMDB
+    - IQKeyboardManager
     - Masonry
     - MBProgressHUD
     - ReactiveObjC
+    - SAMKeychain
     - SNAnimations
     - SNBadgeView
     - SNDBManager
@@ -74,7 +82,7 @@ SPEC REPOS:
     - SNNetworking
     - SNPhotoCarmeraViewController
     - SNPopupViewController
-    - SNSacnViewController
+    - SNScanViewController
     - SNTool
     - SNUIKit
 
@@ -82,9 +90,11 @@ SPEC CHECKSUMS:
   AFNetworking: b6f891fdfaed196b46c7a83cf209e09697b94057
   Aspects: 7595ba96a6727a58ebcbfc954497fc5d2fdde546
   FMDB: 6198a90e7b6900cfc046e6bc0ef6ebb7be9236aa
+  IQKeyboardManager: c390e612f4b98c8fd748016470138537dc163ead
   Masonry: 678fab65091a9290e40e2832a55e7ab731aad201
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
+  SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
   SNAnimations: 2514869d3e3b6d89346836ad72fb455151e7040b
   SNBadgeView: 269173aba4235353dd1112376cc01fce4d656dc0
   SNDBManager: 33fd3b71ae33ef08f6eebe918bb4f5fea6fa57c0
@@ -95,10 +105,10 @@ SPEC CHECKSUMS:
   SNNetworking: 58d566b912c89cc808a173a46f39e5f2cb120d32
   SNPhotoCarmeraViewController: 23079213c7d817ca27f6535ab2db6725072d2376
   SNPopupViewController: 5f84b1a3a1b97bc8d0b39845d8d3d82e7353f68c
-  SNSacnViewController: 6bbfe21a13c46e2e43d86b470ccc7ab3f8c34c40
+  SNScanViewController: 1b9edec486ad5cfc0c0227839090473557bc55f9
   SNTool: ab20ea61f7b887af992a6f6df6b0efe55f8eb125
   SNUIKit: 00d0c2d7d4555c0d3c4896c0e4c6f4c530963564
 
-PODFILE CHECKSUM: d4e68166cad14bfb72e7539423cad2712214bffc
+PODFILE CHECKSUM: 6f3c59064c0136055a7732f4b343ea33ea867c9a
 
-COCOAPODS: 1.5.2
+COCOAPODS: 1.5.0

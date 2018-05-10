@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "0.9.5"
+s.version      = "0.9.6"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -110,8 +110,24 @@ s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
-s.subspec 'Categories' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/Categories/*.{h,m}'
+s.subspec 'Configuration' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Configuration/*.{h,m}'
+
+end
+s.subspec 'Libs' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Libs/*.{h}'
+
+end
+s.subspec 'ViewControllers' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/ViewControllers/*.{h}'
+
+end
+s.subspec 'Views' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Views/*.{h}'
+
+end
+s.subspec 'Plugins' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
 
 end
 
@@ -142,6 +158,12 @@ end
 s.requires_arc = true
 
 s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
+
+s.dependency 'SAMKeychain'
+s.dependency 'Aspects'
+s.dependency 'IQKeyboardManager'
+
+
 s.dependency 'SNScanViewController'
 s.dependency 'SNPhotoCarmeraViewController'
 s.dependency 'SNBadgeView'

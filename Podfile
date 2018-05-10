@@ -15,23 +15,17 @@ target 'SNModuleKit' do
 #
 #    pod 'MJRefresh'
 #
-#    pod 'SAMKeychain'
+    pod 'SAMKeychain'
 #
-#    pod 'Aspects'
+    pod 'Aspects'
 #
 #    pod 'MBProgressHUD'
 #
-#    pod 'IQKeyboardManager'
-#
-#    pod 'MJExtension'
+    pod 'IQKeyboardManager'
 #
 #    pod 'lottie-ios'
 #
-#    pod 'JSONModel'
-#
 #    pod 'FMDB/FTS‘
-#
-#    pod 'WechatOpenSDK'
 #
 #    pod 'Masonry'
 #
@@ -39,9 +33,12 @@ target 'SNModuleKit' do
 #
 #    pod 'pop'
 #
-#    pod 'HyphenateLite'
 
-    pod 'SNSacnViewController'
+
+
+
+
+    pod 'SNScanViewController'
     pod 'SNPhotoCarmeraViewController'
     pod 'SNBadgeView'
     pod 'SNPopupViewController'

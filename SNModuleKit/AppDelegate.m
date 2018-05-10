@@ -19,8 +19,8 @@
 	// Override point for customization after application launch.
     NSLog(@" == = = == = = ==");
 	
-	[UIColor configureDefaultColor];
-    
+//	[UIColor configureDefaultColor];
+	
 	return YES;
 }
 

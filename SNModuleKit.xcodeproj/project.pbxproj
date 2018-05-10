@@ -16,7 +16,7 @@
 		5E0395B81FB4AF2E00A5DFC2 /* SNModuleKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395B71FB4AF2E00A5DFC2 /* SNModuleKitTests.m */; };
 		5E0395C31FB4AF2E00A5DFC2 /* SNModuleKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395C21FB4AF2E00A5DFC2 /* SNModuleKitUITests.m */; };
 		5E65C28B20A226EB00CF5D3B /* SNModuleKitRem.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E65C28A20A226EB00CF5D3B /* SNModuleKitRem.md */; };
-		5EB004CA20A21351003E8AF8 /* UIColor+SNModuleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */; };
+		5E99AB4E20A5020B00616869 /* SNModuleConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99AB4D20A5020B00616869 /* SNModuleConfiguration.m */; };
 		5EB004D420A21FBA003E8AF8 /* SNModuleKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5EB004D320A21FBA003E8AF8 /* SNModuleKit.bundle */; };
 		5ECA36AF209846A300E96217 /* ModulePublic.md in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36AE209846A300E96217 /* ModulePublic.md */; };
 		5ECA36B62098491D00E96217 /* Target_Public.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36B52098491D00E96217 /* Target_Public.m */; };
@@ -24,7 +24,6 @@
 		5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C320984BFD00E96217 /* ModelPublic.m */; };
 		5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C620984C3D00E96217 /* PublicViewController.m */; };
 		5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36C720984C3D00E96217 /* PublicViewController.xib */; };
-		988736A420A43F2000BF6A9C /* NSBundle+SNModuleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 988736A320A43F2000BF6A9C /* NSBundle+SNModuleKit.m */; };
 		9C67D09704BDDB837EAA312A /* libPods-SNModuleKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */; };
 		ED1190E97C6DDF5007A7EA05 /* libPods-SNModuleKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */; };
 		F9BC9CF40B159A0E17F4338E /* libPods-SNModuleKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1238E610F450A637305FCCC0 /* libPods-SNModuleKit.a */; };
@@ -68,8 +67,12 @@
 		5E0395C41FB4AF2E00A5DFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E0396521FB4D0CA00A5DFC2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5E65C28A20A226EB00CF5D3B /* SNModuleKitRem.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SNModuleKitRem.md; sourceTree = "<group>"; };
-		5EB004C820A21351003E8AF8 /* UIColor+SNModuleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIColor+SNModuleKit.h"; sourceTree = "<group>"; };
-		5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIColor+SNModuleKit.m"; sourceTree = "<group>"; };
+		5E99AB4520A4F74C00616869 /* SNModuleLibHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleLibHeader.h; sourceTree = "<group>"; };
+		5E99AB4620A4F77600616869 /* SNModuleViewControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleViewControllerHeader.h; sourceTree = "<group>"; };
+		5E99AB4820A4F79C00616869 /* SNModuleViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleViewHeader.h; sourceTree = "<group>"; };
+		5E99AB4A20A4F7C400616869 /* SNModulePluginHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModulePluginHeader.h; sourceTree = "<group>"; };
+		5E99AB4C20A5020B00616869 /* SNModuleConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleConfiguration.h; sourceTree = "<group>"; };
+		5E99AB4D20A5020B00616869 /* SNModuleConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNModuleConfiguration.m; sourceTree = "<group>"; };
 		5EB004D320A21FBA003E8AF8 /* SNModuleKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SNModuleKit.bundle; sourceTree = "<group>"; };
 		5EB0FFCE20993AC4003E8AF8 /* SNModuleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNModuleKit.h; sourceTree = "<group>"; };
 		5ECA36AE209846A300E96217 /* ModulePublic.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ModulePublic.md; sourceTree = "<group>"; };
@@ -96,8 +99,6 @@
 		9887369B20A4273A00BF6A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9887369C20A4274800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		9887369D20A4274800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		988736A220A43F2000BF6A9C /* NSBundle+SNModuleKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "NSBundle+SNModuleKit.h"; sourceTree = "<group>"; };
-		988736A320A43F2000BF6A9C /* NSBundle+SNModuleKit.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+SNModuleKit.m"; sourceTree = "<group>"; };
 		A7DE2F86137FD881069FE85F /* Pods-SNModuleKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62560C0A811BD78706582D4 /* Pods-SNModuleKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -205,12 +206,57 @@
 			path = SNModuleKitUITests;
 			sourceTree = "<group>";
 		};
+		5E99AB4120A4F60200616869 /* Plugins */ = {
+			isa = PBXGroup;
+			children = (
+				5E99AB4A20A4F7C400616869 /* SNModulePluginHeader.h */,
+			);
+			path = Plugins;
+			sourceTree = "<group>";
+		};
+		5E99AB4220A4F60900616869 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				5E99AB4820A4F79C00616869 /* SNModuleViewHeader.h */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		5E99AB4320A4F62E00616869 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				5E99AB4620A4F77600616869 /* SNModuleViewControllerHeader.h */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		5E99AB4420A4F63A00616869 /* Libs */ = {
+			isa = PBXGroup;
+			children = (
+				5E99AB4520A4F74C00616869 /* SNModuleLibHeader.h */,
+			);
+			path = Libs;
+			sourceTree = "<group>";
+		};
+		5E99AB4B20A5015C00616869 /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				5E99AB4C20A5020B00616869 /* SNModuleConfiguration.h */,
+				5E99AB4D20A5020B00616869 /* SNModuleConfiguration.m */,
+			);
+			path = Configuration;
+			sourceTree = "<group>";
+		};
 		5EB0FFCD20993AC4003E8AF8 /* SNModuleKit */ = {
 			isa = PBXGroup;
 			children = (
 				5EB0FFCE20993AC4003E8AF8 /* SNModuleKit.h */,
+				5E99AB4B20A5015C00616869 /* Configuration */,
+				5E99AB4420A4F63A00616869 /* Libs */,
+				5E99AB4320A4F62E00616869 /* ViewControllers */,
+				5E99AB4220A4F60900616869 /* Views */,
+				5E99AB4120A4F60200616869 /* Plugins */,
 				5EB0FFCF20993AC4003E8AF8 /* Resources */,
-				5EB0FFDB20993AC4003E8AF8 /* Categories */,
 			);
 			path = SNModuleKit;
 			sourceTree = "<group>";
@@ -222,17 +268,6 @@
 				5EB004D320A21FBA003E8AF8 /* SNModuleKit.bundle */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		5EB0FFDB20993AC4003E8AF8 /* Categories */ = {
-			isa = PBXGroup;
-			children = (
-				5EB004C820A21351003E8AF8 /* UIColor+SNModuleKit.h */,
-				5EB004C920A21351003E8AF8 /* UIColor+SNModuleKit.m */,
-				988736A220A43F2000BF6A9C /* NSBundle+SNModuleKit.h */,
-				988736A320A43F2000BF6A9C /* NSBundle+SNModuleKit.m */,
-			);
-			path = Categories;
 			sourceTree = "<group>";
 		};
 		5ECA34A020983C1900E96217 /* ModulePublic */ = {
@@ -393,6 +428,7 @@
 				5E0395971FB4AF2D00A5DFC2 /* Sources */,
 				5E0395981FB4AF2D00A5DFC2 /* Frameworks */,
 				5E0395991FB4AF2D00A5DFC2 /* Resources */,
+				D11A50234451636CD3362AEE /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -554,6 +590,28 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		D11A50234451636CD3362AEE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit-resources.sh",
+				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
+				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
+				"${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SNScanViewController.bundle",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		EB4E9344C2716F3158F35990 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -582,12 +640,11 @@
 				5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */,
 				5ECA36B62098491D00E96217 /* Target_Public.m in Sources */,
 				5ECA36C120984BED00E96217 /* ViewmodelPublic.m in Sources */,
+				5E99AB4E20A5020B00616869 /* SNModuleConfiguration.m in Sources */,
 				5E0395A31FB4AF2E00A5DFC2 /* ViewController.m in Sources */,
 				5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */,
-				988736A420A43F2000BF6A9C /* NSBundle+SNModuleKit.m in Sources */,
 				5E0395AE1FB4AF2E00A5DFC2 /* main.m in Sources */,
 				5E0395A01FB4AF2E00A5DFC2 /* AppDelegate.m in Sources */,
-				5EB004CA20A21351003E8AF8 /* UIColor+SNModuleKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
