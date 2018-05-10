@@ -11,26 +11,21 @@
 @implementation NSBundle (SNModuleKit)
 
 + (NSString *)sn_localizedStringForKey:(NSString *)key {
-    
-    static NSBundle *bundle = nil;
-    
-    if (bundle == nil) {
-        NSString *language = [NSLocale preferredLanguages].firstObject;
-        if ([language hasPrefix:@"en"]) {
-            language = @"en";
-        } else if ([language hasPrefix:@"zh"]) {
-            if ([language rangeOfString:@"Hans"].location != NSNotFound) {
-                language = @"zh-Hans";
-            } else {
-                language = @"zh-Hant";
-            }
+    NSString *language = [NSLocale preferredLanguages].firstObject;
+    if ([language hasPrefix:@"en"]) {
+        language = @"en";
+    } else if ([language hasPrefix:@"zh"]) {
+        if ([language rangeOfString:@"Hans"].location != NSNotFound) {
+            language = @"zh-Hans";
         } else {
-            language = @"en";
+            language = @"zh-Hant";
         }
-        
-        NSBundle * bundleKit = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"SNModuleKit" ofType:@"bundle"]];
-        bundle = [NSBundle bundleWithPath:[bundleKit pathForResource:language ofType:@"lproj"]];
+    } else {
+        language = @"en";
     }
+    
+    NSBundle * bundleKit = [NSBundle bundleWithPath:[[NSBundle mainBundle] pathForResource:@"SNModuleKit" ofType:@"bundle"]];
+    NSBundle * bundle = [NSBundle bundleWithPath:[bundleKit pathForResource:language ofType:@"lproj"]];
     
     NSString * value = [bundle localizedStringForKey:key value:nil table:@"SNModuleKitStrings"];
     
