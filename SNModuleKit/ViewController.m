@@ -27,7 +27,9 @@
     
     UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
     
-    [button setTitle:NSLocalizedStringFromTable(@"测试", @"SNModuleKitStrings", nil) forState:UIControlStateNormal];
+    
+    
+    [button setTitle:[NSBundle sn_localizedStringForKey:@"测试"] forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 100, SCREEN_WIDTH, 90);
     [self.view addSubview:button];
     [button.sn_badgeView setBadgeValue:2];

@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "0.9.3"
+s.version      = "0.9.4"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -106,9 +106,7 @@ s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 #  non-essential files like tests, examples and documentation.
 #
 
-s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitImages.bundle'
-
-s.resources = "SNModuleKit/Resources/Resources/*.lproj/SNModuleKitStrings.strings"
+s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 

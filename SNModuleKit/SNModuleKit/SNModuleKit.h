@@ -11,6 +11,7 @@
 
 //扩展
 #import "UIColor+SNModuleKit.h"
+#import "NSBundle+SNModuleKit.h"
 
 //内部lib
 #import <SNScanViewController.h>
