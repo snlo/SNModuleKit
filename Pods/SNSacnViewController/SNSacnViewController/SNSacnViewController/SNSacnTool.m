@@ -130,15 +130,26 @@ static id instanse;
 
 #pragma mark -- getter // setter
 
-- (UIColor *)blackColor {
-	if (!_blackColor) {
-		_blackColor = [UIColor blackColor];
-	} return _blackColor;
-}
 - (UIColor *)contentColor {
 	if (!_contentColor) {
 		_contentColor = [UIColor grayColor];
 	} return _contentColor;
+}
+
+- (UIColor *)scanLineColor {
+    if (!_scanLineColor) {
+        _scanLineColor = [UIColor blackColor];
+    } return _scanLineColor;
+}
+- (UIColor *)themeColor {
+    if (!_themeColor) {
+        _themeColor = [UIColor whiteColor];
+    } return _themeColor;
+}
+- (UIColor *)blackColor {
+    if (!_blackColor) {
+        _blackColor = [UIColor blackColor];
+    } return _blackColor;
 }
 
 @end

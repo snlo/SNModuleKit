@@ -24,6 +24,7 @@
 		5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C320984BFD00E96217 /* ModelPublic.m */; };
 		5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C620984C3D00E96217 /* PublicViewController.m */; };
 		5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36C720984C3D00E96217 /* PublicViewController.xib */; };
+		9887369E20A4279500BF6A9C /* SNModuleKitStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 988736A020A4279500BF6A9C /* SNModuleKitStrings.strings */; };
 		9C67D09704BDDB837EAA312A /* libPods-SNModuleKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */; };
 		ED1190E97C6DDF5007A7EA05 /* libPods-SNModuleKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */; };
 		F9BC9CF40B159A0E17F4338E /* libPods-SNModuleKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1238E610F450A637305FCCC0 /* libPods-SNModuleKit.a */; };
@@ -91,6 +92,12 @@
 		5ECA36C720984C3D00E96217 /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6BB833A830FC2D97F44867 /* Pods-SNModuleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit.debug.xcconfig"; sourceTree = "<group>"; };
+		9887369A20A4273A00BF6A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
+		9887369B20A4273A00BF6A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		9887369C20A4274800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		9887369D20A4274800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		9887369F20A4279500BF6A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SNModuleKitStrings.strings; sourceTree = "<group>"; };
+		988736A120A4279800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/SNModuleKitStrings.strings"; sourceTree = "<group>"; };
 		A7DE2F86137FD881069FE85F /* Pods-SNModuleKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62560C0A811BD78706582D4 /* Pods-SNModuleKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -213,6 +220,7 @@
 			children = (
 				5E65C28A20A226EB00CF5D3B /* SNModuleKitRem.md */,
 				5EB004D320A21FBA003E8AF8 /* SNModuleKitImages.bundle */,
+				988736A020A4279500BF6A9C /* SNModuleKitStrings.strings */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -462,8 +470,8 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				"zh-Hans",
 			);
 			mainGroup = 5E0395921FB4AF2D00A5DFC2;
 			productRefGroup = 5E03959C1FB4AF2D00A5DFC2 /* Products */;
@@ -485,6 +493,7 @@
 				5ECA36AF209846A300E96217 /* ModulePublic.md in Resources */,
 				5E65C28B20A226EB00CF5D3B /* SNModuleKitRem.md in Resources */,
 				5E0395AB1FB4AF2E00A5DFC2 /* LaunchScreen.storyboard in Resources */,
+				9887369E20A4279500BF6A9C /* SNModuleKitStrings.strings in Resources */,
 				5EB004D420A21FBA003E8AF8 /* SNModuleKitImages.bundle in Resources */,
 				5E0395A81FB4AF2E00A5DFC2 /* Assets.xcassets in Resources */,
 				5E0395A61FB4AF2E00A5DFC2 /* Main.storyboard in Resources */,
@@ -617,6 +626,8 @@
 			isa = PBXVariantGroup;
 			children = (
 				5E0395A51FB4AF2E00A5DFC2 /* Base */,
+				9887369A20A4273A00BF6A9C /* en */,
+				9887369C20A4274800BF6A9C /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -625,8 +636,19 @@
 			isa = PBXVariantGroup;
 			children = (
 				5E0395AA1FB4AF2E00A5DFC2 /* Base */,
+				9887369B20A4273A00BF6A9C /* en */,
+				9887369D20A4274800BF6A9C /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		988736A020A4279500BF6A9C /* SNModuleKitStrings.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9887369F20A4279500BF6A9C /* en */,
+				988736A120A4279800BF6A9C /* zh-Hans */,
+			);
+			name = SNModuleKitStrings.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -636,6 +658,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
@@ -693,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";

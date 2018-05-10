@@ -26,7 +26,8 @@
 //    pod spec lint SNModuleKit.podspec --verbose --use-libraries --allow-warnings
     
     UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
-    [button setTitle:@"点我点我点我" forState:UIControlStateNormal];
+    
+    [button setTitle:NSLocalizedStringFromTable(@"测试", @"SNModuleKitStrings", nil) forState:UIControlStateNormal];
     button.frame = CGRectMake(0, 100, SCREEN_WIDTH, 90);
     [self.view addSubview:button];
     [button.sn_badgeView setBadgeValue:2];

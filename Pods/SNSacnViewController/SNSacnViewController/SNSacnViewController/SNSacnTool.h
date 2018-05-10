@@ -16,6 +16,10 @@
 
 @property (nonatomic, strong) UIColor * contentColor;
 
+@property (nonatomic, strong) UIColor * scanLineColor;
+
+@property (nonatomic, strong) UIColor * themeColor;
+
 @property (nonatomic, strong) UIColor * blackColor;
 
 + (UIViewController *)topViewController;

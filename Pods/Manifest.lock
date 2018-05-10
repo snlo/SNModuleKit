@@ -22,7 +22,7 @@ PODS:
   - MBProgressHUD (1.1.0)
   - ReactiveObjC (3.1.0)
   - SNAnimations (0.0.1)
-  - SNBadgeView (0.0.1)
+  - SNBadgeView (0.0.2)
   - SNDBManager (0.0.4):
     - FMDB/FTS
   - SNDownTimer (0.0.3)
@@ -33,7 +33,7 @@ PODS:
     - AFNetworking
   - SNPhotoCarmeraViewController (0.0.3)
   - SNPopupViewController (0.0.2)
-  - SNSacnViewController (0.0.1)
+  - SNSacnViewController (0.0.2)
   - SNTool (0.0.2):
     - MBProgressHUD
   - SNUIKit (0.0.4):
@@ -57,7 +57,7 @@ DEPENDENCIES:
   - SNUIKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Aspects
     - FMDB
@@ -86,7 +86,7 @@ SPEC CHECKSUMS:
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SNAnimations: 2514869d3e3b6d89346836ad72fb455151e7040b
-  SNBadgeView: 83a2f81c13674b1279a8cdea715b92a96c833e14
+  SNBadgeView: 269173aba4235353dd1112376cc01fce4d656dc0
   SNDBManager: 33fd3b71ae33ef08f6eebe918bb4f5fea6fa57c0
   SNDownTimer: 17da62fd5fe03e598e1a80e78a3d5bd62350b175
   SNFileManager: 5afd2c2268e1125fef814d97c65c58b94488bdfe
@@ -95,10 +95,10 @@ SPEC CHECKSUMS:
   SNNetworking: 58d566b912c89cc808a173a46f39e5f2cb120d32
   SNPhotoCarmeraViewController: 23079213c7d817ca27f6535ab2db6725072d2376
   SNPopupViewController: 5f84b1a3a1b97bc8d0b39845d8d3d82e7353f68c
-  SNSacnViewController: 3257da06231821f25d5a1846d0cdcb6a4ca9cd6b
+  SNSacnViewController: 6bbfe21a13c46e2e43d86b470ccc7ab3f8c34c40
   SNTool: ab20ea61f7b887af992a6f6df6b0efe55f8eb125
   SNUIKit: 00d0c2d7d4555c0d3c4896c0e4c6f4c530963564
 
 PODFILE CHECKSUM: d4e68166cad14bfb72e7539423cad2712214bffc
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2

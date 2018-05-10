@@ -195,7 +195,10 @@ typedef void(^ScanedBlock)(NSString * scanValue);
 
 	[self.view.layer insertSublayer:self.preview atIndex:0];
 
+    [self.view addSubview:self.backgroudView];
+    
 	[self sn_scanAddMaskToView:self.backgroudView withRoundedRect:self.scanRect cornerRadius:0];
+    
 	[self.view addSubview:self.line];
 	
 	[self.view addSubview:self.buttonCancel];
@@ -207,6 +210,22 @@ typedef void(^ScanedBlock)(NSString * scanValue);
 
 #pragma mark -- getter setter
 
+- (void)setScanLineColor:(UIColor *)scanLineColor {
+    _scanLineColor = scanLineColor;
+    [SNSacnTool sharedManager].scanLineColor = _scanLineColor;
+}
+- (void)setThemeColor:(UIColor *)themeColor {
+    _themeColor = themeColor;
+    [SNSacnTool sharedManager].themeColor = _themeColor;
+}
+- (void)setContentColor:(UIColor *)contentColor {
+    _contentColor = contentColor;
+    [SNSacnTool sharedManager].contentColor = _contentColor;
+}
+- (void)setBlackColor:(UIColor *)blackColor {
+    _blackColor = blackColor;
+    [SNSacnTool sharedManager].blackColor = _blackColor;
+}
 
 - (UIView *)line {
 	if (!_line) {
@@ -221,8 +240,11 @@ typedef void(^ScanedBlock)(NSString * scanValue);
 		_backgroudView = [[UIToolbar alloc] init];
 		_backgroudView.barStyle = UIBarStyleBlack;
 		_backgroudView.frame = CGRectMake(0, -1, SNSACN_SCREEN_WIDTH, SNSACN_SCREEN_HIGHT+1);
-		[self.view addSubview:_backgroudView];
 	} return _backgroudView;
+}
+- (void)setBackgroudStyle:(UIBarStyle)backgroudStyle {
+    _backgroudStyle = backgroudStyle;
+    self.backgroudView.barStyle = _backgroudStyle;
 }
 
 - (UIButton *)buttonCancel {
