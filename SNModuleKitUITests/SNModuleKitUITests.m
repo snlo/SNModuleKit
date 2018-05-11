@@ -2,7 +2,7 @@
 //  SNMediatorKitUITests.m
 //  SNMediatorKitUITests
 //
-//  Created by sunDong on 2017/11/9.
+//  Created by snlo on 2017/11/9.
 //  Copyright © 2017年 snlo. All rights reserved.
 //
 
