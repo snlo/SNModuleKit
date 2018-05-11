@@ -27,7 +27,7 @@
     
 //    pod spec lint SNModuleKit.podspec --verbose --use-libraries --allow-warnings
     
-    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
+//    UIButton * button = [UIButton buttonWithType:UIButtonTypeSystem];
 	
     
 //    [button setTitle:[NSBundle sn_localizedStringForKey:@"测试"] forState:UIControlStateNormal];

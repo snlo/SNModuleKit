@@ -13,9 +13,6 @@
 //#import <SNPopupViewController.h>           //
 #import <SNPopupView.h>                     //弹出视图控制器
 #import <SNPhotoCameraViewController.h>     //相册相机视图控制器
-
-
-
-#import <SNBadgeView.h>
+#import <SNBadgeView.h>                     //标记视图
 
 #endif /* SNModuleControlHeader_h */
