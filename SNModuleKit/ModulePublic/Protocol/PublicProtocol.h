@@ -13,7 +13,6 @@
 #import "PublicVenderHeader.h"
 #import "PublicCategoriesHeader.h"
 
-
 static NSString * const kPublic = @"Public";
 
 static NSString * const kNativeFetchPublicViewController = @"nativeFetchPublicViewController";

@@ -9,15 +9,6 @@
 #ifndef SNModulePluginHeader_h
 #define SNModulePluginHeader_h
 
-#import <SNUIKit.h>
-#import <SNTool.h>
-#import <SNFoundation.h>
-#import <SNMediatorKit.h>
-
-#import <SNFileManager.h>
-#import <SNDBManager.h>
-#import <SNNetworking.h>
-#import <SNAnimations.h>
-#import <SNDownTimer.h>
+#import <IQKeyboardManager.h>       //键盘插件
 
 #endif /* SNModulePluginHeader_h */

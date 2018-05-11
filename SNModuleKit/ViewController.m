@@ -10,7 +10,7 @@
 
 #import "SNModuleKit.h"
 
-#import "SNModuleConfiguration.h"
+#import "SNModuleConfig.h"
 
 @interface ViewController ()
 

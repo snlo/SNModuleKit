@@ -16,7 +16,7 @@
 		5E0395B81FB4AF2E00A5DFC2 /* SNModuleKitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395B71FB4AF2E00A5DFC2 /* SNModuleKitTests.m */; };
 		5E0395C31FB4AF2E00A5DFC2 /* SNModuleKitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E0395C21FB4AF2E00A5DFC2 /* SNModuleKitUITests.m */; };
 		5E65C28B20A226EB00CF5D3B /* SNModuleKitRem.md in Resources */ = {isa = PBXBuildFile; fileRef = 5E65C28A20A226EB00CF5D3B /* SNModuleKitRem.md */; };
-		5E99AB4E20A5020B00616869 /* SNModuleConfiguration.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99AB4D20A5020B00616869 /* SNModuleConfiguration.m */; };
+		5E99AB4E20A5020B00616869 /* SNModuleConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = 5E99AB4D20A5020B00616869 /* SNModuleConfig.m */; };
 		5EB004D420A21FBA003E8AF8 /* SNModuleKit.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5EB004D320A21FBA003E8AF8 /* SNModuleKit.bundle */; };
 		5ECA36AF209846A300E96217 /* ModulePublic.md in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36AE209846A300E96217 /* ModulePublic.md */; };
 		5ECA36B62098491D00E96217 /* Target_Public.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36B52098491D00E96217 /* Target_Public.m */; };
@@ -67,12 +67,9 @@
 		5E0395C41FB4AF2E00A5DFC2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5E0396521FB4D0CA00A5DFC2 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
 		5E65C28A20A226EB00CF5D3B /* SNModuleKitRem.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = SNModuleKitRem.md; sourceTree = "<group>"; };
-		5E99AB4520A4F74C00616869 /* SNModuleLibHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleLibHeader.h; sourceTree = "<group>"; };
-		5E99AB4620A4F77600616869 /* SNModuleViewControllerHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleViewControllerHeader.h; sourceTree = "<group>"; };
-		5E99AB4820A4F79C00616869 /* SNModuleViewHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleViewHeader.h; sourceTree = "<group>"; };
 		5E99AB4A20A4F7C400616869 /* SNModulePluginHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModulePluginHeader.h; sourceTree = "<group>"; };
-		5E99AB4C20A5020B00616869 /* SNModuleConfiguration.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleConfiguration.h; sourceTree = "<group>"; };
-		5E99AB4D20A5020B00616869 /* SNModuleConfiguration.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNModuleConfiguration.m; sourceTree = "<group>"; };
+		5E99AB4C20A5020B00616869 /* SNModuleConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleConfig.h; sourceTree = "<group>"; };
+		5E99AB4D20A5020B00616869 /* SNModuleConfig.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SNModuleConfig.m; sourceTree = "<group>"; };
 		5EB004D320A21FBA003E8AF8 /* SNModuleKit.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SNModuleKit.bundle; sourceTree = "<group>"; };
 		5EB0FFCE20993AC4003E8AF8 /* SNModuleKit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SNModuleKit.h; sourceTree = "<group>"; };
 		5ECA36AE209846A300E96217 /* ModulePublic.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = ModulePublic.md; sourceTree = "<group>"; };
@@ -99,6 +96,9 @@
 		9887369B20A4273A00BF6A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9887369C20A4274800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		9887369D20A4274800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		988736BE20A5329E00BF6A9C /* SNModuleMiddlewareHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleMiddlewareHeader.h; sourceTree = "<group>"; };
+		988736BF20A532AD00BF6A9C /* SNModuleControlHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleControlHeader.h; sourceTree = "<group>"; };
+		988736C120A5336B00BF6A9C /* SNModuleComponentHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleComponentHeader.h; sourceTree = "<group>"; };
 		A7DE2F86137FD881069FE85F /* Pods-SNModuleKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62560C0A811BD78706582D4 /* Pods-SNModuleKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -214,49 +214,25 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
-		5E99AB4220A4F60900616869 /* Views */ = {
+		5E99AB4B20A5015C00616869 /* Configurations */ = {
 			isa = PBXGroup;
 			children = (
-				5E99AB4820A4F79C00616869 /* SNModuleViewHeader.h */,
+				5E99AB4C20A5020B00616869 /* SNModuleConfig.h */,
+				5E99AB4D20A5020B00616869 /* SNModuleConfig.m */,
 			);
-			path = Views;
-			sourceTree = "<group>";
-		};
-		5E99AB4320A4F62E00616869 /* ViewControllers */ = {
-			isa = PBXGroup;
-			children = (
-				5E99AB4620A4F77600616869 /* SNModuleViewControllerHeader.h */,
-			);
-			path = ViewControllers;
-			sourceTree = "<group>";
-		};
-		5E99AB4420A4F63A00616869 /* Libs */ = {
-			isa = PBXGroup;
-			children = (
-				5E99AB4520A4F74C00616869 /* SNModuleLibHeader.h */,
-			);
-			path = Libs;
-			sourceTree = "<group>";
-		};
-		5E99AB4B20A5015C00616869 /* Configuration */ = {
-			isa = PBXGroup;
-			children = (
-				5E99AB4C20A5020B00616869 /* SNModuleConfiguration.h */,
-				5E99AB4D20A5020B00616869 /* SNModuleConfiguration.m */,
-			);
-			path = Configuration;
+			path = Configurations;
 			sourceTree = "<group>";
 		};
 		5EB0FFCD20993AC4003E8AF8 /* SNModuleKit */ = {
 			isa = PBXGroup;
 			children = (
 				5EB0FFCE20993AC4003E8AF8 /* SNModuleKit.h */,
-				5E99AB4B20A5015C00616869 /* Configuration */,
-				5E99AB4420A4F63A00616869 /* Libs */,
-				5E99AB4320A4F62E00616869 /* ViewControllers */,
-				5E99AB4220A4F60900616869 /* Views */,
+				988736BD20A5308500BF6A9C /* Components */,
+				988736BB20A5302900BF6A9C /* Controls */,
 				5E99AB4120A4F60200616869 /* Plugins */,
+				988736BC20A5306300BF6A9C /* Middlewares */,
 				5EB0FFCF20993AC4003E8AF8 /* Resources */,
+				5E99AB4B20A5015C00616869 /* Configurations */,
 			);
 			path = SNModuleKit;
 			sourceTree = "<group>";
@@ -415,6 +391,30 @@
 				6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		988736BB20A5302900BF6A9C /* Controls */ = {
+			isa = PBXGroup;
+			children = (
+				988736BF20A532AD00BF6A9C /* SNModuleControlHeader.h */,
+			);
+			path = Controls;
+			sourceTree = "<group>";
+		};
+		988736BC20A5306300BF6A9C /* Middlewares */ = {
+			isa = PBXGroup;
+			children = (
+				988736BE20A5329E00BF6A9C /* SNModuleMiddlewareHeader.h */,
+			);
+			path = Middlewares;
+			sourceTree = "<group>";
+		};
+		988736BD20A5308500BF6A9C /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				988736C120A5336B00BF6A9C /* SNModuleComponentHeader.h */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -640,7 +640,7 @@
 				5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */,
 				5ECA36B62098491D00E96217 /* Target_Public.m in Sources */,
 				5ECA36C120984BED00E96217 /* ViewmodelPublic.m in Sources */,
-				5E99AB4E20A5020B00616869 /* SNModuleConfiguration.m in Sources */,
+				5E99AB4E20A5020B00616869 /* SNModuleConfig.m in Sources */,
 				5E0395A31FB4AF2E00A5DFC2 /* ViewController.m in Sources */,
 				5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */,
 				5E0395AE1FB4AF2E00A5DFC2 /* main.m in Sources */,

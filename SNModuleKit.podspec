@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "0.9.6"
+s.version      = "0.9.7"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -114,20 +114,20 @@ s.subspec 'Configuration' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Configuration/*.{h,m}'
 
 end
-s.subspec 'Libs' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/Libs/*.{h}'
+s.subspec 'Components' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Components/*.{h}'
 
 end
-s.subspec 'ViewControllers' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/ViewControllers/*.{h}'
-
-end
-s.subspec 'Views' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/Views/*.{h}'
+s.subspec 'Controls' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Controls/*.{h}'
 
 end
 s.subspec 'Plugins' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
+
+end
+s.subspec 'Middlewares' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
 
 end
 
@@ -162,6 +162,7 @@ s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 s.dependency 'SAMKeychain'
 s.dependency 'Aspects'
 s.dependency 'IQKeyboardManager'
+s.dependency 'ReactiveObjC'
 
 
 s.dependency 'SNScanViewController'

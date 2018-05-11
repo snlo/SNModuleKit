@@ -1,13 +1,13 @@
 //
-//  SNModuleConfiguration.m
+//  SNModuleConfig.m
 //  SNModuleKit
 //
 //  Created by snlo on 2018/5/11.
 //  Copyright © 2018年 snlo. All rights reserved.
 //
 
-#import "SNModuleConfiguration.h"
+#import "SNModuleConfig.h"
 
-@implementation SNModuleConfiguration
+@implementation SNModuleConfig
 
 @end

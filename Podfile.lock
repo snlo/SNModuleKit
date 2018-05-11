@@ -47,6 +47,7 @@ PODS:
 DEPENDENCIES:
   - Aspects
   - IQKeyboardManager
+  - ReactiveObjC
   - SAMKeychain
   - SNAnimations
   - SNBadgeView
@@ -63,7 +64,7 @@ DEPENDENCIES:
   - SNUIKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - AFNetworking
     - Aspects
     - FMDB
@@ -109,6 +110,6 @@ SPEC CHECKSUMS:
   SNTool: ab20ea61f7b887af992a6f6df6b0efe55f8eb125
   SNUIKit: 00d0c2d7d4555c0d3c4896c0e4c6f4c530963564
 
-PODFILE CHECKSUM: 6f3c59064c0136055a7732f4b343ea33ea867c9a
+PODFILE CHECKSUM: d93bb09c06ff86a8aa5f39bd8d1186608ac566ff
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.2
