@@ -214,25 +214,25 @@
 			path = Plugins;
 			sourceTree = "<group>";
 		};
-		5E99AB4B20A5015C00616869 /* Configurations */ = {
+		5E99AB4B20A5015C00616869 /* Config */ = {
 			isa = PBXGroup;
 			children = (
 				5E99AB4C20A5020B00616869 /* SNModuleConfig.h */,
 				5E99AB4D20A5020B00616869 /* SNModuleConfig.m */,
 			);
-			path = Configurations;
+			path = Config;
 			sourceTree = "<group>";
 		};
 		5EB0FFCD20993AC4003E8AF8 /* SNModuleKit */ = {
 			isa = PBXGroup;
 			children = (
 				5EB0FFCE20993AC4003E8AF8 /* SNModuleKit.h */,
+				5E99AB4B20A5015C00616869 /* Config */,
 				988736BD20A5308500BF6A9C /* Components */,
 				988736BB20A5302900BF6A9C /* Controls */,
 				5E99AB4120A4F60200616869 /* Plugins */,
 				988736BC20A5306300BF6A9C /* Middlewares */,
 				5EB0FFCF20993AC4003E8AF8 /* Resources */,
-				5E99AB4B20A5015C00616869 /* Configurations */,
 			);
 			path = SNModuleKit;
 			sourceTree = "<group>";
