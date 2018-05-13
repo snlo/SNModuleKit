@@ -9,29 +9,29 @@ target 'SNModuleKit' do
 
     pod 'ReactiveObjC'
 #
-#    pod 'AFNetworking'
+    pod 'AFNetworking'
 #
-#    pod 'SDWebImage'
+    pod 'SDWebImage'
 #
-#    pod 'MJRefresh'
+    pod 'MJRefresh'
 #
     pod 'SAMKeychain'
 #
     pod 'Aspects'
 #
-#    pod 'MBProgressHUD'
+    pod 'MBProgressHUD'
 #
     pod 'IQKeyboardManager'
 #
-#    pod 'lottie-ios'
+    pod 'lottie-ios'
 #
-#    pod 'FMDB/FTS‘
+    pod 'FMDB/FTS‘
 #
-#    pod 'Masonry'
+    pod 'Masonry'
 #
-#    pod 'WebViewJavascriptBridge'
+    pod 'WebViewJavascriptBridge'
 #
-#    pod 'pop'
+    pod 'pop'
 #
 
 
