@@ -24,6 +24,9 @@
 		5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C320984BFD00E96217 /* ModelPublic.m */; };
 		5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C620984C3D00E96217 /* PublicViewController.m */; };
 		5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36C720984C3D00E96217 /* PublicViewController.xib */; };
+		982CC8AA20A97A4A0028B9D7 /* setupCodeSnippets in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8A720A97A490028B9D7 /* setupCodeSnippets */; };
+		982CC8AB20A97A4A0028B9D7 /* setupFile in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8A820A97A4A0028B9D7 /* setupFile */; };
+		982CC8AC20A97A4A0028B9D7 /* setupProject in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8A920A97A4A0028B9D7 /* setupProject */; };
 		9C67D09704BDDB837EAA312A /* libPods-SNModuleKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */; };
 		ED1190E97C6DDF5007A7EA05 /* libPods-SNModuleKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */; };
 		F9BC9CF40B159A0E17F4338E /* libPods-SNModuleKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1238E610F450A637305FCCC0 /* libPods-SNModuleKit.a */; };
@@ -92,6 +95,9 @@
 		5ECA36C720984C3D00E96217 /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6BB833A830FC2D97F44867 /* Pods-SNModuleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit.debug.xcconfig"; sourceTree = "<group>"; };
+		982CC8A720A97A490028B9D7 /* setupCodeSnippets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setupCodeSnippets; sourceTree = "<group>"; };
+		982CC8A820A97A4A0028B9D7 /* setupFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setupFile; sourceTree = "<group>"; };
+		982CC8A920A97A4A0028B9D7 /* setupProject */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setupProject; sourceTree = "<group>"; };
 		9887369A20A4273A00BF6A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 		9887369B20A4273A00BF6A9C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		9887369C20A4274800BF6A9C /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
@@ -240,6 +246,9 @@
 		5EB0FFCF20993AC4003E8AF8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				982CC8A720A97A490028B9D7 /* setupCodeSnippets */,
+				982CC8A820A97A4A0028B9D7 /* setupFile */,
+				982CC8A920A97A4A0028B9D7 /* setupProject */,
 				5E65C28A20A226EB00CF5D3B /* SNModuleKitRem.md */,
 				5EB004D320A21FBA003E8AF8 /* SNModuleKit.bundle */,
 			);
@@ -528,8 +537,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ECA36AF209846A300E96217 /* ModulePublic.md in Resources */,
+				982CC8AB20A97A4A0028B9D7 /* setupFile in Resources */,
+				982CC8AC20A97A4A0028B9D7 /* setupProject in Resources */,
 				5E65C28B20A226EB00CF5D3B /* SNModuleKitRem.md in Resources */,
 				5E0395AB1FB4AF2E00A5DFC2 /* LaunchScreen.storyboard in Resources */,
+				982CC8AA20A97A4A0028B9D7 /* setupCodeSnippets in Resources */,
 				5EB004D420A21FBA003E8AF8 /* SNModuleKit.bundle in Resources */,
 				5E0395A81FB4AF2E00A5DFC2 /* Assets.xcassets in Resources */,
 				5E0395A61FB4AF2E00A5DFC2 /* Main.storyboard in Resources */,
