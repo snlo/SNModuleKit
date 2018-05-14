@@ -107,6 +107,9 @@ s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 #
 
 s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
+s.resources = 'SNModuleKit/SNModuleKit/Resources/setupFile'
+s.resources = 'SNModuleKit/SNModuleKit/Resources/setupProject'
+s.resources = 'SNModuleKit/SNModuleKit/Resources/setupCodeSnippets'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -132,7 +135,10 @@ ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
 end
 
 # s.subspec 'Resources' do |ss|
-# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
+# # ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
+# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupFile'
+# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupProject'
+# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupCodeSnippets'
 
 # end
 
@@ -159,38 +165,38 @@ s.requires_arc = true
 
 s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-s.dependency 'SAMKeychain'
-s.dependency 'Aspects'
-s.dependency 'ReactiveObjC'
-s.dependency 'SDWebImageManager'
-s.dependency 'Masonry'
-s.dependency 'FMDB/FTS'
-s.dependency 'lottie-ios'
-s.dependency 'pop'
-s.dependency 'WebViewJavascriptBridge'
-s.dependency 'MBProgressHUD'
-s.dependency 'MJRefresh'
-s.dependency 'AFNetworking'
+# s.dependency 'SAMKeychain'
+# s.dependency 'Aspects'
+# s.dependency 'ReactiveObjC'
+# s.dependency 'SDWebImageManager'
+# s.dependency 'Masonry'
+# s.dependency 'FMDB/FTS'
+# s.dependency 'lottie-ios'
+# s.dependency 'pop'
+# s.dependency 'WebViewJavascriptBridge'
+# s.dependency 'MBProgressHUD'
+# s.dependency 'MJRefresh'
+# s.dependency 'AFNetworking'
 
 
-s.dependency 'IQKeyboardManager'
+# s.dependency 'IQKeyboardManager'
 
 s.dependency 'SNMediatorKit'
 
-s.dependency 'SNScanViewController'
-s.dependency 'SNPhotoCarmeraViewController'
-s.dependency 'SNBadgeView'
-s.dependency 'SNPopupViewController'
+# s.dependency 'SNScanViewController'
+# s.dependency 'SNPhotoCarmeraViewController'
+# s.dependency 'SNBadgeView'
+# s.dependency 'SNPopupViewController'
 
-s.dependency 'SNTool'
+# s.dependency 'SNTool'
 
-s.dependency 'SNUIKit'
-s.dependency 'SNAnimations'
-s.dependency 'SNFoundation'
+# s.dependency 'SNUIKit'
+# s.dependency 'SNAnimations'
+# s.dependency 'SNFoundation'
 
-s.dependency 'SNDBManager'
-s.dependency 'SNFileManager'
-s.dependency 'SNNetworking'
-s.dependency 'SNDownTimer'
+# s.dependency 'SNDBManager'
+# s.dependency 'SNFileManager'
+# s.dependency 'SNNetworking'
+# s.dependency 'SNDownTimer'
 
 end
