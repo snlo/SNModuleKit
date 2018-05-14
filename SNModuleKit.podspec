@@ -95,7 +95,7 @@ s.source       = { :git => "https://github.com/snlo/SNModuleKit.git", :tag => "#
 # s.source_files  = "Classes", "Classes/**/*.{h,m}"
 # s.exclude_files = "Classes/Exclude"
 
-# s.public_header_files = "Classes/**/*.h"
+# s.public_header_files = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 
 
 # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -134,7 +134,7 @@ s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
 
 s.subspec 'Resources' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
-ss.source_files = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
+ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupCodeSnippets.sh'
 
 end
 
