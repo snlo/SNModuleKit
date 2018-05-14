@@ -91,7 +91,7 @@ s.source       = { :git => "https://github.com/snlo/SNModuleKit.git", :tag => "#
 #  Not including the public_header_files will make all headers public.
 #
 
-# s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
+s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 # s.source_files  = "Classes", "Classes/**/*.{h,m}"
 # s.exclude_files = "Classes/Exclude"
 
@@ -127,10 +127,10 @@ s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
 # ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
 
 # end
-# s.subspec 'Middlewares' do |ss|
-# ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
+s.subspec 'Middlewares' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
 
-# end
+end
 
 # s.subspec 'Resources' do |ss|
 # ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
