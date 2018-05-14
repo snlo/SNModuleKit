@@ -164,7 +164,7 @@ s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 s.dependency 'SAMKeychain'
 s.dependency 'Aspects'
 s.dependency 'ReactiveObjC'
-s.dependency 'SDWebImageManager'
+s.dependency 'SDWebImage'
 s.dependency 'Masonry'
 s.dependency 'FMDB/FTS'
 s.dependency 'lottie-ios'
@@ -180,9 +180,10 @@ s.dependency 'IQKeyboardManager'
 s.dependency 'SNMediatorKit'
 
 s.dependency 'SNScanViewController'
+s.dependency 'SNPopupViewController'
 s.dependency 'SNPhotoCarmeraViewController'
 s.dependency 'SNBadgeView'
-s.dependency 'SNPopupViewController'
+
 
 s.dependency 'SNTool'
 
@@ -190,8 +191,8 @@ s.dependency 'SNUIKit'
 s.dependency 'SNAnimations'
 s.dependency 'SNFoundation'
 
-s.dependency 'SNDBManager'
 s.dependency 'SNFileManager'
+s.dependency 'SNDBManager'
 s.dependency 'SNNetworking'
 s.dependency 'SNDownTimer'
 
