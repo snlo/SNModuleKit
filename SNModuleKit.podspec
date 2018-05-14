@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "0.9.8"
+s.version      = "0.9.9"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -107,7 +107,7 @@ s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 #
 
 s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
-s.resources = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
+# s.resources = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -132,13 +132,11 @@ ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
 
 end
 
-# s.subspec 'Resources' do |ss|
-# # ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
-# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupFile'
-# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupProject'
-# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupCodeSnippets'
+s.subspec 'Resources' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
+ss.source_files = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
 
-# end
+end
 
 # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
