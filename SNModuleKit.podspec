@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "1.0.0"
+s.version      = "2.0.0"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ s.summary      = "A delightful iOS and OS X Project framework."
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 s.description  = <<-DESC
-If your project uses component-based solutions, you'll be much more handy with this framework!This version is a streamlined version of this framework, very refreshing.
+If your project uses component-based solutions, you'll be much more handy with this framework!
 DESC
 
 s.homepage     = "https://github.com/snlo/SNModuleKit"
@@ -115,18 +115,18 @@ s.subspec 'Config' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Config/*.{h,m}'
 
 end
-# s.subspec 'Components' do |ss|
-# ss.source_files = 'SNModuleKit/SNModuleKit/Components/*.{h}'
+s.subspec 'Components' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Components/*.{h}'
 
-# end
-# s.subspec 'Controls' do |ss|
-# ss.source_files = 'SNModuleKit/SNModuleKit/Controls/*.{h}'
+end
+s.subspec 'Controls' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Controls/*.{h}'
 
-# end
-# s.subspec 'Plugins' do |ss|
-# ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
+end
+s.subspec 'Plugins' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
 
-# end
+end
 s.subspec 'Middlewares' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
 
@@ -161,38 +161,38 @@ s.requires_arc = true
 
 s.xcconfig = { "HEADER_SEARCH_PATHS" => "$(SDKROOT)/usr/include/libxml2" }
 
-# s.dependency 'SAMKeychain'
-# s.dependency 'Aspects'
-# s.dependency 'ReactiveObjC'
-# s.dependency 'SDWebImageManager'
-# s.dependency 'Masonry'
-# s.dependency 'FMDB/FTS'
-# s.dependency 'lottie-ios'
-# s.dependency 'pop'
-# s.dependency 'WebViewJavascriptBridge'
-# s.dependency 'MBProgressHUD'
-# s.dependency 'MJRefresh'
-# s.dependency 'AFNetworking'
+s.dependency 'SAMKeychain'
+s.dependency 'Aspects'
+s.dependency 'ReactiveObjC'
+s.dependency 'SDWebImageManager'
+s.dependency 'Masonry'
+s.dependency 'FMDB/FTS'
+s.dependency 'lottie-ios'
+s.dependency 'pop'
+s.dependency 'WebViewJavascriptBridge'
+s.dependency 'MBProgressHUD'
+s.dependency 'MJRefresh'
+s.dependency 'AFNetworking'
 
 
-# s.dependency 'IQKeyboardManager'
+s.dependency 'IQKeyboardManager'
 
 s.dependency 'SNMediatorKit'
 
-# s.dependency 'SNScanViewController'
-# s.dependency 'SNPhotoCarmeraViewController'
-# s.dependency 'SNBadgeView'
-# s.dependency 'SNPopupViewController'
+s.dependency 'SNScanViewController'
+s.dependency 'SNPhotoCarmeraViewController'
+s.dependency 'SNBadgeView'
+s.dependency 'SNPopupViewController'
 
-# s.dependency 'SNTool'
+s.dependency 'SNTool'
 
-# s.dependency 'SNUIKit'
-# s.dependency 'SNAnimations'
-# s.dependency 'SNFoundation'
+s.dependency 'SNUIKit'
+s.dependency 'SNAnimations'
+s.dependency 'SNFoundation'
 
-# s.dependency 'SNDBManager'
-# s.dependency 'SNFileManager'
-# s.dependency 'SNNetworking'
-# s.dependency 'SNDownTimer'
+s.dependency 'SNDBManager'
+s.dependency 'SNFileManager'
+s.dependency 'SNNetworking'
+s.dependency 'SNDownTimer'
 
 end
