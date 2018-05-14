@@ -107,9 +107,7 @@ s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 #
 
 s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
-s.resources = 'SNModuleKit/SNModuleKit/Resources/setupFile'
-s.resources = 'SNModuleKit/SNModuleKit/Resources/setupProject'
-s.resources = 'SNModuleKit/SNModuleKit/Resources/setupCodeSnippets'
+s.resources = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
