@@ -107,7 +107,7 @@ s.source       = { :git => "https://github.com/snlo/SNModuleKit.git", :tag => "#
 #
 
 s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
-# s.resources = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
+s.resources = 'SNModuleKit/SNModuleKit/Resources/*'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
@@ -132,11 +132,11 @@ s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
 
 # end
 
-s.subspec 'Resources' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
-ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupCodeSnippets.sh'
+# s.subspec 'Resources' do |ss|
+# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
+# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/setupCodeSnippets.sh'
 
-end
+# end
 
 # ――― Project Linking ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
 #
