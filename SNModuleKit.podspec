@@ -95,7 +95,7 @@ s.source       = { :git => "https://github.com/snlo/SNModuleKit.git", :tag => "#
 # s.source_files  = "Classes", "Classes/**/*.{h,m}"
 # s.exclude_files = "Classes/Exclude"
 
-# s.public_header_files = "SNModuleKit/SNModuleKit/SNModuleKit.h"
+s.public_header_files = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 
 
 # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -111,10 +111,10 @@ s.resources = 'SNModuleKit/SNModuleKit/Resources/*'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
 
-# s.subspec 'Config' do |ss|
-# ss.source_files = 'SNModuleKit/SNModuleKit/Config/*.{h,m}'
+s.subspec 'Config' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Config/*.{h,m}'
 
-# end
+end
 # s.subspec 'Components' do |ss|
 # ss.source_files = 'SNModuleKit/SNModuleKit/Components/*.{h}'
 
@@ -127,10 +127,10 @@ s.resources = 'SNModuleKit/SNModuleKit/Resources/*'
 # ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
 
 # end
-# s.subspec 'Middlewares' do |ss|
-# ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
+s.subspec 'Middlewares' do |ss|
+ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
 
-# end
+end
 
 # s.subspec 'Resources' do |ss|
 # ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
