@@ -91,11 +91,11 @@ s.source       = { :git => "https://github.com/snlo/SNModuleKit.git", :tag => "#
 #  Not including the public_header_files will make all headers public.
 #
 
-# s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
+s.source_files  = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 # s.source_files  = "Classes", "Classes/**/*.{h,m}"
 # s.exclude_files = "Classes/Exclude"
 
-s.public_header_files = "SNModuleKit/SNModuleKit/SNModuleKit.h"
+# s.public_header_files = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 
 
 # ――― Resources ―――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――――― #
@@ -106,7 +106,7 @@ s.public_header_files = "SNModuleKit/SNModuleKit/SNModuleKit.h"
 #  non-essential files like tests, examples and documentation.
 #
 
-s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
+# s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
 s.resources = 'SNModuleKit/SNModuleKit/Resources/*'
 
 # s.preserve_paths = "FilesToSave", "MoreFilesToSave"
