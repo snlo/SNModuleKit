@@ -9,7 +9,7 @@
 #ifndef SNModuleMiddlewareHeader_h
 #define SNModuleMiddlewareHeader_h
 
-//#import <SNMediatorKit.h>       //模块间中间件
+#import <SNMediatorKit.h>       //模块间中间件
 
 #endif /* SNModuleMiddlewareHeader_h */
 

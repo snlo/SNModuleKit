@@ -115,18 +115,18 @@ s.subspec 'Config' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Config/*.{h,m}'
 
 end
-s.subspec 'Components' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/Components/*.{h}'
+# s.subspec 'Components' do |ss|
+# ss.source_files = 'SNModuleKit/SNModuleKit/Components/*.{h}'
 
-end
-s.subspec 'Controls' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/Controls/*.{h}'
+# end
+# s.subspec 'Controls' do |ss|
+# ss.source_files = 'SNModuleKit/SNModuleKit/Controls/*.{h}'
 
-end
-s.subspec 'Plugins' do |ss|
-ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
+# end
+# s.subspec 'Plugins' do |ss|
+# ss.source_files = 'SNModuleKit/SNModuleKit/Plugins/*.{h}'
 
-end
+# end
 s.subspec 'Middlewares' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Middlewares/*.{h}'
 
