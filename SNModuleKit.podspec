@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "0.9.11"
+s.version      = "1.0.0"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -25,7 +25,7 @@ s.summary      = "A delightful iOS and OS X Project framework."
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!
 s.description  = <<-DESC
-If your project uses component-based solutions, you'll be much more handy with this framework!
+If your project uses component-based solutions, you'll be much more handy with this framework!This version is a streamlined version of this framework, very refreshing.
 DESC
 
 s.homepage     = "https://github.com/snlo/SNModuleKit"
