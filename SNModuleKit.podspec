@@ -134,7 +134,7 @@ s.resources = 'SNModuleKit/SNModuleKit/Resources/SNModuleKit.bundle'
 
 s.subspec 'Resources' do |ss|
 ss.source_files = 'SNModuleKit/SNModuleKit/Resources/SNModuleKitRem.md'
-# ss.source_files = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
+ss.source_files = 'SNModuleKit/SNModuleKit/Resources/*.{sh}'
 
 end
 
