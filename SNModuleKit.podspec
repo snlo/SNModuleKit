@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "2.0.0"
+s.version      = "2.0.1"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -183,6 +183,7 @@ s.dependency 'SNScanViewController'
 s.dependency 'SNPopupViewController'
 s.dependency 'SNPhotoCarmeraViewController'
 s.dependency 'SNBadgeView'
+s.dependency 'SNImageBrowserViewController'
 
 
 s.dependency 'SNTool'
