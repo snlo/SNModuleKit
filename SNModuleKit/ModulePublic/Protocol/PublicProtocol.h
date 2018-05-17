@@ -13,10 +13,14 @@
 #import "PublicVenderHeader.h"
 #import "PublicCategoriesHeader.h"
 
+#import <SNConcreteProtocol.h>
+
 static NSString * const kPublic = @"Public";
 
 static NSString * const kNativeFetchPublicViewController = @"nativeFetchPublicViewController";
 
 @protocol PublicProtocol <NSObject>
+
+@concrete
 
 @end

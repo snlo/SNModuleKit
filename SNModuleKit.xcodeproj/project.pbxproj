@@ -24,6 +24,7 @@
 		5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C320984BFD00E96217 /* ModelPublic.m */; };
 		5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C620984C3D00E96217 /* PublicViewController.m */; };
 		5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36C720984C3D00E96217 /* PublicViewController.xib */; };
+		98297E9720AD972000BEBAF0 /* PublicProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 98297E9620AD972000BEBAF0 /* PublicProtocol.m */; };
 		982CC8B720A995360028B9D7 /* setupCodeSnippets in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B420A995360028B9D7 /* setupCodeSnippets */; };
 		982CC8B820A995360028B9D7 /* setupFile in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B520A995360028B9D7 /* setupFile */; };
 		982CC8B920A995360028B9D7 /* setupProject in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B620A995360028B9D7 /* setupProject */; };
@@ -95,6 +96,7 @@
 		5ECA36C720984C3D00E96217 /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6BB833A830FC2D97F44867 /* Pods-SNModuleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit.debug.xcconfig"; sourceTree = "<group>"; };
+		98297E9620AD972000BEBAF0 /* PublicProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicProtocol.m; sourceTree = "<group>"; };
 		982CC8B320A98A160028B9D7 /* SNModuleComponentHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleComponentHeader.h; sourceTree = "<group>"; };
 		982CC8B420A995360028B9D7 /* setupCodeSnippets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setupCodeSnippets; sourceTree = "<group>"; };
 		982CC8B520A995360028B9D7 /* setupFile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setupFile; sourceTree = "<group>"; };
@@ -364,6 +366,7 @@
 			isa = PBXGroup;
 			children = (
 				5ECA36B12098485B00E96217 /* PublicProtocol.h */,
+				98297E9620AD972000BEBAF0 /* PublicProtocol.m */,
 			);
 			path = Protocol;
 			sourceTree = "<group>";
@@ -658,6 +661,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */,
+				98297E9720AD972000BEBAF0 /* PublicProtocol.m in Sources */,
 				5ECA36B62098491D00E96217 /* Target_Public.m in Sources */,
 				5ECA36C120984BED00E96217 /* ViewmodelPublic.m in Sources */,
 				5E99AB4E20A5020B00616869 /* SNModuleConfig.m in Sources */,
