@@ -4,6 +4,9 @@ cd ~/Desktop
 
 git clone https://github.com/snlo/SNWorkflow.git
 
+#clear
+rm -rf ~/Library/Developer/Xcode/Templates/File\ Templates/Snlo\ Source
+
 #copy
 cp -rf ~/Desktop/SNWorkflow/SNWorkflow/Snlo\ Source ~/Library/Developer/Xcode/Templates/File\ Templates
 
