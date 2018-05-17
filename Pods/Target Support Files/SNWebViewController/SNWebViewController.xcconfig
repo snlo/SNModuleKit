@@ -1,0 +1,10 @@
+CONFIGURATION_BUILD_DIR = ${PODS_CONFIGURATION_BUILD_DIR}/SNWebViewController
+GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Private" "${PODS_ROOT}/Headers/Private/SNWebViewController" "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/AFNetworking" "${PODS_ROOT}/Headers/Public/Aspects" "${PODS_ROOT}/Headers/Public/MBProgressHUD" "${PODS_ROOT}/Headers/Public/ReactiveObjC" "${PODS_ROOT}/Headers/Public/SNDownTimer" "${PODS_ROOT}/Headers/Public/SNFoundation" "${PODS_ROOT}/Headers/Public/SNNetworking" "${PODS_ROOT}/Headers/Public/SNTool" "${PODS_ROOT}/Headers/Public/SNWebViewController" "${PODS_ROOT}/Headers/Public/WebViewJavascriptBridge" $(SDKROOT)/usr/include/libxml2
+LIBRARY_SEARCH_PATHS = $(inherited) "${PODS_CONFIGURATION_BUILD_DIR}/AFNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/Aspects" "${PODS_CONFIGURATION_BUILD_DIR}/MBProgressHUD" "${PODS_CONFIGURATION_BUILD_DIR}/ReactiveObjC" "${PODS_CONFIGURATION_BUILD_DIR}/SNDownTimer" "${PODS_CONFIGURATION_BUILD_DIR}/SNFoundation" "${PODS_CONFIGURATION_BUILD_DIR}/SNNetworking" "${PODS_CONFIGURATION_BUILD_DIR}/SNTool" "${PODS_CONFIGURATION_BUILD_DIR}/WebViewJavascriptBridge"
+PODS_BUILD_DIR = ${BUILD_DIR}
+PODS_CONFIGURATION_BUILD_DIR = ${PODS_BUILD_DIR}/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)
+PODS_ROOT = ${SRCROOT}
+PODS_TARGET_SRCROOT = ${PODS_ROOT}/SNWebViewController
+PRODUCT_BUNDLE_IDENTIFIER = org.cocoapods.${PRODUCT_NAME:rfc1034identifier}
+SKIP_INSTALL = YES

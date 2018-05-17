@@ -1,0 +1,1 @@
+../../../SNImageBrowserViewController/SNImageBrowserViewController/SNImageBrowserViewController/Translation/SNImageBrowserTranslation.h

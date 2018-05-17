@@ -38,6 +38,8 @@ target 'SNModuleKit' do
 
 
 
+    pod 'SNImageBrowserViewController'
+    pod 'SNWebViewController'
     pod 'SNScanViewController'
     pod 'SNPhotoCarmeraViewController'
     pod 'SNBadgeView'
