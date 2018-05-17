@@ -61,7 +61,7 @@
     NSMutableDictionary * errorDic = [NSMutableDictionary dictionary];
     if ([error isKindOfClass:[NSString class]]) {
 		
-		[SNNetworkTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:(NSString *)error chooseBlock:nil actionsStatement:nil, nil];
+		[SNTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:(NSString *)error chooseBlock:nil actionsStatement:nil, nil];
         
         [errorDic setObject:@"unknown error" forKey:@"unknown error"];
         return errorDic;
@@ -83,13 +83,13 @@
     BOOL has_error = NO;
     for (id  _Nonnull key in errorDic.allKeys) {
         if ([key hasSuffix:@"Description"]) {
-            [SNNetworkTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:(NSString *)error chooseBlock:nil actionsStatement:nil, nil];
+            [SNTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:(NSString *)error chooseBlock:nil actionsStatement:nil, nil];
             has_error = YES;
             break;
         }
     }
     if (!has_error) {
-		[SNNetworkTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:@"当前网络状态不佳" chooseBlock:nil actionsStatement:nil, nil];
+		[SNTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:@"当前网络状态不佳" chooseBlock:nil actionsStatement:nil, nil];
     }
 
     return errorDic;

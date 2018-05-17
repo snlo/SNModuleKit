@@ -2,12 +2,11 @@
 //  SNMediator.m
 //  AiteCube
 //
-//  Created by sunDong on 2017/9/22.
+//  Created by snlo on 2017/9/22.
 //  Copyright © 2017年 AiteCube. All rights reserved.
 //
 
 #import "SNMediator.h"
-
 #import <objc/runtime.h>
 
 #import "SNMediatorTool.h"
@@ -18,27 +17,7 @@
 
 @end
 
-@implementation SNMediator
-
-static id instanse;
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
-	static dispatch_once_t onesToken;
-	dispatch_once(&onesToken, ^{
-		instanse = [super allocWithZone:zone];
-	});
-	return instanse;
-}
-+ (instancetype)sharedManager {
-	static dispatch_once_t onestoken;
-	dispatch_once(&onestoken, ^{
-		instanse = [[self alloc] init];
-	});
-	return instanse;
-}
-- (id)copyWithZone:(NSZone *)zone {
-	return instanse;
-};
+singletonImplemention(SNMediator)
 
 #pragma mark - public methods
 
@@ -49,8 +28,7 @@ static id instanse;
  aaa://targetA/actionB?id=1234
  */
 
-- (id)performActionWithUrl:(NSURL *)url completion:(void(^)(id responseObject))completion
-{
+- (id)performActionWithUrl:(NSURL *)url completion:(void(^)(id responseObject))completion {
 	NSMutableDictionary *params = [[NSMutableDictionary alloc] init];
 	NSString *urlString = [url query];
 	for (NSString *param in [urlString componentsSeparatedByString:@"&"]) {
@@ -77,8 +55,7 @@ static id instanse;
 	return responseObject;
 }
 
-- (id)performTarget:(NSString *)targetName action:(NSString *)actionName params:(NSDictionary *)params shouldCacheTarget:(BOOL)shouldCacheTarget
-{
+- (id)performTarget:(NSString *)targetName action:(NSString *)actionName params:(NSDictionary *)params shouldCacheTarget:(BOOL)shouldCacheTarget {
 	NSString *targetClassString = [NSString stringWithFormat:@"Target_%@", targetName];
 	NSString *actionString = [NSString stringWithFormat:@"Action_%@:", actionName];
 	Class targetClass;
@@ -122,15 +99,13 @@ static id instanse;
 	}
 }
 
-- (void)releaseCachedTargetWithTargetName:(NSString *)targetName
-{
+- (void)releaseCachedTargetWithTargetName:(NSString *)targetName {
 	NSString *targetClassString = [NSString stringWithFormat:@"Target_%@", targetName];
 	[self.cachedTarget removeObjectForKey:targetClassString];
 }
 
 #pragma mark - private methods
-- (id)safePerformAction:(SEL)action target:(NSObject *)target params:(NSDictionary *)params
-{
+- (id)safePerformAction:(SEL)action target:(NSObject *)target params:(NSDictionary *)params {
 	NSMethodSignature* methodSig = [target methodSignatureForSelector:action];
 	if(methodSig == nil) {
 		return nil;
@@ -197,8 +172,7 @@ static id instanse;
 }
 
 #pragma mark - getters and setters
-- (NSMutableDictionary *)cachedTarget
-{
+- (NSMutableDictionary *)cachedTarget {
 	if (_cachedTarget == nil) {
 		_cachedTarget = [[NSMutableDictionary alloc] init];
 	}
@@ -267,8 +241,8 @@ static id instanse;
 + (UIViewController *)mediatErrorViewController {
 	__block UIViewController * errorViewController = [UIViewController new];
 	errorViewController.view.backgroundColor = [UIColor redColor];
-	[[SNMediatorTool topViewController] presentViewController:errorViewController animated:YES completion:^{
-		[SNMediatorTool showAlertStyle:UIAlertControllerStyleAlert title:@"警告" msg:@"！不支持该返回类型！" chooseBlock:^(NSInteger actionIndx) {
+	[[SNTool topViewController] presentViewController:errorViewController animated:YES completion:^{
+		[SNTool showAlertStyle:UIAlertControllerStyleAlert title:@"警告" msg:@"！不支持该返回类型！" chooseBlock:^(NSInteger actionIndx) {
 			[errorViewController dismissViewControllerAnimated:YES completion:^{
 				
 			}];
@@ -277,11 +251,6 @@ static id instanse;
 	return errorViewController;
 }
 
-void printAge(int age)
-__attribute__((enable_if(age > 0  && age < 120, "你丫太监?")))
-{
-	NSLog(@"%d",age);
-}
 
 @end
 

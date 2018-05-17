@@ -9,7 +9,6 @@
 #import <Foundation/Foundation.h>
 
 #import <AFNetworking.h>
-
 #import <UIKit+AFNetworking.h>
 
 __attribute__((objc_subclassing_restricted))
@@ -17,10 +16,6 @@ __attribute__((objc_subclassing_restricted))
 __attribute__((objc_runtime_name("snloбЇЯАзЪСЯ")))
 
 @interface SNNetworking : NSObject
-
-@property (nonatomic, strong) UIColor * contentColor;
-
-@property (nonatomic, strong) UIColor * blackColor;
 
 + (instancetype)sharedManager;
 

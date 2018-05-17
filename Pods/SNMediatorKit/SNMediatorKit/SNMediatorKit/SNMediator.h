@@ -2,7 +2,7 @@
 //  SNMediator.h
 //  AiteCube
 //
-//  Created by sunDong on 2017/9/22.
+//  Created by snlo on 2017/9/22.
 //  Copyright © 2017年 AiteCube. All rights reserved.
 //
 
@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 
 #import "SNMediatorProtocol.h"
+
 
 __attribute__((objc_subclassing_restricted))
 

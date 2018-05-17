@@ -2,8 +2,8 @@
 //  UITableViewCell+SNCell.m
 //  DoorBell
 //
-//  Created by sunDong on 2017/8/9.
-//  Copyright © 2017年 sundong. All rights reserved.
+//  Created by snlo on 2017/8/9.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import "UITableViewCell+SNCell.h"

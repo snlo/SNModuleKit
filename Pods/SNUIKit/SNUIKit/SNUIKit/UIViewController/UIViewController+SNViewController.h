@@ -1,16 +1,14 @@
 //
 //  UIViewController+SNViewController.h
-//  AiteCube
+//  snlo
 //
-//  Created by sunDong on 2017/9/27.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Created by snlo on 2017/9/27.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 
 @interface UIViewController (SNViewController)
-
-- (void)sn_setNavigationbarHidden:(BOOL)hidden animationComeBack:(BOOL)animation;
 
 /**
  用于导航栏视图颜色的呈现
@@ -33,12 +31,27 @@
 @property (nonatomic, assign) BOOL sn_isAbleEdgeGesture;
 
 /**
- 设置导航栏按钮
+ 设置导航栏右边按钮
  */
 - (UIBarButtonItem *)sn_setRightBarbuttonItemTile:(NSString *)title target:(id)target action:(SEL)action;
-- (UIBarButtonItem *)sn_setLeftBarbuttonItemTile:(NSString *)title target:(id)target action:(SEL)action;
+/**
+ 设置导航栏右边按钮
+ */
 - (UIBarButtonItem *)sn_setRightBarbuttonItemImage:(UIImage *)image target:(id)target action:(SEL)action;
+
+/**
+ 设置导航栏左边按钮
+ */
+- (UIBarButtonItem *)sn_setLeftBarbuttonItemTile:(NSString *)title target:(id)target action:(SEL)action;
+/**
+ 设置导航栏左边按钮
+ */
 - (UIBarButtonItem *)sn_setLeftBarbuttonItemImage:(UIImage *)image target:(id)target action:(SEL)action;
+
+/**
+ 设置导航栏隐藏动画
+ */
+- (void)sn_setNavigationbarHidden:(BOOL)hidden animationComeBack:(BOOL)animation;
 
 /**
  pop 到制定控制器

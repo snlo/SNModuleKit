@@ -3,16 +3,16 @@
 //  NeighborMom
 //
 //  Created by snlo on 16/4/29.
-//  Copyright © 2016年 WAYOS. All rights reserved.
+//  Copyright © 2016年 snlo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 
 @interface NSString (SNFoundationJSON)
 
-+ (NSString *)jsonStringWithDictionary:(NSDictionary *)dictionary;
-+ (NSString *)jsonStringWithArray:(NSArray *)array;
-+ (NSString *)jsonStringWithString:(NSString *) string;
-+ (NSString *)jsonStringWithObject:(id) object;
++ (NSString *)sn_jsonStringWithDictionary:(NSDictionary *)dictionary;
++ (NSString *)sn_jsonStringWithArray:(NSArray *)array;
++ (NSString *)sn_jsonStringWithString:(NSString *)string;
++ (NSString *)sn_jsonStringWithObject:(id)object;
 
 @end

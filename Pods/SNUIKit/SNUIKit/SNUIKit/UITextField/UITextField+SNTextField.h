@@ -1,9 +1,9 @@
 //
 //  UITextField+SNTextField.h
-//  AiteCube
+//  snlo
 //
 //  Created by snlo on 2017/12/9.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

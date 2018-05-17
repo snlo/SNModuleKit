@@ -1,9 +1,9 @@
 //
 //  SNDownTimer.h
-//  Ljiamm
+//  SNDownTimer
 //
-//  Created by sunDong on 16/12/9.
-//  Copyright © 2016年 sunDong. All rights reserved.
+//  Created by snlo on 16/12/9.
+//  Copyright © 2016年 snlo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
@@ -26,7 +26,7 @@
 + (instancetype)downTimerWithFrame:(NSTimeInterval)timeFrame
                           interval:(NSTimeInterval)interval
                          formatter:(NSString *)formatter
-                        startBlock:(void(^)(void))startBlock
+                        startBlock:(void(^)(NSString *showTimeString))startBlock
                      intervalBlock:(void(^)(NSTimeInterval afterSeconds, NSString *showTimeString))intervalBlock
                       completBlock:(void(^)(void))completBlock;
 /**

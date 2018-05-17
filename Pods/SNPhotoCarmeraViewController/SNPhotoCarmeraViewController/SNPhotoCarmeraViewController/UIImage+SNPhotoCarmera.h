@@ -1,9 +1,9 @@
 //
-//  UIImage+Crop.h
-//  CropImage
+//  UIImage+SNPhotoCarmera.h
+//  SNPhotoCarmeraViewControllor
 //
-//  Created by limuyun on 2017/1/11.
-//  Copyright © 2017年 biiway. All rights reserved.
+//  Created by snlo on 2017/1/11.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -16,12 +16,12 @@
  @param newSize 缩放后的尺寸
  @return UIImage
  */
-- (UIImage *)resizeImageWithSize:(CGSize)newSize;
+- (UIImage *)SNPhotoCarmera_resizeImageWithSize:(CGSize)newSize;
 
 /**
  图片圆形裁剪
 
  @return UIImage
  */
-- (UIImage *)ovalClip;
+- (UIImage *)SNPhotoCarmera_ovalClip;
 @end

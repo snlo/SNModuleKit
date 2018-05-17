@@ -1,9 +1,9 @@
 //
 //  SNTool.m
-//  AiteCube
+//  snlo
 //
-//  Created by sunDong on 2017/9/25.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Created by snlo on 2017/9/25.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import "SNTool.h"
@@ -22,27 +22,7 @@
 
 @end
 
-@implementation SNTool
-
-static id instanse;
-
-+ (instancetype)allocWithZone:(struct _NSZone *)zone {
-	static dispatch_once_t onesToken;
-	dispatch_once(&onesToken, ^{
-		instanse = [super allocWithZone:zone];
-	});
-	return instanse;
-}
-+ (instancetype)sharedManager {
-	static dispatch_once_t onestoken;
-	dispatch_once(&onestoken, ^{
-		instanse = [[self alloc] init];
-	});
-	return instanse;
-}
-- (id)copyWithZone:(NSZone *)zone {
-	return instanse;
-};
+singletonImplemention(SNTool)
 
 #pragma mark -- API
 
@@ -72,7 +52,6 @@ static id instanse;
     BOOL isSettingColor = NO;
     unsigned int count;
     Ivar *ivars =  class_copyIvarList([UIAlertAction class], &count);
-    NSLog(@"________________________________________________");
     for (int i = 0; i < count; i++) {
         Ivar ivar = ivars[i];
         const char * cName =  ivar_getName(ivar);
@@ -83,7 +62,6 @@ static id instanse;
         }
 //        NSLog(@"%@",ocName);
     }
-    NSLog(@"________________________________________________");
 //    free(ivars);
 
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:style];
@@ -100,16 +78,16 @@ static id instanse;
                 if (styleAction == UIAlertActionStyleCancel) {
                     [action setValue:COLOR_CONTENT forKey:@"titleTextColor"];
                 } else {
-                    [action setValue:COLOR_BLACK forKey:@"titleTextColor"];
+                    [action setValue:COLOR_MAIN forKey:@"titleTextColor"];
                 }
             }
         }
         [alertController addAction:action];
     }
     
-    [[self getNextViewController] presentViewController:alertController animated:YES completion:nil];
+    [[self topViewController] presentViewController:alertController animated:YES completion:nil];
     
-    alertController.view.tintColor = COLOR_BLACK;
+    alertController.view.tintColor = COLOR_MAIN;
     
     //2秒钟之后自动dismiss掉
     if (!cancelString) {
@@ -176,8 +154,8 @@ static id instanse;
 }
 
 // 颜色转换三：iOS中十六进制的颜色（以#开头）转换为UIColor
-+ (UIColor *) colorWithHexString: (NSString *)color
-{
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha {
+    
 	NSString *cString = [[color stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] uppercaseString];
 	
 	// String should be 6 or 8 characters
@@ -213,7 +191,7 @@ static id instanse;
 	[[NSScanner scannerWithString:gString] scanHexInt:&g];
 	[[NSScanner scannerWithString:bString] scanHexInt:&b];
 	
-	return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:1.0f];
+	return [UIColor colorWithRed:((float) r / 255.0f) green:((float) g / 255.0f) blue:((float) b / 255.0f) alpha:alpha];
 }
 
 //正则表达式检索手机号
@@ -372,14 +350,9 @@ static id instanse;
     }
 }
 + (BOOL)isPassWord:(NSString *)pass {
-    BOOL result = false;
-    if ([pass length] >= 6){
-        // 判断长度大于8位后再接着判断是否同时包含数字和字符
-        NSString * regex = @"^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,12}$";
-        NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
-        result = [pred evaluateWithObject:pass];
-    }
-    return result;
+	NSString * regex = @"^(?!^[0-9]+$)(?!^[A-z]+$)(?!^[^A-z0-9]+$)^.{6,12}$";
+	NSPredicate *pred = [NSPredicate predicateWithFormat:@"SELF MATCHES %@", regex];
+	return [pred evaluateWithObject:pass];
 }
 + (BOOL)isPaymentNumber:(NSString *)number {
     BOOL result = false;
@@ -419,65 +392,28 @@ static id instanse;
     return [UIDevice currentDevice].systemVersion.floatValue >= 11.0;
 }
 
-+ (UIViewController *)getNextViewController
-{
-    UIViewController *result = nil;
-    UIWindow * window = [[UIApplication sharedApplication] keyWindow];
-    
-    if (window.windowLevel != UIWindowLevelNormal) {
-        NSArray *windows = [[UIApplication sharedApplication] windows];
-        
-        for(UIWindow * tmpWin in windows) {
-            
-            if (tmpWin.windowLevel == UIWindowLevelNormal) {
-                window = tmpWin;
-                break;
-            }
-        }
-    }
-    
-    UIView * frontView = [[UIView alloc]init];
-    
-    if (window.subviews.count < 1) {
-        frontView = window.rootViewController.view;
-    } else {
-        frontView = [[window subviews] objectAtIndex:0];
-    }
-    
-    id nextResponder = [frontView nextResponder];
-    
-    if ([nextResponder isKindOfClass:[UIViewController class]]) {
-        result = nextResponder;
-    } else {
-        result = window.rootViewController;
-    }
-    
-    if (result.presentedViewController) {
-        result = result.presentedViewController;
-        
-        for (int i = 0; i < 20; ++i) {
-            if (result.presentedViewController) {
-                result = result.presentedViewController;
-            } else {
-                break;
-            }
-        }
-    }
-    NSLog(@"getNextViewController -- %@",NSStringFromClass([result class]));
-    return result;
-}
-
 + (UIViewController *)topViewController {
-    UIViewController * resultVC = [self fetchTopViewControllerWith:[[UIApplication sharedApplication].keyWindow rootViewController]];
+    __block UIWindow * window = [UIApplication sharedApplication].keyWindow;
+    if (!window) {
+        [[UIApplication sharedApplication].windows enumerateObjectsUsingBlock:^(__kindof UIWindow * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            window = obj;
+        }];
+    }
+    NSLog(@"%@",window.rootViewController);
+    
+    UIViewController * resultVC = [self fetchTopViewControllerWith:[window rootViewController]];
+    if (!resultVC) {
+        
+    }
     while (resultVC.presentedViewController) {
         resultVC = [self fetchTopViewControllerWith:resultVC.presentedViewController];
     }
     while (resultVC.childViewControllers.count > 0) {
-        resultVC = [self fetchTopViewControllerWithChids:resultVC.childViewControllers.lastObject];
+        resultVC = [self fetchTopViewControllerWithChilds:resultVC.childViewControllers.lastObject];
     }
     return resultVC;
 }
-+ (UIViewController *)fetchTopViewControllerWithChids:(UIViewController *)VC  {
++ (UIViewController *)fetchTopViewControllerWithChilds:(UIViewController *)VC  {
     if (VC.childViewControllers.lastObject) {
         return VC.childViewControllers.lastObject;
     } else {
@@ -599,7 +535,7 @@ static id instanse;
     }
 }
 
-+ (NSString *)getCurrentTimeFormat:(NSString *)format fromDate:(NSDate *)date
++ (NSString *)fetchCurrentTimeFormat:(NSString *)format fromDate:(NSDate *)date
 {
     NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
     
@@ -613,7 +549,7 @@ static id instanse;
     }
     return [formatter stringFromDate:date];
 }
-+ (NSString *)getTimeFromCurrentSecs:(NSTimeInterval)secs format:(NSString *)format
++ (NSString *)fetchTimeFromCurrentSecs:(NSTimeInterval)secs format:(NSString *)format
 {
     NSDateFormatter * formatter = [[NSDateFormatter alloc]init];
     if (format) {
@@ -625,7 +561,7 @@ static id instanse;
     
     return [formatter stringFromDate:nextDate];
 }
-+ (NSString *)getCurrentWeekFromDate:(NSDate *)date {
++ (NSString *)fetchCurrentWeekFromDate:(NSDate *)date {
     NSCalendar  * calendar = [NSCalendar  currentCalendar];
     NSUInteger  unitFlags = NSCalendarUnitEra | NSCalendarUnitYear | NSCalendarUnitMonth | NSCalendarUnitDay | NSCalendarUnitWeekday | NSCalendarUnitHour | NSCalendarUnitMinute |NSCalendarUnitSecond;
     if (!date) {
@@ -644,7 +580,7 @@ static id instanse;
 //                  conponent.second);
     return SNString(@"%@",weekdays[conponent.weekday]);
 }
-+ (NSString *)getAppVersionNo {
++ (NSString *)fetchAppVersionNo {
     return [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
 }
 
@@ -727,7 +663,7 @@ static id instanse;
 
 - (MBProgressHUD *)hud {
 	if (!_hud) {
-		_hud = [MBProgressHUD showHUDAddedTo:[SNTool getNextViewController].view animated:YES];
+		_hud = [MBProgressHUD showHUDAddedTo:[SNTool topViewController].view animated:YES];
 		_hud.mode = MBProgressHUDModeText;
         _hud.contentColor = [UIColor whiteColor];
 		_hud.bezelView.color = [UIColor colorWithWhite:0.00 alpha:0.7];
@@ -738,7 +674,7 @@ static id instanse;
 }
 - (MBProgressHUD *)hudSuccess {
 	if (!_hudSuccess) {
-		_hudSuccess = [MBProgressHUD showHUDAddedTo:[SNTool getNextViewController].view animated:YES];
+		_hudSuccess = [MBProgressHUD showHUDAddedTo:[SNTool topViewController].view animated:YES];
 		_hudSuccess.mode = MBProgressHUDModeCustomView;
 		
 		UIImage *image = [[UIImage imageNamed:@"public_checkbox_circle_checked_white"] imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
@@ -754,10 +690,10 @@ static id instanse;
 }
 - (MBProgressHUD *)hudLoding {
     if (!_hudLoding) {
-        if (![SNTool getNextViewController]) {
+        if (![SNTool topViewController]) {
             return _hudLoding;
         }
-        _hudLoding = [MBProgressHUD showHUDAddedTo:[SNTool getNextViewController].view animated:YES];
+        _hudLoding = [MBProgressHUD showHUDAddedTo:[SNTool topViewController].view animated:YES];
         _hudLoding.mode = MBProgressHUDModeIndeterminate;
         _hudLoding.bezelView.color = [UIColor colorWithWhite:0.00 alpha:0.7];
         _hudLoding.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
@@ -767,6 +703,55 @@ static id instanse;
     } return _hudLoding;
 }
 
+
+#pragma mark -- Repealed
+//+ (UIViewController *)topViewController
+//{
+//	UIViewController *result = nil;
+//	UIWindow * window = [[UIApplication sharedApplication] keyWindow];
+//
+//	if (window.windowLevel != UIWindowLevelNormal) {
+//		NSArray *windows = [[UIApplication sharedApplication] windows];
+//
+//		for(UIWindow * tmpWin in windows) {
+//
+//			if (tmpWin.windowLevel == UIWindowLevelNormal) {
+//				window = tmpWin;
+//				break;
+//			}
+//		}
+//	}
+//
+//	UIView * frontView = [[UIView alloc]init];
+//
+//	if (window.subviews.count < 1) {
+//		frontView = window.rootViewController.view;
+//	} else {
+//		frontView = [[window subviews] objectAtIndex:0];
+//	}
+//
+//	id nextResponder = [frontView nextResponder];
+//
+//	if ([nextResponder isKindOfClass:[UIViewController class]]) {
+//		result = nextResponder;
+//	} else {
+//		result = window.rootViewController;
+//	}
+//
+//	if (result.presentedViewController) {
+//		result = result.presentedViewController;
+//
+//		for (int i = 0; i < 20; ++i) {
+//			if (result.presentedViewController) {
+//				result = result.presentedViewController;
+//			} else {
+//				break;
+//			}
+//		}
+//	}
+//	NSLog(@"topViewController -- %@",NSStringFromClass([result class]));
+//	return result;
+//}
 
 
 @end

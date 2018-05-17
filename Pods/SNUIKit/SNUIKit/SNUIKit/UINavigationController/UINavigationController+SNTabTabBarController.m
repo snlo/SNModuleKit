@@ -1,9 +1,9 @@
 //
 //  UINavigationController+SNTabTabBarController.m
-//  AiteCube
+//  snlo
 //
-//  Created by sunDong on 2017/9/29.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Created by snlo on 2017/9/29.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import "UINavigationController+SNTabTabBarController.h"
@@ -65,9 +65,8 @@
     
 	self.sn_tabBarController.viewControllers = [self sn_tabBarControllerViewControllers];
 	
-	[[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor lightGrayColor], NSForegroundColorAttributeName, [UIFont systemFontOfSize:12.0f],NSFontAttributeName,nil] forState:UIControlStateNormal];
-	
-	[[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[SNUIKitTool sharedManager].hintColor, NSForegroundColorAttributeName, [UIFont systemFontOfSize:12.0f],NSFontAttributeName,nil] forState:UIControlStateSelected];
+	[self sn_setTabBarItemTitleTextColor:COLOR_CONTENT normalfont:[UIFont systemFontOfSize:12.0f] forState:UIControlStateNormal];
+	[self sn_setTabBarItemTitleTextColor:COLOR_TITLE normalfont:[UIFont systemFontOfSize:12.0f] forState:UIControlStateSelected];
 
 	for (int i = 0; i < [self sn_tabBarControllerViewControllers].count; ++i) {
 		
@@ -82,6 +81,10 @@
     if ([self sn_tabBarControllerViewControllers].count < 2) {
         self.sn_tabBarController.tabBar.hidden = YES;
     }
+}
+
+- (void)sn_setTabBarItemTitleTextColor:(UIColor *)color normalfont:(UIFont*)font forState:(UIControlState)state {
+	[[UITabBarItem appearance] setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:color, NSForegroundColorAttributeName, font,NSFontAttributeName,nil] forState:state];
 }
 
 #pragma mark -- rewrite methods
@@ -101,8 +104,8 @@
 #pragma mark -- private methods
 
 - (void)configureTabbrItemTitle:(NSString *)title pages:(int)pages imageName:(NSString *)imageName selectedImageName:(NSString *)selectedImageName {
-	self.sn_tabBarController.tabBar.items[pages].image = [SNUIKIT_IMAGE_NAMED(imageName) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; //蓝色BUG
-	self.sn_tabBarController.tabBar.items[pages].selectedImage = [SNUIKIT_IMAGE_NAMED(selectedImageName) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+	self.sn_tabBarController.tabBar.items[pages].image = [IMAGE_NAMED(imageName) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]; //蓝色BUG
+	self.sn_tabBarController.tabBar.items[pages].selectedImage = [IMAGE_NAMED(selectedImageName) imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
 	self.sn_tabBarController.tabBar.items[pages].title = title;
 }
 

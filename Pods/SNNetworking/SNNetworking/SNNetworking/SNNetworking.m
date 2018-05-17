@@ -124,7 +124,7 @@ static id instanse;
         
         for (NSData * data in dataArray) {
 
-            NSString * names = [[SNNetworkTool currentTime] md5String];
+            NSString * names = [[SNTool fetchCurrentTimeFormat:@"yyyyMMddHHmmssSSS" fromDate:[NSDate date]] md5String];
             NSString * fileName = [NSString stringWithFormat:@"%@.%@",names,fileSuffixName];
             
             [formData appendPartWithFileData:data name:name fileName:fileName mimeType:type];
@@ -269,14 +269,14 @@ static id instanse;
     
     [SNNetworking sharedManager].loadingLevel += 1;
     if ([SNNetworking sharedManager].loadingLeveling < 1001) {
-        [SNNetworkTool showLoading:nil];
+        [SNTool showLoading:nil];
     }
 }
 + (void)netWorkingSuccess {
     [SNNetworking sharedManager].loadingLevel -= 1;
     if ([SNNetworking sharedManager].loadingLeveling < 1001) {
         if ([SNNetworking sharedManager].loadingLevel <= 0) {
-            [SNNetworkTool dismisLoding];
+            [SNTool dismisLoding];
             [SNNetworking sharedManager].loadingLevel = 0;
         }
     }
@@ -285,7 +285,7 @@ static id instanse;
     [SNNetworking sharedManager].loadingLevel -= 1;
     if ([SNNetworking sharedManager].loadingLeveling < 1001) {
         if ([SNNetworking sharedManager].loadingLevel <= 0) {
-            [SNNetworkTool dismisLoding];
+            [SNTool dismisLoding];
             [SNNetworking sharedManager].loadingLevel = 0;
         }
     }
@@ -352,15 +352,6 @@ static id instanse;
     if (!_basrUrl) {
         _basrUrl = @"http://ac.aitelife.com";
     } return _basrUrl;
-}
-
-- (void)setContentColor:(UIColor *)contentColor {
-	_contentColor = contentColor;
-	[SNNetworkTool sharedManager].contentColor = _contentColor;
-}
-- (void)setBlackColor:(UIColor *)blackColor {
-	_blackColor = blackColor;
-	[SNNetworkTool sharedManager].blackColor = _blackColor;
 }
 
 @end

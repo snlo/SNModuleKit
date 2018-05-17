@@ -1,9 +1,9 @@
 //
 //  SNPhotoCameraViewController.h
-//  NeighborMom
+//  SNPhotoCarmeraViewControllor
 //
-//  Created by sunDong on 16/4/11.
-//  Copyright © 2016年 WAYOS. All rights reserved.
+//  Created by snlo on 16/4/11.
+//  Copyright © 2016年 snlo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -19,21 +19,6 @@
  照片选择器
  */
 @property (nonatomic, readonly) UIImagePickerController * imagePickerController;
-
-/**
- 主题色
- */
-@property (nonatomic, strong) UIColor * tintColor;
-
-/**
- 内容色，用于更新统一
- */
-@property (nonatomic, strong) UIColor * contentColor;
-
-/**
- 黑色，用于更新统一
- */
-@property (nonatomic, strong) UIColor * blackColor;
 
 /**
  初始化

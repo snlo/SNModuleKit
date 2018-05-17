@@ -1,14 +1,14 @@
 //
 //  SNDownTimer.m
-//  Ljiamm
+//  SNDownTimer
 //
-//  Created by sunDong on 16/12/9.
-//  Copyright © 2016年 sunDong. All rights reserved.
+//  Created by snlo on 16/12/9.
+//  Copyright © 2016年 snlo. All rights reserved.
 //
 
 #import "SNDownTimer.h"
 
-typedef void(^StartBlock)(void);
+typedef void(^StartBlock)(NSString *showTimeString);
 typedef void(^IntervalBlock)(NSTimeInterval afterSeconds, NSString *showTimeString);
 typedef void(^CompletBlock)(void);
 @class SNSharedDownTimer;
@@ -33,7 +33,7 @@ typedef void(^CompletBlock)(void);
 - (instancetype)initWithFrame:(NSTimeInterval)timeFrame
                      interval:(NSTimeInterval)interval
                     formatter:(NSString *)formatter
-                   startBlock:(void(^)(void))startBlock
+                   startBlock:(void(^)(NSString *showTimeString))startBlock
                 intervalBlock:(void(^)(NSTimeInterval afterSeconds, NSString *showTimeString))intervalBlock
                  completBlock:(void(^)(void))completBlock
 {
@@ -43,7 +43,8 @@ typedef void(^CompletBlock)(void);
         _interval = interval;
         [self.formatter setDateFormat:formatter];
         [self timer];
-        if (startBlock) startBlock();
+        NSString *showTimeString = [self.formatter stringFromDate:[[NSDate dateWithTimeIntervalSince1970:0] dateByAddingTimeInterval:(_timeFrame -_tempTime)]];
+        if (startBlock) startBlock(showTimeString);
         if (intervalBlock) self.intervalBlock = intervalBlock;
         if (completBlock) self.completBlock = completBlock;
     } return self;
@@ -52,7 +53,7 @@ typedef void(^CompletBlock)(void);
 + (instancetype)downTimerWithFrame:(NSTimeInterval)timeFrame
                           interval:(NSTimeInterval)interval
                          formatter:(NSString *)formatter
-                        startBlock:(void(^)(void))startBlock
+                        startBlock:(void(^)(NSString *showTimeString))startBlock
                      intervalBlock:(void(^)(NSTimeInterval afterSeconds, NSString *showTimeString))intervalBlock
                       completBlock:(void(^)(void))completBlock
 {
@@ -84,6 +85,7 @@ typedef void(^CompletBlock)(void);
         
         [self.timer invalidate];
         self.timer = nil;
+        
         
         if (self.completBlock) self.completBlock();
     }

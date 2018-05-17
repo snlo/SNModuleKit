@@ -8,9 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-/**
- 注意在继承时一级子视图有且只有一个,它才会提供回退、入场和智能屏蔽边缘手势的功能。
- */
 @interface SNPopupView : UIView
 
 /**
@@ -18,21 +15,40 @@
  */
 @property (nonatomic, assign) BOOL isBlankTouchInVisible;
 
+/**
+ 自定义出场动画
+ */
+@property (nonatomic) CABasicAnimation * showAnimation;
 
 /**
- 回退。会执行‘dealloc’函数
- @param block 当动画完成时执行回调
+ 自定义退场动画
+ */
+@property (nonatomic) CABasicAnimation * dismissAnimation;
+
+/**
+ 实现为子视图添加出场动画，对多个子视图定制
+ */
+- (void)addSubviewShowAnimation;
+
+/**
+ 实现为子视图添加退场动画，对多个子视图定制
+ */
+- (void)addSubviewDismissAnimation;
+
+/**
+ 退场
+ @param block 退场回调
  */
 - (void)dismissFromSuperView:(void(^)(void))block;
 
 /**
- 入场
- @param block 当动画完成时执行回调
+ 出场
+ @param block 出场回调
  */
 - (void)showInSuperView:(void(^)(void))block;
 
 /**
- 当接受的回退时的回调，当实现次API时‘dismissFromSuperView’中的‘block’会失效
+ 退场回调拦截
  */
 - (void)receiveDismissBlock:(void(^)(void))block;
 

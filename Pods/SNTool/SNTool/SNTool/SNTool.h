@@ -1,25 +1,29 @@
 //
 //  SNTool.h
-//  AiteCube
+//  snlo
 //
-//  Created by sunDong on 2017/9/25.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Created by snlo on 2017/9/25.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import "SNTololMacro.h"
+#import "SNToolMacro.h"
 #import "Singletion.h"
+
+#import "NSString+SNTool.h"
+
+#import "SNConcreteProtocol.h"
+#import "SNSafeCategory.h"
+#import "SNRuntimeExtensions.h"
 
 __attribute__((objc_subclassing_restricted))
 
-@interface SNTool : NSObject
-
-+ (instancetype)sharedManager;
+singletonInterface(SNTool)
 
 /**
- 获取根视图控制器
+ 获取根视图控制器，最后一个window的rootViewController
  */
 + (UIViewController *)rootViewController;
 
@@ -61,6 +65,16 @@ __attribute__((objc_subclassing_restricted))
 + (BOOL)isPresented:(UIViewController *)viewController;
 
 /**
+ 任意对象的上一个响应者ViewContrllor实咧，前提是它已经被加载
+ */
++ (UIViewController *)topViewController;
+
+/**
+ 获取‘topViewController’的 UINavigationController
+ */
++ (UINavigationController *)fetchNavigationController;
+
+/**
  读取颜色的透明度
  */
 + (CGFloat)alphaColor:(UIColor *)color;
@@ -74,12 +88,12 @@ __attribute__((objc_subclassing_restricted))
  颜色转换
  
  @param color iOS中十六进制的颜色（以#开头）
- @return UIColor
+ @param alpha 透明度
  */
-+ (UIColor *)colorWithHexString:(NSString *)color;
++ (UIColor *)colorWithHexString:(NSString *)color alpha:(CGFloat)alpha;
 
 /**
- 正则表达式检索手机号
+ 正则表达式检索手机号:(^1([3-9])\\d{9}$)
  */
 + (BOOL)isPhone:(NSString *)phone;
 
@@ -89,7 +103,7 @@ __attribute__((objc_subclassing_restricted))
 + (BOOL)isIDCardNumber:(NSString *)value;
 
 /**
- 正则密码是否6位以上包含数字和字母
+ 正则密码是否6-12位包含数字和字母
  */
 + (BOOL)isPassWord:(NSString *)pass;
 
@@ -99,7 +113,7 @@ __attribute__((objc_subclassing_restricted))
 + (BOOL)isPaymentNumber:(NSString *)number;
 
 /**
- 正则匹配image的url
+ 正则匹配image的url，若不是则加上SNNetworking中的url
  */
 + (NSString *)isImageUrl:(NSString *)string;
 
@@ -107,19 +121,14 @@ __attribute__((objc_subclassing_restricted))
  切除聊天文件域名地址
  */
 + (NSString *)cutHTTPStringFromChatFilePath:(NSString *)filePath;
+
 /**
  判断iOS 11以便UI适配
  */
 + (BOOL)isiOS11;
 
 /**
- 任意对象的上一个响应者ViewContrllor实咧
- */
-+ (UIViewController *)getNextViewController;
-+ (UIViewController *)topViewController;
-/**
  拨打电话
-
  @param number 电话号码
  */
 + (void)callWithTelephone:(NSString *)number;
@@ -136,7 +145,6 @@ __attribute__((objc_subclassing_restricted))
 
 /**
  实现模糊效果（兼容到iOS_7，在iOS8以前用的是UIToolbar，在iOS8以后用的是UIVisualEffectView。当然这两者的效果也是有所不同） 不建议让其参加CaorAnimation动画
-
  @param view 被模糊对象
  @param color 模糊颜色,设置它的alpha值从0~1模糊度由低变高
  @param alpha 模糊透明度，值为0时，不存在模糊度。
@@ -145,7 +153,6 @@ __attribute__((objc_subclassing_restricted))
 
 /**
  改变某些文字的颜色 并单独设置其字体
-
  @param font 设置的字体
  @param color 颜色
  @param totalString 总的字符串
@@ -160,33 +167,7 @@ __attribute__((objc_subclassing_restricted))
 + (BOOL)stringContainsEmoji:(NSString *)string;
 
 /**
- 获取但前时间，
-
- @param format 默认格式：@"yyyy-MM-dd HH:mm:ss" 当为nil，时间的格式为默认
- @param date 自定义时间
- @return 当前时间
- */
-+ (NSString *)getCurrentTimeFormat:(NSString *)format fromDate:(NSDate *)date;
-
-/**
- 获取距离当前时间
-
- @param secs  时间间隔，秒，after就传正数，before就传负数 eg:在此之前3天 -24 * 60 * 60 * 3
- @param format 默认格式：@"yyyy-MM-dd HH:mm:ss" 当为nil，时间的格式为默认
- @return 距离当前时间secs秒
- */
-+ (NSString *)getTimeFromCurrentSecs:(NSTimeInterval)secs format:(NSString *)format;
-
-/**
- 获取当前星期几
-
- @param date 自定义时间
- */
-+ (NSString *)getCurrentWeekFromDate:(NSDate *)date;
-
-/**
  根据正则，过滤特殊字符
-
  @param string 要过滤的字符串
  @param regexStr 正则
  @return 过滤后的字符串
@@ -194,9 +175,31 @@ __attribute__((objc_subclassing_restricted))
 + (NSString *)filterCharacters:(NSString *)string withRegex:(NSString *)regexStr;
 
 /**
+ 获取当前时间，
+ @param format 默认格式：@"yyyy-MM-dd HH:mm:ss" 当为nil，时间的格式为默认
+ @param date 自定义时间
+ @return 当前时间
+ */
++ (NSString *)fetchCurrentTimeFormat:(NSString *)format fromDate:(NSDate *)date;
+
+/**
+ 获取距离当前时间
+ @param secs  时间间隔，秒，after就传正数，before就传负数 eg:在此之前3天 -24 * 60 * 60 * 3
+ @param format 默认格式：@"yyyy-MM-dd HH:mm:ss" 当为nil，时间的格式为默认
+ @return 距离当前时间secs秒
+ */
++ (NSString *)fetchTimeFromCurrentSecs:(NSTimeInterval)secs format:(NSString *)format;
+
+/**
+ 获取当前星期几
+ @param date 自定义时间
+ */
++ (NSString *)fetchCurrentWeekFromDate:(NSDate *)date;
+
+/**
  获取本地版本号
  */
-+ (NSString *)getAppVersionNo;
++ (NSString *)fetchAppVersionNo;
 
 /**
  是否全为空格

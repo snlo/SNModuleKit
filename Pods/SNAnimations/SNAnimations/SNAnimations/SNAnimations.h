@@ -12,56 +12,61 @@
 #import <UIKit/UIKit.h>
 #import <Foundation/Foundation.h>
 
-static const CGFloat kAnimationTime = 0.3;
+//#import <POP.h>
+//#import <locale.h>
 
-#if __IPHONE_OS_VERSION_MAX_ALLOWED > 90400
+#import "UIView+SNAnimations.h"
 
-@interface SNAnimations : NSObject<CAAnimationDelegate>
+static const CGFloat kSNAnimationsTime = 0.3;
 
-#else
+//#if __IPHONE_OS_VERSION_MAX_ALLOWED > __IPHONE_9_3
+
+//@interface SNAnimations : NSObject <CAAnimationDelegate>
+
+//#else
 
 @interface SNAnimations : NSObject
 
-#endif
+//#endif
 
 /**
  淡入
  */
-+ (CABasicAnimation *)fadeInAnimationToAlpha:(CGFloat)toAlpha;
++ (CABasicAnimation *)fadeInAnimationToAlpha:(CGFloat)toAlpha duration:(CFTimeInterval)duration;
 
 /**
  淡出
  */
-+ (CABasicAnimation *)fadeOutAnimation;
++ (CABasicAnimation *)fadeOutAnimationDuration:(CFTimeInterval)duration;
 
 /**
  从底部出现
  */
-+ (CABasicAnimation *)bottomOutAnimationMoveY:(CGFloat)moveY;
++ (CABasicAnimation *)bottomOutAnimationMoveY:(CGFloat)moveY duration:(CFTimeInterval)duration;
 
 /**
  消失进入底部
  */
-+ (CABasicAnimation *)bottomInAnimationMoveY:(CGFloat)moveY;
++ (CABasicAnimation *)bottomInAnimationMoveY:(CGFloat)moveY duration:(CFTimeInterval)duration;
 
 /**
  放大
  */
-+ (CABasicAnimation *)zoomInAnimationToPorportion:(NSNumber *)porportion;
++ (CABasicAnimation *)zoomInAnimationToPorportion:(NSNumber *)porportion duration:(CFTimeInterval)duration;
 
 /**
  缩小
  */
-+ (CABasicAnimation *)zoomOutAnimation;
++ (CABasicAnimation *)zoomOutAnimationDuration:(CFTimeInterval)duration;
 
 /**
  旋转
  */
-+ (CABasicAnimation *)rotaeAnimationformValue:(CGFloat)fromValue toValue:(CGFloat)toValue;
++ (CABasicAnimation *)rotaeAnimationformValue:(CGFloat)fromValue toValue:(CGFloat)toValue duration:(CFTimeInterval)duration;
 
 /**
  晃动 eg:-5,5
  */
-+ (CABasicAnimation *)shakeAnimationformValue:(CGFloat)fromValue toValue:(CGFloat)toValue;
++ (CABasicAnimation *)shakeAnimationformValue:(CGFloat)fromValue toValue:(CGFloat)toValue repeatCount:(CGFloat)repeatCount duration:(CFTimeInterval)duration;
 
 @end

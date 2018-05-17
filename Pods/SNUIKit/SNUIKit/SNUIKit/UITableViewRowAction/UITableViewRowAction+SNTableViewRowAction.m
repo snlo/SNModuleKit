@@ -11,7 +11,7 @@
 
 @implementation UITableViewRowAction (SNTableViewRowAction)
 
-+ (instancetype)rowActionWithStyle:(UITableViewRowActionStyle)style image:(UIImage *)image handler:(void (^)(UITableViewRowAction * _Nullable, NSIndexPath * _Nullable))handler {
++ (instancetype)sn_rowActionWithStyle:(UITableViewRowActionStyle)style image:(UIImage *)image handler:(void (^)(UITableViewRowAction * _Nullable, NSIndexPath * _Nullable))handler {
     UITableViewRowAction *rowAction = [self rowActionWithStyle:style title:@"holder" handler:handler];
     rowAction.sn_enabled = image;
     return rowAction;

@@ -1,1 +1,0 @@
-../../../SNScanViewController/SNScanViewController/SNScanViewController/SNScanMacro.h

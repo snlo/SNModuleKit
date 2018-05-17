@@ -1,16 +1,16 @@
 //
-//  UIImage+Crop.m
-//  CropImage
+//  UIImage+SNPhotoCarmera.m
+//  SNPhotoCarmeraViewControllor
 //
-//  Created by limuyun on 2017/1/11.
-//  Copyright © 2017年 biiway. All rights reserved.
+//  Created by snlo on 2017/1/11.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import "UIImage+SNPhotoCarmera.h"
 
 @implementation UIImage (SNPhotoCarmera)
 
-- (UIImage *)resizeImageWithSize:(CGSize)newSize {
+- (UIImage *)SNPhotoCarmera_resizeImageWithSize:(CGSize)newSize {
     CGFloat newWidth = newSize.width;
     CGFloat newHeight = newSize.height;
     float width  = self.size.width;
@@ -25,7 +25,7 @@
     }
     return self;
 }
-- (UIImage *)ovalClip {
+- (UIImage *)SNPhotoCarmera_ovalClip {
 
     CGSize size = self.size;
     UIGraphicsBeginImageContextWithOptions(size, NO, [UIScreen mainScreen].scale);

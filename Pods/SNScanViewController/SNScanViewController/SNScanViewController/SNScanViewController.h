@@ -1,6 +1,6 @@
 //
-//  SNScanViewController.h
-//  SNScanViewController
+//  SNSacnViewController.h
+//  SNSacnViewController
 //
 //  Created by snlo on 2018/4/9.
 //  Copyright © 2018年 snlo. All rights reserved.
@@ -39,8 +39,6 @@
  内容色
  */
 @property (nonatomic, strong) UIColor * contentColor;
-
-@property (nonatomic, strong) UIColor * blackColor;
 
 /**
  背景风格

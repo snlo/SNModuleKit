@@ -1,9 +1,9 @@
 //
 //  UIViewController+SNViewController.m
-//  AiteCube
+//  snlo
 //
-//  Created by sunDong on 2017/9/27.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Created by snlo on 2017/9/27.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import "UIViewController+SNViewController.h"
@@ -92,11 +92,11 @@
 //    self.view.backgroundColor = COLOR_BACK; //不能设置
     
     self.sn_navigationController.navigationBar.titleTextAttributes =
-    @{NSForegroundColorAttributeName:[SNUIKitTool sharedManager].mainColor};
+    @{NSForegroundColorAttributeName:COLOR_MAIN};
 	
 	//导航栏按钮
 	if (self.sn_navigationController.viewControllers.count > 1) {
-        [[self sn_setLeftBarbuttonItemImage:[UIImage imageNamed:@"public_return"] target:self action:@selector(hansleBackBarbuttonItem:)] setTintColor:[SNUIKitTool sharedManager].mainColor];
+        [[self sn_setLeftBarbuttonItemImage:[UIImage imageNamed:@"public_return"] target:self action:@selector(hansleBackBarbuttonItem:)] setTintColor:COLOR_MAIN];
 	}
 
 }
@@ -209,14 +209,14 @@
 
 - (UIBarButtonItem *)sn_setRightBarbuttonItemTile:(NSString *)title target:(id)target action:(SEL)action {
 	UIBarButtonItem * rightTitleItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:action];
-	[rightTitleItem setTintColor:[SNUIKitTool sharedManager].mainColor];
+	[rightTitleItem setTintColor:COLOR_MAIN];
     
 	self.sn_navigationItem.rightBarButtonItem = rightTitleItem;
 	return rightTitleItem;
 }
 - (UIBarButtonItem *)sn_setLeftBarbuttonItemTile:(NSString *)title target:(id)target action:(SEL)action {
 	UIBarButtonItem * leftTitleItem = [[UIBarButtonItem alloc] initWithTitle:title style:UIBarButtonItemStylePlain target:target action:action];
-    [leftTitleItem setTintColor:[SNUIKitTool sharedManager].mainColor];
+    [leftTitleItem setTintColor:COLOR_MAIN];
     
 	self.sn_navigationItem.leftBarButtonItem = leftTitleItem;
 	return leftTitleItem;
@@ -224,14 +224,14 @@
 
 - (UIBarButtonItem *)sn_setRightBarbuttonItemImage:(UIImage *)image target:(id)target action:(SEL)action {
 	UIBarButtonItem * rightTitleItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:target action:action];
-	[rightTitleItem setTintColor:[SNUIKitTool sharedManager].mainColor];
+	[rightTitleItem setTintColor:COLOR_MAIN];
 	
 	self.sn_navigationItem.rightBarButtonItem = rightTitleItem;
 	return rightTitleItem;
 }
 - (UIBarButtonItem *)sn_setLeftBarbuttonItemImage:(UIImage *)image target:(id)target action:(SEL)action {
 	UIBarButtonItem * leftTitleItem = [[UIBarButtonItem alloc] initWithImage:image style:UIBarButtonItemStylePlain target:target action:action];
-	[leftTitleItem setTintColor:[SNUIKitTool sharedManager].mainColor];
+	[leftTitleItem setTintColor:COLOR_MAIN];
     
 	self.sn_navigationItem.leftBarButtonItem = leftTitleItem;
 	return leftTitleItem;
@@ -256,7 +256,7 @@
 	} else {
 		if (self.presentingViewController) {
 			[self dismissViewControllerAnimated:animated completion:^{
-				[[SNUIKitTool topViewController] sn_popToViewControllerWithName:viewControllerName estimatedTabBarSelectedIndex:selectedIndex animated:animated];
+				[[SNTool topViewController] sn_popToViewControllerWithName:viewControllerName estimatedTabBarSelectedIndex:selectedIndex animated:animated];
 			}];
 		} else {
 			[tempController pushViewController:shouldViewController animated:animated];
@@ -295,20 +295,20 @@
 			
 		} else {
 			[self dismissViewControllerAnimated:animated completion:^{
-				[[SNUIKitTool topViewController] sn_popToViewControllerWithName:viewControllerName estimatedTabBarSelectedIndex:selectedIndex animated:animated];
+				[[SNTool topViewController] sn_popToViewControllerWithName:viewControllerName estimatedTabBarSelectedIndex:selectedIndex animated:animated];
 			}];
 		}
 		if (_isErrorSign) {
 			
 			if (self.presentingViewController) {
 				[self dismissViewControllerAnimated:animated completion:^{
-					[[SNUIKitTool topViewController] sn_popToViewControllerWithName:viewControllerName estimatedTabBarSelectedIndex:selectedIndex animated:animated];
+					[[SNTool topViewController] sn_popToViewControllerWithName:viewControllerName estimatedTabBarSelectedIndex:selectedIndex animated:animated];
 				}];
 			} else {
-				if ([SNUIKitTool topViewController].navigationController) {
-					[[SNUIKitTool topViewController].navigationController pushViewController:shouldViewController animated:animated];
+				if ([SNTool topViewController].navigationController) {
+					[[SNTool topViewController].navigationController pushViewController:shouldViewController animated:animated];
 				} else {
-					[[SNUIKitTool topViewController] presentViewController:shouldViewController animated:animated completion:^{
+					[[SNTool topViewController] presentViewController:shouldViewController animated:animated completion:^{
 						
 					}];
 				}

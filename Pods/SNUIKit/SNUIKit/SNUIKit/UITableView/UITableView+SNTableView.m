@@ -1,9 +1,9 @@
 //
 //  UITableView+SNTableView.m
-//  AiteCube
+//  snlo
 //
 //  Created by snlo on 2017/11/10.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import "UITableView+SNTableView.h"
@@ -23,7 +23,7 @@
 
 - (void)updateConstraints {
     
-    self.separatorColor = [SNUIKitTool sharedManager].separatorColor;
+    self.separatorColor = COLOR_SEPARATOR;
     
     [super updateConstraints];
 }

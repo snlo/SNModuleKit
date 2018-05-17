@@ -1,9 +1,9 @@
 //
 //  UIButton+SNButton.m
-//  AiteCube
+//  snlo
 //
-//  Created by sunDong on 2017/9/23.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Created by snlo on 2017/9/23.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import "UIButton+SNButton.h"
@@ -25,7 +25,7 @@
 	return [number floatValue];
 }
 
-- (void)setNormalStateTitle:(NSString *)title {
+- (void)sn_setNormalStateTitle:(NSString *)title {
     [self.titleLabel setText:title];
     [self setTitle:title forState:UIControlStateNormal];
 }
@@ -37,49 +37,7 @@
     self.layer.masksToBounds = YES;
 }
 
-- (void)setCustomImageType:(CustomImageType)type {
-    CGSize titleSize = self.titleLabel.intrinsicContentSize;
-    CGSize imageSize = self.imageView.frame.size;
-    CGFloat interval = 20.0f;
-    
-    switch (type) {
-        case CustomImageTypeLeft: {
-            interval = .0f;
-            [self setImageEdgeInsets:UIEdgeInsetsMake(0,titleSize.width+interval/2, 0, -titleSize.width)];
-            [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imageSize.width, 0, imageSize.width+interval/2)];
-            
-        } break;
-        case CustomImageTypeBottom: {
-            [self setImageEdgeInsets:UIEdgeInsetsMake(-titleSize.height-interval/2, 0, 0, -titleSize.width)];
-            [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imageSize.width, -imageSize.height-interval/2, 0)];
-        } break;
-        default: {
-        } break;
-    }
-}
-
-- (void)setCustomImageType:(CustomImageType)type interval:(CGFloat)interval {
-    CGSize titleSize = self.titleLabel.intrinsicContentSize;
-    CGSize imageSize = self.imageView.frame.size;
-    CGFloat tempInterval = interval > 0 ? : 0;
-    
-    switch (type) {
-        case CustomImageTypeLeft: {
-            interval = .0f;
-            [self setImageEdgeInsets:UIEdgeInsetsMake(0,titleSize.width+tempInterval/2, 0, -titleSize.width)];
-            [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imageSize.width, 0, imageSize.width+tempInterval/2)];
-            
-        } break;
-        case CustomImageTypeBottom: {
-            [self setImageEdgeInsets:UIEdgeInsetsMake(-titleSize.height-tempInterval/2, 0, 0, -titleSize.width)];
-            [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imageSize.width, -imageSize.height-tempInterval/2, 0)];
-        } break;
-        default: {
-        } break;
-    }
-}
-
-- (void)setCustomImageType:(CustomImageType)type imageTitleSpace:(CGFloat)space {
+- (void)sn_setTitleImageType:(SNButtonTitleImageType)type imageTitleSpace:(CGFloat)space {
     
     CGFloat imageWith = self.imageView.frame.size.width;
     CGFloat imageHeight = self.imageView.frame.size.height;
@@ -96,19 +54,19 @@
     }
 
     switch (type) {
-        case CustomImageTypeTop: {
+        case SNButtonTitleImageTypeTop: {
             [self setImageEdgeInsets:UIEdgeInsetsMake(-labelHeight-space/2.0, 0, 0, -labelWidth)];
             [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imageWith, -imageHeight-space/2.0, 0)];
         } break;
-        case CustomImageTypeLeft: {
+        case SNButtonTitleImageTypeLeft: {
             [self setImageEdgeInsets:UIEdgeInsetsMake(0, -space/2.0, 0, space/2.0)];
             [self setTitleEdgeInsets:UIEdgeInsetsMake(0, space/2.0, 0, -space/2.0)];
         } break;
-        case CustomImageTypeBottom: {
+        case SNButtonTitleImageTypeBottom: {
             [self setImageEdgeInsets:UIEdgeInsetsMake(0, 0, -labelHeight-space/2.0, -labelWidth)];
             [self setTitleEdgeInsets:UIEdgeInsetsMake(-imageHeight-space/2.0, -imageWith, 0, 0)];
         } break;
-        case CustomImageTypeRight: {
+        case SNButtonTitleImageTypeRight: {
             [self setImageEdgeInsets:UIEdgeInsetsMake(0, labelWidth+space/2.0, 0, -labelWidth-space/2.0)];
             [self setTitleEdgeInsets:UIEdgeInsetsMake(0, -imageWith-space/2.0, 0, imageWith+space/2.0)];
         } break;

@@ -1,6 +1,6 @@
 //
-//  SNScanViewController.m
-//  SNScanViewController
+//  SNSacnViewController.m
+//  SNSacnViewController
 //
 //  Created by snlo on 2018/4/9.
 //  Copyright © 2018年 snlo. All rights reserved.
@@ -27,14 +27,14 @@ typedef void(^ScanedBlock)(NSString * scanValue);
 @property (nonatomic, assign) CGRect scanRect;
 @property (nonatomic, strong) UIToolbar * backgroudView;
 
-@property (nonatomic, strong) UIButton * buttonCancel; //
+@property (nonatomic, strong) UIButton * buttonCancel;
 @property (nonatomic, strong) UIBarButtonItem * itemCancel;
 
-@property (nonatomic, strong) AVCaptureSession *session; //
-@property (nonatomic, strong) AVCaptureVideoPreviewLayer *preview; //
+@property (nonatomic, strong) AVCaptureSession *session;
+@property (nonatomic, strong) AVCaptureVideoPreviewLayer *preview;
 
-@property (nonatomic, copy) CanceledBlock canceledBlock; //
-@property (nonatomic, copy) ScanedBlock scanedBlock; //
+@property (nonatomic, copy) CanceledBlock canceledBlock;
+@property (nonatomic, copy) ScanedBlock scanedBlock;
 
 /**
  播放声音
@@ -210,27 +210,43 @@ typedef void(^ScanedBlock)(NSString * scanValue);
 
 #pragma mark -- getter setter
 
+@synthesize scanLineColor = _scanLineColor;
 - (void)setScanLineColor:(UIColor *)scanLineColor {
     _scanLineColor = scanLineColor;
-    [SNScanTool sharedManager].scanLineColor = _scanLineColor;
+    self.line.backgroundColor = _scanLineColor;
 }
+@synthesize themeColor = _themeColor;
 - (void)setThemeColor:(UIColor *)themeColor {
     _themeColor = themeColor;
-    [SNScanTool sharedManager].themeColor = _themeColor;
+    [self.buttonCancel setTitleColor:_themeColor forState:UIControlStateNormal];
+    
 }
+@synthesize contentColor = _contentColor;
 - (void)setContentColor:(UIColor *)contentColor {
     _contentColor = contentColor;
-    [SNScanTool sharedManager].contentColor = _contentColor;
+    
 }
-- (void)setBlackColor:(UIColor *)blackColor {
-    _blackColor = blackColor;
-    [SNScanTool sharedManager].blackColor = _blackColor;
+
+- (UIColor *)scanLineColor {
+    if (!_scanLineColor) {
+        _scanLineColor = COLOR_MAIN;
+    } return _scanLineColor;
+}
+- (UIColor *)themeColor {
+    if (!_themeColor) {
+        _themeColor = [UIColor whiteColor];
+    } return _themeColor;
+}
+- (UIColor *)contentColor {
+    if (!_contentColor) {
+        _contentColor = COLOR_CONTENT;
+    } return _contentColor;
 }
 
 - (UIView *)line {
 	if (!_line) {
 		_line = [[UIView alloc]init];
-		_line.backgroundColor = [UIColor colorWithRed:0.000 green:0.502 blue:1.000 alpha:1.000];
+        _line.backgroundColor = self.scanLineColor;
 		_line.frame = CGRectMake(self.scanRect.origin.x, self.scanRect.origin.y, self.scanRect.size.width, 1);
 	} return _line;
 }
@@ -252,7 +268,7 @@ typedef void(^ScanedBlock)(NSString * scanValue);
 		_buttonCancel = [[UIButton alloc] initWithFrame:CGRectMake(20,24,50,40)];
 		[_buttonCancel addTarget:self action:@selector(handleButtonCancel:) forControlEvents:UIControlEventTouchUpInside];
 		[_buttonCancel setTitle:@"取消" forState:UIControlStateNormal];
-		[_buttonCancel setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+		[_buttonCancel setTitleColor:self.themeColor forState:UIControlStateNormal];
 		
 	} return _buttonCancel;
 }
@@ -285,7 +301,7 @@ typedef void(^ScanedBlock)(NSString * scanValue);
         if (authStatus == AVAuthorizationStatusRestricted ||//此应用程序没有被授权访问的照片数据。可能是家长控制权限
             authStatus == AVAuthorizationStatusDenied) { //用户已经明确否认了这一照片数据的应用程序访问
             // 无权限 引导去开启
-            [SNScanTool showAlertStyle:UIAlertControllerStyleAlert title:@"提示" msg:@"没有相机访问权限，是否去设置中开启" chooseBlock:^(NSInteger actionIndx) {
+            [SNTool showAlertStyle:UIAlertControllerStyleAlert title:@"提示" msg:@"没有相机访问权限，是否去设置中开启" chooseBlock:^(NSInteger actionIndx) {
                 if (actionIndx == 1) {
                     NSURL *url = [NSURL URLWithString:UIApplicationOpenSettingsURLString];
                     if ([[UIApplication sharedApplication] canOpenURL:url]) {

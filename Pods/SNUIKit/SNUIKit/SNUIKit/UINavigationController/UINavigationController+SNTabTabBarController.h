@@ -1,17 +1,18 @@
 //
 //  UINavigationController+SNTabTabBarController.h
-//  AiteCube
+//  snlo
 //
-//  Created by sunDong on 2017/9/29.
-//  Copyright © 2017年 AiteCube. All rights reserved.
+//  Created by snlo on 2017/9/29.
+//  Copyright © 2017年 snlo. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
+
 /*
                      vc
                   /
                  /
- nav -- tabbar -    vc
+ nav -- tabbar -  -  vc
                  \
                   \
                      vc
@@ -41,6 +42,11 @@
                                          itemsTitle:(NSArray <NSString *> *)itemsTitle
                                      itemsImageNmae:(NSArray <NSString *> *)itemsImageNmae
                              itemsSelectedImageName:(NSArray <NSString *> *)itemsSelectedImageName;
+
+/**
+ 设置标签栏按钮标题式样
+ */
+- (void)sn_setTabBarItemTitleTextColor:(UIColor *)color normalfont:(UIFont*)font forState:(UIControlState)state;
 
 /**
  标签内容视图集

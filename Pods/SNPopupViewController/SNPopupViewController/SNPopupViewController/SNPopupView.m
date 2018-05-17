@@ -27,10 +27,13 @@ typedef void(^ReceiveDismissBlock)(void);
 #pragma mark -- <UIGestureRecognizerDelegate>
 - (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch{
     //防止自视图触发点击回退事件
-    if ([touch.view isDescendantOfView:self.subviews.firstObject]) {
-        return NO;
-    }
-    return YES;
+	__block BOOL gesture = true;
+	[self.subviews enumerateObjectsUsingBlock:^(__kindof UIView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+		if ([touch.view isDescendantOfView:obj]) {
+			gesture = false;
+		}
+	}];
+    return gesture;
 }
 
 #pragma mark -- event response
@@ -41,29 +44,11 @@ typedef void(^ReceiveDismissBlock)(void);
 }
 
 #pragma mark -- public methods
-- (void)dismissFromSuperView:(void(^)(void))block {
-    //退场动画
-    [self.subviews.firstObject.layer addAnimation:[self fadeOutAnimation] forKey:nil];
-    
-    self.alpha = 1;
-    [UIView animateWithDuration:0.15 animations:^{
-        self.alpha = 0;
-        
-    } completion:^(BOOL finished) {
-        [self removeFromSuperview];
-        [SNPopupTool topViewController].snPopup_isAbleEdgeGesture = YES;
-        if (self.receiveDismissBlock) {
-            self.receiveDismissBlock();
-        } else {
-            if (block) {
-                block();
-            }
-        }
-    }];
+- (void)addSubviewShowAnimation {
+	[self.subviews.firstObject.layer addAnimation:self.showAnimation forKey:nil];
 }
-
 - (void)showInSuperView:(void(^)(void))block {
-    self.frame = CGRectMake(0, 0, SNPOPUP_SCREEN_WIDTH, SNPOPUP_SCREEN_HEIGHT);
+    self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
     //加载单击回退手势
     UITapGestureRecognizer * touchBlankGesture = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(touchesBlank:)];
@@ -72,19 +57,42 @@ typedef void(^ReceiveDismissBlock)(void);
     [self addGestureRecognizer:touchBlankGesture];
     
     //入场动画
-    [self.subviews.firstObject.layer addAnimation:[self zoomOutAnimation] forKey:nil];
+	[self addSubviewShowAnimation];
     
     self.alpha = 0;
-    [[SNPopupTool getNextViewController].view endEditing:YES];
-    [[SNPopupTool getNextViewController].view addSubview:self];
+    [[SNTool topViewController].view endEditing:YES];
+    [[SNTool topViewController].view addSubview:self];
     [UIView animateWithDuration:0.15 animations:^{
         self.alpha = 1;
     } completion:^(BOOL finished) {
-        [SNPopupTool topViewController].snPopup_isAbleEdgeGesture = NO;
+        [SNTool topViewController].snPopup_isAbleEdgeGesture = NO;
         if (block) {
             block();
         }
     }];
+}
+
+- (void)addSubviewDismissAnimation {
+	[self.subviews.firstObject.layer addAnimation:self.dismissAnimation forKey:nil];
+}
+- (void)dismissFromSuperView:(void(^)(void))block {
+	//退场动画
+	[self addSubviewDismissAnimation];
+	
+	self.alpha = 1;
+	[UIView animateWithDuration:0.15 animations:^{
+		self.alpha = 0;
+		
+	} completion:^(BOOL finished) {
+		[self removeFromSuperview];
+		[SNTool topViewController].snPopup_isAbleEdgeGesture = YES;
+		if (block) {
+			block();
+		}
+		if (self.receiveDismissBlock) {
+			self.receiveDismissBlock();
+		}
+	}];
 }
 
 - (void)receiveDismissBlock:(void(^)(void))block {
@@ -94,25 +102,35 @@ typedef void(^ReceiveDismissBlock)(void);
 }
 #pragma mark -- private methods
 
-- (CABasicAnimation *)zoomOutAnimation {
-    CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
-    animation.duration = 0.15;
-    animation.fromValue = @1.2;
-    animation.toValue = @1;
-    animation.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionLinear];
-    animation.removedOnCompletion = NO;
-    animation.fillMode = kCAFillModeForwards;
-    return animation;
+#pragma mark -- getter / setter
+@synthesize showAnimation = _showAnimation;
+- (void)setShowAnimation:(CABasicAnimation *)showAnimation {
+	_showAnimation = showAnimation;
+}
+@synthesize dismissAnimation = _dismissAnimation;
+- (void)setDismissAnimation:(CABasicAnimation *)dismissAnimation {
+	_dismissAnimation = dismissAnimation;
 }
 
-- (CABasicAnimation *)fadeOutAnimation {
-	CABasicAnimation * animation = [CABasicAnimation animationWithKeyPath:@"opacity"];
-	animation.duration = 3.0;
-	animation.toValue = @0;
-	animation.removedOnCompletion = NO;
-	animation.fillMode = kCAFillModeForwards;
-	//    animation.delegate = self;
-	return animation;
+- (CABasicAnimation *)showAnimation {
+	if (!_showAnimation) {
+		_showAnimation = [CABasicAnimation animationWithKeyPath:@"transform.scale"];
+		_showAnimation.duration = 0.15;
+		_showAnimation.fromValue = @1.2;
+		_showAnimation.toValue = @1;
+		_showAnimation.timingFunction = [CAMediaTimingFunction functionWithName: kCAMediaTimingFunctionLinear];
+		_showAnimation.removedOnCompletion = NO;
+		_showAnimation.fillMode = kCAFillModeForwards;
+	} return _showAnimation;
+}
+- (CABasicAnimation *)dismissAnimation {
+	if (_dismissAnimation) {
+		_dismissAnimation = [CABasicAnimation animationWithKeyPath:@"opacity"];
+		_dismissAnimation.duration = 3.0;
+		_dismissAnimation.toValue = @0;
+		_dismissAnimation.removedOnCompletion = NO;
+		_dismissAnimation.fillMode = kCAFillModeForwards;
+	} return _dismissAnimation;
 }
 
 @end

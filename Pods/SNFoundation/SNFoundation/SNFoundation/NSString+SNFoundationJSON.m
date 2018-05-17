@@ -3,25 +3,25 @@
 //  NeighborMom
 //
 //  Created by snlo on 16/4/29.
-//  Copyright © 2016年 WAYOS. All rights reserved.
+//  Copyright © 2016年 snlo. All rights reserved.
 //
 
 #import "NSString+SNFoundationJSON.h"
 
 @implementation NSString (SNFoundationJSON)
 
-+ (NSString *)jsonStringWithString:(NSString *)string{
++ (NSString *)sn_jsonStringWithString:(NSString *)string {
     return [NSString stringWithFormat:@"\"%@\"",
             [[string stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"] stringByReplacingOccurrencesOfString:@""withString:@"\\"]
             ];
 }
 
-+ (NSString *)jsonStringWithArray:(NSArray *)array{
++ (NSString *)sn_jsonStringWithArray:(NSArray *)array {
     NSMutableString *reString = [NSMutableString string];
     [reString appendString:@"["];
     NSMutableArray *values = [NSMutableArray array];
     for (id valueObj in array) {
-        NSString *value = [NSString jsonStringWithObject:valueObj];
+        NSString *value = [NSString sn_jsonStringWithObject:valueObj];
         if (value) {
             [values addObject:[NSString stringWithFormat:@"%@",value]];
         }
@@ -31,7 +31,7 @@
     return reString;
 }
 
-+ (NSString *)jsonStringWithDictionary:(NSDictionary *)dictionary{
++ (NSString *)sn_jsonStringWithDictionary:(NSDictionary *)dictionary {
     NSArray *keys = [dictionary allKeys];
     NSMutableString *reString = [NSMutableString string];
     [reString appendString:@"{"];
@@ -39,7 +39,7 @@
     for (int i=0; i<[keys count]; i++) {
         NSString *name = [keys objectAtIndex:i];
         id valueObj = [dictionary objectForKey:name];
-        NSString *value = [NSString jsonStringWithObject:valueObj];
+        NSString *value = [NSString sn_jsonStringWithObject:valueObj];
         
         if (value) {
             
@@ -51,19 +51,16 @@
     return reString;
 }
 
-+ (NSString *)jsonStringWithObject:(id)object{
-    NSString *value = nil;
-    if (!object) {
-        return value;
-    }
++ (NSString *)sn_jsonStringWithObject:(id)object {
     if ([object isKindOfClass:[NSString class]]) {
-        value = [NSString jsonStringWithString:object];
-    }else if([object isKindOfClass:[NSDictionary class]]){
-        value = [NSString jsonStringWithDictionary:object];
-    }else if([object isKindOfClass:[NSArray class]]){
-        value = [NSString jsonStringWithArray:object];
-    }
-    return value;
+        return [NSString sn_jsonStringWithString:object];
+    } else if([object isKindOfClass:[NSDictionary class]]){
+        return [NSString sn_jsonStringWithDictionary:object];
+    } else if([object isKindOfClass:[NSArray class]]){
+        return [NSString sn_jsonStringWithArray:object];
+	} else {
+		return nil;
+	}
 }
 
 @end

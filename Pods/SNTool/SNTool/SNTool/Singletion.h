@@ -2,8 +2,8 @@
 //  Singletion.h
 //  SNNetworking
 //
-//  Created by sunDong on 16/6/30.
-//  Copyright © 2016年 sunDong. All rights reserved.
+//  Created by snlo on 16/6/30.
+//  Copyright © 2016年 snlo. All rights reserved.
 //
 
 

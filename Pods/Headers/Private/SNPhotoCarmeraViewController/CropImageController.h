@@ -1,1 +1,0 @@
-../../../SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/CropImageController.h
