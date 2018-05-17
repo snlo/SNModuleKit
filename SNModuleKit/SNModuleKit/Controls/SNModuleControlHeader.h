@@ -16,6 +16,5 @@
 #import <SNBadgeView.h>                     //标记视图
 #import <SNImageBrowserViewController.h>    //图片浏览视图控制器、扩展
 #import <UIImageView+SNImageBrowserViewController.h>
-#import <SNWebViewProtocol.h>               //H5容器，面向协议
 
 #endif /* SNModuleControlHeader_h */
