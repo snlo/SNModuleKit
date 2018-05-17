@@ -28,7 +28,7 @@
 #import <Masonry.h>                        //动态布局
 #import <FMDB.h>                           //数据库，基于sql
 #import <Lottie/Lottie.h>                  //加载JSON配置的动画，跨平台动画
-#import <pop.h>                            //脸书开源动画
+#import <POP.h>                            //脸书开源动画
 #import <WebViewJavascriptBridge.h>        //UIWebView、WKWebView与H5的交互交接
 #import <MBProgressHUD.h>             	   //提示框
 #import <MJRefresh.h>                 	   //刷新控件
