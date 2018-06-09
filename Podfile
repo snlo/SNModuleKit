@@ -35,9 +35,6 @@ target 'SNModuleKit' do
 #
 
 
-
-
-
     pod 'SNImageBrowserViewController'
     pod 'SNWebViewController'
     pod 'SNScanViewController'
