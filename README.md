@@ -43,7 +43,7 @@
 	setupProject
 ```
 
-![1](/Users/snlo/Desktop/gitHub/SNModuleKit/SNModuleKit/Assets.xcassets/1.imageset/1.jpg)
+![1](https://github.com/snlo/SNModuleKit/blob/master/SNModuleKit/Assets.xcassets/1.imageset/1.jpg)
 
 ## 安装
 
