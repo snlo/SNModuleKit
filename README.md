@@ -45,6 +45,40 @@
 
 ![1](https://github.com/snlo/SNModuleKit/blob/master/SNModuleKit/Assets.xcassets/1.imageset/1.jpg)
 
+模块项目模板使用，相对来说比较麻烦一点，不过还好创建模块只是低频需求。它麻烦的就在于通过模板创建出来的模块文件夹是个虚拟文件夹，并且可能需要重命名该模块文件夹的名字。下面我们以图文的形式来说明下。
+
+1. 新建模块工程`shift`+`command`+`n`，选择`Snlo Module App`![2](/Users/snlo/Desktop/gitHub/SNModuleKit/SNModuleKit/Assets.xcassets/2.imageset/2.jpg)
+
+2. 给模块取名，注意模块名是`Module`之后的命名![3](/Users/snlo/Desktop/gitHub/SNModuleKit/SNModuleKit/Assets.xcassets/3.imageset/3.jpg)
+
+3. 特别强调，被创建出来的模块文件夹是一个虚拟文件夹，也就是在修改虚拟文件夹中的文件时，实际的文件不会发生改变。![4](/Users/snlo/Desktop/gitHub/SNModuleKit/SNModuleKit/Assets.xcassets/4.imageset/4.jpg)
+
+4. 重命名模块名，在新建模块时无法对模块名进行变量处理。如果你知道怎么处理请给我留言或发邮件给我，谢谢！![5](/Users/snlo/Desktop/gitHub/SNModuleKit/SNModuleKit/Assets.xcassets/5.imageset/5.jpg)
+
+5. 使虚拟模块文件实体化![6](/Users/snlo/Desktop/gitHub/SNModuleKit/SNModuleKit/Assets.xcassets/6.imageset/6.jpg)
+
+   ![7](/Users/snlo/Desktop/gitHub/SNModuleKit/SNModuleKit/Assets.xcassets/7.imageset/7.jpg)
+
+6. 使用模块中的`Tagret_Action`，需要遵守模块化规范。例如在`Tagret_Public`文件中
+
+   ```objc
+   #import <Foundation/Foundation.h>
+   #import <UIKit/UIKit.h>
+   
+   @interface Target_Public : NSObject
+   
+   - (UIViewController *)Action_nativeFetchPublicViewController:(NSDictionary *)params;
+   
+   @end
+   ```
+
+   其中`Target_`和`Action_`是硬编码，`native`是用来标记为本地调度的硬编码。
+
+## 缺点
+
+- 模板更新需手动执行脚本
+- 模块项目模板需单独创建
+
 ## 安装
 
 ##### Mini版
