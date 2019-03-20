@@ -9,6 +9,6 @@
 #ifndef SNModulePluginHeader_h
 #define SNModulePluginHeader_h
 
-#import <IQKeyboardManager.h>       //键盘插件
+#import <IQKeyboardManager/IQKeyboardManager.h> //键盘插件
 
 #endif /* SNModulePluginHeader_h */
