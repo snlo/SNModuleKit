@@ -12,8 +12,6 @@
 //
 //#import "SNModuleConfig.h"
 
-
-
 @interface ViewController ()
 
 @end
