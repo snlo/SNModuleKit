@@ -10,7 +10,6 @@
 #import <UIKit/UIKit.h>
 
 #import <SNTool.h>
-#import "UIViewController+SNPopupViewController.h"
 
 singletonInterface(SNPopupTool)
 

@@ -193,11 +193,11 @@ typedef void(^CancelBlock)(void);
 }
 
 #pragma mark - UIStatusBarStyle
-- (UIStatusBarStyle)preferredStatusBarStyle {
-    return UIStatusBarStyleLightContent;
-}
-- (BOOL)prefersStatusBarHidden {
-    return NO;
-}
+//- (UIStatusBarStyle)preferredStatusBarStyle {
+//    return UIStatusBarStyleLightContent;
+//}
+//- (BOOL)prefersStatusBarHidden {
+//    return NO;
+//}
 @end
 

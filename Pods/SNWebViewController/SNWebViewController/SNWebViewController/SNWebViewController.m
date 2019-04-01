@@ -35,13 +35,12 @@
 #pragma mark -- life cycle
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    
-    if (!self.isHasNativeNavigation) {
-        [SNTool fetchNavigationController].navigationBar.hidden = YES;
-    } else {
-        [SNTool fetchNavigationController].navigationBar.hidden = NO;
-        self.progressView.frame = CGRectMake(0, [SNTool navigationBarHeight], SCREEN_WIDTH, 3);
-    }
+	
+	if (_isHasNativeNavigation) {
+		[SNTool fetchNavigationController].navigationBar.hidden = NO;
+	} else {
+		[SNTool fetchNavigationController].navigationBar.hidden = YES;
+	}
     adjustsScrollViewInsets_NO(self.webview.scrollView, self);
 }
 
@@ -49,7 +48,7 @@
     [super viewWillDisappear:animated];
     
     if (!self.isHasNativeNavigation) {
-        [SNTool fetchNavigationController].navigationBar.hidden = NO;
+//        [SNTool fetchNavigationController].navigationBar.hidden = NO;
     }
 }
 
@@ -101,6 +100,18 @@
 #pragma mark -- private methods
 - (void)base_web_configureUserInterface {
     self.view.backgroundColor = [UIColor whiteColor];
+	[RACObserve(self.webview, frame) subscribeNext:^(id  _Nullable x) {
+        if ([SNTool topViewController].navigationController.navigationBar && self.isHasNativeNavigation && ![SNTool topViewController].navigationController.navigationBar.hidden) {
+            CGFloat offset = [SNTool statusBarHeight]+[SNTool navigationBarHeight] - self.webview.frame.origin.y;
+            self.progressView.frame = CGRectMake(0, offset > 0 ? offset : 0, SCREEN_WIDTH, 3);
+        } else {
+            if (self.originYprogressView > 1) {
+                self.progressView.frame = CGRectMake(0, self.originYprogressView, SCREEN_WIDTH, 3);
+            } else {
+                self.progressView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 3);
+            }
+        }
+	}];
 }
 - (void)base_web_configureDataSource {
     
@@ -174,16 +185,6 @@
 #pragma mark -- setter
 - (void)setIsHasNativeNavigation:(BOOL)isHasNativeNavigation {
     _isHasNativeNavigation = isHasNativeNavigation;
-    
-    if (_isHasNativeNavigation) {
-        [SNTool fetchNavigationController].navigationBar.hidden = NO;
-        [RACObserve(self.webview, frame) subscribeNext:^(id  _Nullable x) {
-            CGFloat offset = [SNTool statusBarHeight] + [SNTool navigationBarHeight] - self.webview.frame.origin.y;
-            self.progressView.frame = CGRectMake(0, offset > 0 ? offset : 0, SCREEN_WIDTH, 3);
-        }];
-    } else {
-        [SNTool fetchNavigationController].navigationBar.hidden = YES;
-    }
 }
 - (void)setReloadUrl:(NSString *)reloadUrl {
     _reloadUrl = reloadUrl;

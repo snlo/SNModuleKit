@@ -3,10 +3,15 @@ set -e
 set -u
 set -o pipefail
 
+function on_error {
+  echo "$(realpath -mq "${0}"):$1: error: Unexpected failure"
+}
+trap 'on_error $LINENO' ERR
+
 if [ -z ${UNLOCALIZED_RESOURCES_FOLDER_PATH+x} ]; then
-    # If UNLOCALIZED_RESOURCES_FOLDER_PATH is not set, then there's nowhere for us to copy
-    # resources to, so exit 0 (signalling the script phase was successful).
-    exit 0
+  # If UNLOCALIZED_RESOURCES_FOLDER_PATH is not set, then there's nowhere for us to copy
+  # resources to, so exit 0 (signalling the script phase was successful).
+  exit 0
 fi
 
 mkdir -p "${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}"
@@ -96,7 +101,30 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
   install_resource "${PODS_ROOT}/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/SNPhotoCarmera.bundle"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle/en.lproj/SNScanViewControllerStrings.strings"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle/zh-Hans.lproj/SNScanViewControllerStrings.strings"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/AppIcon.appiconset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_photo_album.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_photo_album.imageset/SNScanView_photo_album@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_photo_album.imageset/SNScanView_photo_album@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_return_three.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_return_three.imageset/SNScanView_return_three@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_return_three.imageset/SNScanView_return_three@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_one.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_one.imageset/SNScanView_scanning_one@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_one.imageset/SNScanView_scanning_one@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_two.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_two.imageset/SNScanView_scanning_two@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_two.imageset/SNScanView_scanning_two@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_off_the_light.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_off_the_light.imageset/SNScanView_turn_off_the_light@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_off_the_light.imageset/SNScanView_turn_off_the_light@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_on_the_light.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_on_the_light.imageset/SNScanView_turn_on_the_light@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_on_the_light.imageset/SNScanView_turn_on_the_light@3x.png"
   install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets"
   install_resource "${PODS_ROOT}/SNTool/SNTool/SNTool/SNTool.bundle"
   install_resource "${PODS_ROOT}/SNUIKit/SNUIKit/SNUIKit/SNUIKit.bundle"
 fi
@@ -105,7 +133,30 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_resource "${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle"
   install_resource "${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle"
   install_resource "${PODS_ROOT}/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/SNPhotoCarmera.bundle"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle/en.lproj/SNScanViewControllerStrings.strings"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle/zh-Hans.lproj/SNScanViewControllerStrings.strings"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/AppIcon.appiconset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_photo_album.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_photo_album.imageset/SNScanView_photo_album@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_photo_album.imageset/SNScanView_photo_album@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_return_three.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_return_three.imageset/SNScanView_return_three@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_return_three.imageset/SNScanView_return_three@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_one.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_one.imageset/SNScanView_scanning_one@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_one.imageset/SNScanView_scanning_one@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_two.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_two.imageset/SNScanView_scanning_two@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_scanning_two.imageset/SNScanView_scanning_two@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_off_the_light.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_off_the_light.imageset/SNScanView_turn_off_the_light@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_off_the_light.imageset/SNScanView_turn_off_the_light@3x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_on_the_light.imageset/Contents.json"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_on_the_light.imageset/SNScanView_turn_on_the_light@2x.png"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets/SNScanView_turn_on_the_light.imageset/SNScanView_turn_on_the_light@3x.png"
   install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle"
+  install_resource "${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewControllerImages.xcassets"
   install_resource "${PODS_ROOT}/SNTool/SNTool/SNTool/SNTool.bundle"
   install_resource "${PODS_ROOT}/SNUIKit/SNUIKit/SNUIKit/SNUIKit.bundle"
 fi

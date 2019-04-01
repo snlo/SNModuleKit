@@ -8,42 +8,9 @@
 
 #import <UIKit/UIKit.h>
 
+#import "SNScanView.h"
+
 @interface SNScanViewController : UIViewController
-
-/**
- 扫描区尺寸
- */
-@property (nonatomic, assign) CGSize scanSize;
-
-/**
- 扫描区中心点
- */
-@property (nonatomic, assign) CGPoint scanCenter;
-
-/**
- 扫描区frame
- */
-@property (nonatomic, assign) CGRect scanFrame;
-
-/**
- 扫描线颜色
- */
-@property (nonatomic, strong) UIColor * scanLineColor;
-
-/**
- 主题色，包括按钮颜色，标题颜色
- */
-@property (nonatomic, strong) UIColor * themeColor;
-
-/**
- 内容色
- */
-@property (nonatomic, strong) UIColor * contentColor;
-
-/**
- 背景风格
- */
-@property (nonatomic) UIBarStyle backgroudStyle;
 
 /**
  初始化
@@ -61,13 +28,8 @@
 - (void)scanedBlock:(void(^)(NSString * scanedValue))scanedBlock canceledBlock:(void(^)(void))canceledBlock;
 
 /**
- 开启闪光灯
+ 视图
  */
-- (void)onTorch;
-
-/**
- 关闭闪关灯
- */
-- (void)offTorch;
+@property (nonatomic, strong) SNScanView * viewScan;
 
 @end

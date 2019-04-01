@@ -102,6 +102,7 @@ typedef void(^CompletBlock)(void);
 - (NSDateFormatter *)formatter {
     if (!_formatter) {
         _formatter = [[NSDateFormatter alloc]init];
+        [_formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     } return _formatter;
 }
 
@@ -121,7 +122,6 @@ typedef void(^CompletBlock)(void);
 
 
 //---------------我是分割线------------------
-
 
 
 
@@ -192,6 +192,7 @@ static id _singletion;
 - (NSDateFormatter *)formatter {
     if (!_formatter) {
         _formatter = [[NSDateFormatter alloc]init];
+        [_formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     } return _formatter;
 }
 

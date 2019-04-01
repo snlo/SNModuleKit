@@ -58,6 +58,7 @@
 //遍历error，找出错误信息
 + (NSMutableDictionary *)valueFromError:(NSError *)error
 {
+    NSLog(@"%@",error);
     NSMutableDictionary * errorDic = [NSMutableDictionary dictionary];
     if ([error isKindOfClass:[NSString class]]) {
 		
@@ -83,7 +84,7 @@
     BOOL has_error = NO;
     for (id  _Nonnull key in errorDic.allKeys) {
         if ([key hasSuffix:@"Description"]) {
-            [SNTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:(NSString *)error chooseBlock:nil actionsStatement:nil, nil];
+            [SNTool showAlertStyle:UIAlertControllerStyleAlert title:nil msg:(NSString *)errorDic[key] chooseBlock:nil actionsStatement:nil, nil];
             has_error = YES;
             break;
         }

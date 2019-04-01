@@ -16,4 +16,16 @@ singletonImplemention(SNScanTool)
     return [NSString sn_localizedStringForKey:key table:@"SNScanViewControllerStrings" bundle:@"SNScanViewController"];
 }
 
++ (void)scanAddMaskToView:(UIView *)view withRoundedRect:(CGRect)roundedRect cornerRadius:(CGFloat)cornerRadius {
+    UIBezierPath *path = [UIBezierPath bezierPathWithRect:view.bounds];
+    
+    [path appendPath:[[UIBezierPath bezierPathWithRoundedRect:roundedRect cornerRadius:cornerRadius] bezierPathByReversingPath]];
+    
+    CAShapeLayer *shapeLayer = [CAShapeLayer layer];
+    
+    shapeLayer.path = path.CGPath;
+    
+    [view.layer setMask:shapeLayer];
+}
+
 @end

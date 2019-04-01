@@ -1,1 +1,0 @@
-../../../SNImageBrowserViewController/SNImageBrowserViewController/SNImageBrowserViewController/Categories/UIView+SNImageBrowserViewController.h

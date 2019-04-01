@@ -1,4 +1,5 @@
-# SNNetWorking
+# SNNetworking
+
 基于 ’AFNetWoking3.x‘ 的一个网络工作组，旨在集中处理网络请求。当AFNetWoking框架更新时能够快速的替换升级。
 
 ## Features
@@ -9,18 +10,17 @@
 - 支持 通过创建的缓存文件夹名获取沙盒路径
 - 支持 自定义缓存机制
 - 集中处理 GET \ POST \ UPLOAD \ DOWNLOAD ，在”SNNetworking.h“的分类中
-- 支持手动设置COOKIES
+- 便捷添加自定义COOKIES
 
 ## Problems
 
-- 多线程的队列处理有待优化
 - 需要为”SNNetworking.h“手动添加分类，在分类中需要对每个接口进行编写设计
 
 ## Installation
 
-1. 下载SNNetWorkingGroup中所有文件
-2. 找到Networking文件夹，拖入你的项目中。（如果你的项目已经集成了AFNetworking，请替换‘Networking’中的AFNetworking）
-3. 导入"SNNetworking+...(自己取的名字) .h"
+```
+pod 'SNNetworking'
+```
 
 ## Usage
 
@@ -118,6 +118,8 @@ SNNetworking+helper.m：
 }
 ```
 
+更多API的介绍可以在[SNNetworking.h](https://github.com/snlo/SNNetworking/blob/master/SNNetworking/SNNetworking/SNNetworking.h)中查阅
+
 ## Requirements
 
 该项目最低支持iOS 8 和Xcode 8
@@ -126,6 +128,8 @@ SNNetworking+helper.m：
 
 感谢[AFNetworking](https://github.com/AFNetworking/AFNetworking)为我们的项目提供便利
 
+感谢[SNTool](https://github.com/snlo/SNTool)、[SNFoundation](https://github.com/snlo/SNFoundation)
+
 ## License
 
-SNNetWorkingGroup是根据MIT许可证发布的。有关详细信息，请参阅[LICENSE](https://github.com/snlo/SNNetWorkingGroup/blob/master/LICENSE)。
+SNNetworking是根据MIT许可证发布的。有关详细信息，请参阅[LICENSE](https://github.com/snlo/SNNetWorkingGroup/blob/master/LICENSE)。

@@ -16,6 +16,15 @@ typedef void(^ReceiveDismissBlock)(void);
 
 @property (nonatomic, copy) ReceiveDismissBlock receiveDismissBlock;
 
+@property (nonatomic, strong) UIViewController * viewController;
+
+
+/**
+ 标记边缘返回手势
+ */
+@property (nonatomic, strong) UIViewController * gesture_viewController;
+@property (nonatomic, assign) BOOL isAbleEdgeGesture;
+
 @end
 
 @implementation SNPopupView
@@ -47,6 +56,11 @@ typedef void(^ReceiveDismissBlock)(void);
 - (void)addSubviewShowAnimation {
 	[self.subviews.firstObject.layer addAnimation:self.showAnimation forKey:nil];
 }
+
+- (void)showin:(void(^)(void))block withViewController:(UIViewController *)viewController {
+	self.viewController = viewController;
+	[self showInSuperView:block];
+}
 - (void)showInSuperView:(void(^)(void))block {
     self.frame = CGRectMake(0, 0, SCREEN_WIDTH, SCREEN_HEIGHT);
     
@@ -59,13 +73,24 @@ typedef void(^ReceiveDismissBlock)(void);
     //入场动画
 	[self addSubviewShowAnimation];
     
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+    self.gesture_viewController = [SNTool topViewController];
+    
+    if ([self.gesture_viewController respondsToSelector:NSSelectorFromString(@"sn_isAbleEdgeGesture")]) {
+        
+        self.isAbleEdgeGesture = [self.gesture_viewController performSelector:NSSelectorFromString(@"sn_isAbleEdgeGesture")];
+        
+        [self.gesture_viewController performSelector:NSSelectorFromString(@"setSn_isAbleEdgeGesture:") withObject:@(NO)];
+#pragma clang diagnostic pop
+    }
+    
     self.alpha = 0;
-    [[SNTool topViewController].view endEditing:YES];
-    [[SNTool topViewController].view addSubview:self];
+    [self.viewController.view endEditing:YES];
+    [self.viewController.view addSubview:self];
     [UIView animateWithDuration:0.15 animations:^{
         self.alpha = 1;
     } completion:^(BOOL finished) {
-        [SNTool topViewController].snPopup_isAbleEdgeGesture = NO;
         if (block) {
             block();
         }
@@ -79,13 +104,27 @@ typedef void(^ReceiveDismissBlock)(void);
 	//退场动画
 	[self addSubviewDismissAnimation];
 	
+    if (self.isAbleEdgeGesture) {
+        //        NSMethodSignature* signature = [[target class] instanceMethodSignatureForSelector:NSSelectorFromString(@"setSn_isAbleEdgeGesture:")];
+        //        NSInvocation* invocation = [NSInvocation invocationWithMethodSignature: signature];
+        //        [invocation setTarget:target];
+        //        [invocation setSelector:NSSelectorFromString(@"setSn_isAbleEdgeGesture:") ];
+        //        [invocation setArgument:&boolValue atIndex:2];
+        //        [invocation invoke];
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self.gesture_viewController performSelector:NSSelectorFromString(@"setSn_isAbleEdgeGesture:") withObject:@(YES)];
+#pragma clang diagnostic pop
+        
+    }
+    
 	self.alpha = 1;
 	[UIView animateWithDuration:0.15 animations:^{
 		self.alpha = 0;
 		
 	} completion:^(BOOL finished) {
 		[self removeFromSuperview];
-		[SNTool topViewController].snPopup_isAbleEdgeGesture = YES;
+		
 		if (block) {
 			block();
 		}
@@ -131,6 +170,14 @@ typedef void(^ReceiveDismissBlock)(void);
 		_dismissAnimation.removedOnCompletion = NO;
 		_dismissAnimation.fillMode = kCAFillModeForwards;
 	} return _dismissAnimation;
+}
+
+#pragma mark -- getter
+
+- (UIViewController *)viewController {
+	if (!_viewController) {
+		_viewController = [SNTool topViewController];
+	} return _viewController;
 }
 
 @end

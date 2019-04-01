@@ -108,14 +108,26 @@ typedef void(^SelectedCancelBlock)(void);
         self.selectedImageBlock(self.selectedImage);
     }
     [self removeFromParentViewController];
-    [self.parentVC dismissViewControllerAnimated:YES completion:nil];
+	[self.parentVC dismissViewControllerAnimated:YES completion:^{
+		if ([[UIApplication sharedApplication] performSelector:@selector(setStatusBarHidden:animated:)]) {
+			[[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
+		} else {
+			[UIApplication sharedApplication].statusBarHidden = NO;
+		}
+	}];
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     if (self.selectedCancelBlock) self.selectedCancelBlock();
     
     [self removeFromParentViewController];
-    [self.parentVC dismissViewControllerAnimated:YES completion:nil];
+	[self.parentVC dismissViewControllerAnimated:YES completion:^{
+		if ([[UIApplication sharedApplication] performSelector:@selector(setStatusBarHidden:animated:)]) {
+			[[UIApplication sharedApplication] setStatusBarHidden:NO animated:YES];
+		} else {
+			[UIApplication sharedApplication].statusBarHidden = NO;
+		}
+	}];
 }
 
 #pragma mark -- SNPhotoCarmeraCropImageDelegate

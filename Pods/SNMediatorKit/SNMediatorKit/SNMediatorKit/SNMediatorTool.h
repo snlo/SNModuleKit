@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-#import <SNTool.h>
+#import <SNTool/SNTool.h>
 
 __attribute__((objc_subclassing_restricted))
 

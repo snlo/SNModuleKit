@@ -1,9 +1,11 @@
 # SNDownTimer
 机智的定时器，可以全局化的管理你的Timer。如果使用默认间歇回调函数，可以快速的定制你的心跳包机制。如果使用自定义间歇回调函数，可以设计一个个性化的倒计时定时器。
 
-## Usage
+## Features
 
-CocoaPods：pod 'SNDownTimer'
+- [x] 可在UIScrollView中使用，它在mainRunLoop中的模式是NSRunLoopCommonModes
+
+## Usage
 
 倒计时定时器：
 
@@ -34,6 +36,12 @@ __block SNDownTimer * timer =
         NSLog(@"interval");
     }];
 //结束 请调用 [SNSharedDownTimer invalidate]
+```
+
+## Installation
+
+```
+pod 'SNDownTimer'
 ```
 
 ## License

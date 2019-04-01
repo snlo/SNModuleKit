@@ -1,1 +1,0 @@
-../../../SNMediatorKit/SNMediatorKit/SNMediatorKit/SNMediatorProtocol.h

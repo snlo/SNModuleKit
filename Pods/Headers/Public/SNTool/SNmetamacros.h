@@ -1,1 +1,0 @@
-../../../SNTool/SNTool/SNTool/SNmetamacros.h

@@ -22,6 +22,10 @@ __attribute__((objc_runtime_name("snloOXZjGfNl6qhP09")))
 
 /**
  远程App调用入口
+ scheme://[target]/[action]?[params]
+ 
+ url sample:
+ http://targetA/actionB?id=1234
  */
 - (id)performActionWithUrl:(NSURL *)url completion:(void(^)(id responseObject))completion;
 

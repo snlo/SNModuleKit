@@ -18,9 +18,17 @@
 #import "SNSafeCategory.h"
 #import "SNRuntimeExtensions.h"
 
+#import <MBProgressHUD/MBProgressHUD.h>
+
 __attribute__((objc_subclassing_restricted))
 
 singletonInterface(SNTool)
+
+@property (nonatomic, readonly) MBProgressHUD * hud;
+
+@property (nonatomic, readonly) MBProgressHUD * hudSuccess;
+
+@property (nonatomic, readonly) MBProgressHUD * hudLoding;
 
 /**
  获取根视图控制器，最后一个window的rootViewController
@@ -57,7 +65,7 @@ singletonInterface(SNTool)
 /**
  销毁 全局菊花
  */
-+ (void)dismisLoding;
++ (void)dismissLoading;
 
 /**
  判断一个视图控制器是否是模态推送出来的

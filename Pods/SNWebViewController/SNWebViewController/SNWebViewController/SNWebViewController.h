@@ -13,6 +13,8 @@
 
 #import "SNWebViewProtocol.h"
 
+#import "SNWebTool.h"
+
 @interface SNWebViewController : UIViewController <UIWebViewDelegate, SNWebViewProtocol>
 
 /**
@@ -49,5 +51,10 @@
  进度条
  */
 @property (nonatomic, strong) UIProgressView * progressView;
+
+/**
+ 精确的精度条位置
+ */
+@property (nonatomic, assign) CGFloat originYprogressView;
 
 @end

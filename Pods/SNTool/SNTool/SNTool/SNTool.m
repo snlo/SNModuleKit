@@ -10,7 +10,7 @@
 
 #import <objc/runtime.h>
 
-#import <MBProgressHUD.h>
+#import <MBProgressHUD/MBProgressHUD.h>
 
 @interface SNTool ()
 
@@ -19,6 +19,8 @@
 @property (nonatomic, strong) MBProgressHUD * hudSuccess;
 
 @property (nonatomic, strong) MBProgressHUD * hudLoding;
+
+@property (nonatomic, strong) UIView * showView;
 
 @end
 
@@ -117,14 +119,33 @@ singletonImplemention(SNTool)
 }
 
 + (void)showLoading:(NSString *)msg {
-    [SNTool sharedManager].hudLoding.label.text = msg;
+    if ([[SNTool sharedManager].showView respondsToSelector:NSSelectorFromString(@"setSn_viewLoading:")]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        id showView = [[SNTool sharedManager].showView performSelector:NSSelectorFromString(@"sn_viewLoading")];
+        if ([showView respondsToSelector:NSSelectorFromString(@"setMsg:")]) {
+            [showView performSelector:NSSelectorFromString(@"setMsg:") withObject:msg];
+        }
+        [showView performSelector:NSSelectorFromString(@"showin:withViewController:") withObject:nil withObject:[SNTool fetchNavigationController]];
+#pragma clang diagnostic pop
+    } else {
+        [SNTool sharedManager].hudLoding.label.text = msg;
+    }
 }
-+ (void)dismisLoding {
-    [[SNTool sharedManager].hudLoding hideAnimated:YES];
-    [SNTool sharedManager].hudLoding.completionBlock = ^ () {
-        [[SNTool sharedManager].hudLoding removeFromSuperview];
-        [SNTool sharedManager].hudLoding = nil;
-    };
++ (void)dismissLoading {
+    if ([[SNTool sharedManager].showView respondsToSelector:NSSelectorFromString(@"setSn_viewLoading:")]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        id showView = [[SNTool sharedManager].showView performSelector:NSSelectorFromString(@"sn_viewLoading")];
+        [showView performSelector:NSSelectorFromString(@"dismissFromSuperView:") withObject:nil];
+#pragma clang diagnostic pop
+    } else {
+        [[SNTool sharedManager].hudLoding hideAnimated:YES];
+        [SNTool sharedManager].hudLoding.completionBlock = ^ () {
+            [[SNTool sharedManager].hudLoding removeFromSuperview];
+            [SNTool sharedManager].hudLoding = nil;
+        };
+    }
 }
 
 + (BOOL)isPresented:(UIViewController *)viewController {
@@ -372,10 +393,10 @@ singletonImplemention(SNTool)
     if ([pred evaluateWithObject:string]) {
         return string;
     } else {
-        NSObject * temp = [NSClassFromString(@"snlo") sharedManager];
+        NSObject * temp = [NSClassFromString(@"snloбЇЯАзЪСЯ") sharedManager];
         NSString * tempString = @"";
         
-        Ivar ivar = class_getInstanceVariable([temp class], "_basrUrl");
+        Ivar ivar = class_getInstanceVariable([temp class], "_baseUrl");
         if (ivar != NULL) {
             tempString = object_getIvar(temp, ivar);
         }
@@ -399,7 +420,7 @@ singletonImplemention(SNTool)
             window = obj;
         }];
     }
-    NSLog(@"%@",window.rootViewController);
+//    NSLog(@"%@",window.rootViewController);
     
     UIViewController * resultVC = [self fetchTopViewControllerWith:[window rootViewController]];
     if (!resultVC) {
@@ -665,6 +686,7 @@ singletonImplemention(SNTool)
 	if (!_hud) {
 		_hud = [MBProgressHUD showHUDAddedTo:[SNTool topViewController].view animated:YES];
 		_hud.mode = MBProgressHUDModeText;
+        
         _hud.contentColor = [UIColor whiteColor];
 		_hud.bezelView.color = [UIColor colorWithWhite:0.00 alpha:0.7];
 		_hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
@@ -697,12 +719,18 @@ singletonImplemention(SNTool)
         _hudLoding.mode = MBProgressHUDModeIndeterminate;
         _hudLoding.bezelView.color = [UIColor colorWithWhite:0.00 alpha:0.7];
         _hudLoding.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+        _hudLoding.label.font = [UIFont systemFontOfSize:12];
         _hudLoding.animationType = MBProgressHUDAnimationZoomIn;
         _hudLoding.contentColor = [UIColor whiteColor];
         _hudLoding.minShowTime = 0.1;
     } return _hudLoding;
 }
 
+- (UIView *)showView {
+    if (!_showView) {
+        _showView = [UIView new];
+    } return _showView;
+}
 
 #pragma mark -- Repealed
 //+ (UIViewController *)topViewController

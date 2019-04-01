@@ -9,6 +9,8 @@
 #import <Foundation/Foundation.h>
 #import <SNConcreteProtocol.h>
 
+#import "SNWKWebViewCategories.h"
+
 @protocol SNWkWebViewProtocol <NSObject>
 
 @required

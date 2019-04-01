@@ -1,10 +1,15 @@
-//
-//  SNDownTimer.h
-//  SNDownTimer
-//
-//  Created by snlo on 16/12/9.
-//  Copyright © 2016年 snlo. All rights reserved.
-//
+////////    ////////////
+///////    /////////////
+//////    //////////////
+/////    ///////////////    SNDownTimer.h
+////    ////////////////    SNDownTimer
+///                   //
+//                   ///    Created by snlo on 16/12/9.
+////////////////    ////    Copyright © 2016年 snlo. All rights reserved.
+///////////////    /////
+//////////////    //////
+/////////////    ///////
+////////////    ////////
 
 #import <Foundation/Foundation.h>
 
@@ -17,7 +22,7 @@
 
  @param timeFrame 总的时间
  @param interval 间歇时间
- @param formatter 时间格式，如果为‘SS’则时间以秒为单位的自然数
+ @param formatter 时间格式(仅支持时分秒...，超过一天无实际倒计时意义，建议提前计算展示)，如果为‘SS’则时间以秒为单位的自然数
  @param startBlock 间歇开始前回调
  @param intervalBlock 间歇回调，‘afterSeconds’剩余时间，’showTimeString‘展示时间
  @param completBlock 总的时间结束时的回调

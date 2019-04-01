@@ -45,6 +45,17 @@
     [self setUIComponent];
 }
 
+- (void)viewDidDisappear:(BOOL)animated {
+    [super viewDidDisappear:animated];
+    
+    if ([self respondsToSelector:NSSelectorFromString(@"sn_autoStatusBarStyle")]) {
+#pragma clang diagnostic push
+#pragma clang diagnostic ignored "-Warc-performSelector-leaks"
+        [self performSelector:NSSelectorFromString(@"sn_autoStatusBarStyle")];
+#pragma clang diagnostic pop
+    }
+}
+
 - (void)dealloc {
     NSLog(@"%s",__func__);
 }

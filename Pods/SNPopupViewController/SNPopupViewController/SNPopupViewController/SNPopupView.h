@@ -48,6 +48,14 @@
 - (void)showInSuperView:(void(^)(void))block;
 
 /**
+ 出场，指定控制器
+
+ @param block 出场回调
+ @param viewController 可以是viewcontroller、tabbarviewcontroller、navigationcontroller等
+ */
+- (void)showin:(void(^)(void))block withViewController:(UIViewController *)viewController;
+
+/**
  退场回调拦截
  */
 - (void)receiveDismissBlock:(void(^)(void))block;

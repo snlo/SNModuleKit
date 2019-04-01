@@ -104,14 +104,20 @@ typedef void(^SNAnimationsBeforeStopblock)(CAAnimation * animation);
 	objc_setAssociatedObject(self, @selector(sn_animationKey), sn_animationKey, OBJC_ASSOCIATION_RETAIN);
 }
 - (NSString *)sn_animationKey {
-	return objc_getAssociatedObject(self, _cmd);
+    NSString * string = objc_getAssociatedObject(self, _cmd);
+    if (!string) {
+        string = @"";
+    } return string;
 }
 
 - (void)setSn_animationValue:(NSString *)sn_animationValue {
 	objc_setAssociatedObject(self, @selector(sn_animationValue), sn_animationValue, OBJC_ASSOCIATION_RETAIN);
 }
 - (NSString *)sn_animationValue {
-	return objc_getAssociatedObject(self, _cmd);
+    NSString * string = objc_getAssociatedObject(self, _cmd);
+    if (!string) {
+        string = @"";
+    } return string;
 }
 
 @end

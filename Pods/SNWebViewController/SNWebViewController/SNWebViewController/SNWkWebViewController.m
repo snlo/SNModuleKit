@@ -39,7 +39,6 @@
         [SNTool fetchNavigationController].navigationBar.hidden = YES;
     } else {
         [SNTool fetchNavigationController].navigationBar.hidden = NO;
-        self.progressView.frame = CGRectMake(0, [SNTool navigationBarHeight], SCREEN_WIDTH, 3);
     }
     adjustsScrollViewInsets_NO(self.webview.scrollView, self);
 }
@@ -48,7 +47,7 @@
     [super viewWillDisappear:animated];
     
     if (!self.isHasNativeNavigation) {
-        [SNTool fetchNavigationController].navigationBar.hidden = NO;
+//        [SNTool fetchNavigationController].navigationBar.hidden = NO;
     }
 }
 
@@ -99,32 +98,22 @@
 
 #pragma mark -- event response
 - (void)handlePostJsByNative:(id)body {
-    NSDictionary * dic = [NSDictionary dictionaryWithDictionary:body];
-
-    __block NSString * urlString = @"";
-    __block NSMutableDictionary * muDic = [[NSMutableDictionary alloc] init];
-
-    [dic enumerateKeysAndObjectsUsingBlock:^(id  _Nonnull key, id  _Nonnull obj, BOOL * _Nonnull stop) {
-        if ([key isEqualToString:@"url"]) {
-            urlString = obj;
-        } else {
-            [muDic setValue:obj forKey:key];
-        }
-    }];
     
-    [SNNetworking loadingInvalid];
-    [SNNetworking postWithUrl:SNString(@"%@%@",[SNNetworking sharedManager].basrUrl,urlString) parameters:muDic progress:nil success:^(id responseObject) {
-        [SNNetworking loadingRecovery];
-        [self.webview evaluateJavaScript:[NSString stringWithFormat:@"postCallback('%@')",
+    __block NSString * urlString = @"";
+    __block NSString * callBackString = @"";
+    __block NSMutableDictionary * muDic =
+    [SNWebTool handleJsBody:body urlString:&urlString callBackString:&callBackString];
+    
+    NSURLSessionDataTask * task = [SNNetworking postWithUrl:SNString(@"%@%@",[SNNetworking sharedManager].baseUrl,urlString) parameters:muDic progress:nil success:^(id responseObject) {
+        [self.webview evaluateJavaScript:[NSString stringWithFormat:@"%@('%@')",callBackString,
                                           [responseObject sn_json]] completionHandler:^(id _Nullable data, NSError * _Nullable error) {
             if (!error) {
                 [self.subjectPostJs sendNext:@{@"url":urlString,@"data":responseObject,@"fromdata":muDic}];
             }
         }];
     } failure:^(NSError *error) {
-        [SNNetworking loadingRecovery];
         [self.subjectPostJs sendNext:@{@"error":SNString(@"%ld",(long)error.code)}];
-        [self.webview evaluateJavaScript:[NSString stringWithFormat:@"postCallback('%@')",[@{@"code":SNString(@"%ld",(long)error.code)} sn_json]] completionHandler:^(id _Nullable data, NSError * _Nullable error) {
+        [self.webview evaluateJavaScript:[NSString stringWithFormat:@"%@('%@')",callBackString, [@{@"code":SNString(@"%ld",(long)error.code)} sn_json]] completionHandler:^(id _Nullable data, NSError * _Nullable error) {
             if (error) {
                 NSLog(@"%@",error);
             } else {
@@ -132,17 +121,34 @@
             }
         }];
     }];
+    [SNNetworking donotShowLoadingViewAtTask:task];
 }
 
 #pragma mark -- public methods
 - (void)setURLProtocolClass:(Class)class scriptMessageHandlerNames:(NSArray <NSString *> *)names {
     self.classURLProtocol = class;
-    self.scriptMessageHandlerNames = [NSMutableArray arrayWithArray:names];
+    if (names.count > 0) {
+        [self.scriptMessageHandlerNames addObjectsFromArray:names];
+        [self handleScriptMessageHandlerNames:self.scriptMessageHandlerNames];
+    }
 }
 
 #pragma mark -- private methods
 - (void)base_web_configureUserInterface {
     self.view.backgroundColor = [UIColor whiteColor];
+	
+	[RACObserve(self.webview, frame) subscribeNext:^(id  _Nullable x) {
+        if ([SNTool topViewController].navigationController.navigationBar && self.isHasNativeNavigation && ![SNTool topViewController].navigationController.navigationBar.hidden) {
+            CGFloat offset = [SNTool statusBarHeight]+[SNTool navigationBarHeight] - self.webview.frame.origin.y;
+            self.progressView.frame = CGRectMake(0, offset > 0 ? offset : 0, SCREEN_WIDTH, 3);
+        } else {
+            if (self.originYprogressView > 1) {
+                self.progressView.frame = CGRectMake(0, self.originYprogressView, SCREEN_WIDTH, 3);
+            } else {
+                self.progressView.frame = CGRectMake(0, 0, SCREEN_WIDTH, 3);
+            }
+        }
+	}];
 }
 - (void)base_web_configureDataSource {
     
@@ -175,6 +181,41 @@
     } error:&error];
 }
 
+#pragma mark -- API
+- (void)setNoneSelect:(BOOL)selected {
+    if (selected) {
+        NSString *css = @"body{-webkit-user-select:none;-webkit-touch-callout:none;}";
+        
+        // CSS选中样式取消
+        NSMutableString *javascript = [NSMutableString string];
+        [javascript appendString:@"var style = document.createElement('style');"];
+        [javascript appendString:@"style.type = 'text/css';"];
+        [javascript appendFormat:@"var cssContent = document.createTextNode('%@');", css];
+        [javascript appendString:@"style.appendChild(cssContent);"];
+        [javascript appendString:@"document.body.appendChild(style);"];
+        // javascript注入
+        WKUserScript *noneSelectScript = [[WKUserScript alloc] initWithSource:javascript injectionTime:WKUserScriptInjectionTimeAtDocumentEnd forMainFrameOnly:YES];
+        [self.webview.configuration.userContentController addUserScript:noneSelectScript];
+    }
+}
+- (void)clearAllWebsiteDataTypes:(void(^)(void))block {
+    if ([self.webview respondsToSelector:NSSelectorFromString(@"customUserAgent")]) {
+        NSSet *websiteDataTypes = [WKWebsiteDataStore allWebsiteDataTypes];
+        //// Date from
+        NSDate *dateFrom = [NSDate dateWithTimeIntervalSince1970:0];
+        //// Execute
+        [[WKWebsiteDataStore defaultDataStore] removeDataOfTypes:websiteDataTypes modifiedSince:dateFrom completionHandler:^{
+            //         Done
+            if (block) {
+                block();
+            } else {
+                self.reloadUrl = self.reloadUrl;
+            }
+        }];
+        [self reloadUrl];
+    }
+}
+
 #pragma mark -- getter setter
 
 - (WKWebView *)webview {
@@ -183,7 +224,9 @@
         WKWebViewConfiguration *config = [[WKWebViewConfiguration alloc] init];
         config.selectionGranularity = WKSelectionGranularityCharacter;
         config.allowsInlineMediaPlayback = YES; // 允许在线播放
-        config.allowsAirPlayForMediaPlayback = YES; //允许视频播放
+        if ([config respondsToSelector:@selector(allowsAirPlayForMediaPlayback)]) {
+            config.allowsAirPlayForMediaPlayback = YES; //允许视频播放
+        }
         config.selectionGranularity = YES; // 允许可以与网页交互，选择视图
         config.suppressesIncrementalRendering = YES; // 是否支持记忆读取
         config.processPool = [[WKProcessPool alloc] init]; // web内容处理池
@@ -243,15 +286,6 @@
 #pragma mark -- setter
 - (void)setIsHasNativeNavigation:(BOOL)isHasNativeNavigation {
     _isHasNativeNavigation = isHasNativeNavigation;
-    if (_isHasNativeNavigation) {
-        [SNTool fetchNavigationController].navigationBar.hidden = NO;
-        [RACObserve(self.webview, frame) subscribeNext:^(id  _Nullable x) {
-            CGFloat offset = [SNTool statusBarHeight] + [SNTool navigationBarHeight] - self.webview.frame.origin.y;
-            self.progressView.frame = CGRectMake(0, offset > 0 ? offset : 0, SCREEN_WIDTH, 3);
-        }];
-    } else {
-        [SNTool fetchNavigationController].navigationBar.hidden = YES;
-    }
 }
 - (void)setReloadUrl:(NSString *)reloadUrl {
     _reloadUrl = reloadUrl;
@@ -270,16 +304,30 @@
         }
     }
 }
-- (void)setScriptMessageHandlerNames:(NSMutableArray<NSString *> *)scriptMessageHandlerNames {
-    _scriptMessageHandlerNames = scriptMessageHandlerNames;
+- (NSMutableArray<NSString *> *)scriptMessageHandlerNames {
+    if (!_scriptMessageHandlerNames) {
+        _scriptMessageHandlerNames = [[NSMutableArray alloc] init];
+    } return _scriptMessageHandlerNames;
+}
+- (void)handleScriptMessageHandlerNames:(NSMutableArray<NSString *> *)scriptMessageHandlerNames {
     
     [self.scriptMessageHandlerNames addObject:self.postNameByNative];
     
-    if (_scriptMessageHandlerNames) {
-        [_scriptMessageHandlerNames enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-            [self.webview.configuration.userContentController addScriptMessageHandler:self name:obj];
+    if (self.scriptMessageHandlerNames.count > 1) { //去重
+        NSMutableDictionary * dic = [NSMutableDictionary dictionary];
+        [self.scriptMessageHandlerNames enumerateObjectsWithOptions:NSEnumerationReverse usingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            [dic setValue:@(idx) forKey:obj];
         }];
+        [self.scriptMessageHandlerNames removeAllObjects];
+        [self.scriptMessageHandlerNames addObjectsFromArray:dic.allKeys];
     }
+    
+    [self.scriptMessageHandlerNames enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        
+        [self.webview.configuration.userContentController removeScriptMessageHandlerForName:obj];
+        
+        [self.webview.configuration.userContentController addScriptMessageHandler:self name:obj];
+    }];
 }
 
 @synthesize postNameByNative = _postNameByNative;

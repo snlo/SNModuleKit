@@ -11,6 +11,7 @@
 #import "NSObject+SNFoundationModel.h"
 #import "NSString+SNFoundationHASH.h"
 #import "NSString+SNFoundationJSON.h"
+#import "NSObject+SNFoundation.h"
 
 @interface SNFoundation : NSObject
 

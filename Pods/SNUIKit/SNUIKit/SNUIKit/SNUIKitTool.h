@@ -17,4 +17,6 @@
 
 singletonInterface(SNUIKitTool)
 
+void SNUIKitTool_replaceMethodFromNew(Class aClass, SEL aMethod, SEL newMethod);
+
 @end

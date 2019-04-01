@@ -24,13 +24,13 @@
 		5ECA36C420984BFD00E96217 /* ModelPublic.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C320984BFD00E96217 /* ModelPublic.m */; };
 		5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5ECA36C620984C3D00E96217 /* PublicViewController.m */; };
 		5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36C720984C3D00E96217 /* PublicViewController.xib */; };
+		62DEC36B06B3041226FB9D44 /* Pods_SNModuleKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936E711FEA731E4B7AF1A13E /* Pods_SNModuleKitTests.framework */; };
+		87FF97BE0C610A5B8EC1BC47 /* Pods_SNModuleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E943B3497A5D942B7F755BE /* Pods_SNModuleKit.framework */; };
 		98297E9720AD972000BEBAF0 /* PublicProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 98297E9620AD972000BEBAF0 /* PublicProtocol.m */; };
 		982CC8B720A995360028B9D7 /* setupCodeSnippets in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B420A995360028B9D7 /* setupCodeSnippets */; };
 		982CC8B820A995360028B9D7 /* setupFile in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B520A995360028B9D7 /* setupFile */; };
 		982CC8B920A995360028B9D7 /* setupProject in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B620A995360028B9D7 /* setupProject */; };
-		9C67D09704BDDB837EAA312A /* libPods-SNModuleKitTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */; };
-		ED1190E97C6DDF5007A7EA05 /* libPods-SNModuleKitUITests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */; };
-		F9BC9CF40B159A0E17F4338E /* libPods-SNModuleKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1238E610F450A637305FCCC0 /* libPods-SNModuleKit.a */; };
+		AFB08C3EF9285B36E67A0607 /* Pods_SNModuleKitUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 415B3EB0C466884B43019A7A /* Pods_SNModuleKitUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,7 +52,8 @@
 
 /* Begin PBXFileReference section */
 		0B3B95ED9FB34F5264A5F263 /* Pods-SNModuleKitTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitTests/Pods-SNModuleKitTests.debug.xcconfig"; sourceTree = "<group>"; };
-		1238E610F450A637305FCCC0 /* libPods-SNModuleKit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKit.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1E943B3497A5D942B7F755BE /* Pods_SNModuleKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNModuleKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		415B3EB0C466884B43019A7A /* Pods_SNModuleKitUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNModuleKitUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E03959B1FB4AF2D00A5DFC2 /* SNModuleKit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SNModuleKit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E03959E1FB4AF2D00A5DFC2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5E03959F1FB4AF2E00A5DFC2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -94,8 +95,8 @@
 		5ECA36C520984C3D00E96217 /* PublicViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PublicViewController.h; sourceTree = "<group>"; };
 		5ECA36C620984C3D00E96217 /* PublicViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicViewController.m; sourceTree = "<group>"; };
 		5ECA36C720984C3D00E96217 /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
-		6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitUITests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6B6BB833A830FC2D97F44867 /* Pods-SNModuleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit.debug.xcconfig"; sourceTree = "<group>"; };
+		936E711FEA731E4B7AF1A13E /* Pods_SNModuleKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNModuleKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		98297E9620AD972000BEBAF0 /* PublicProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicProtocol.m; sourceTree = "<group>"; };
 		982CC8B320A98A160028B9D7 /* SNModuleComponentHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleComponentHeader.h; sourceTree = "<group>"; };
 		982CC8B420A995360028B9D7 /* setupCodeSnippets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setupCodeSnippets; sourceTree = "<group>"; };
@@ -108,7 +109,6 @@
 		988736BE20A5329E00BF6A9C /* SNModuleMiddlewareHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleMiddlewareHeader.h; sourceTree = "<group>"; };
 		988736BF20A532AD00BF6A9C /* SNModuleControlHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleControlHeader.h; sourceTree = "<group>"; };
 		A7DE2F86137FD881069FE85F /* Pods-SNModuleKitUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SNModuleKitTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C62560C0A811BD78706582D4 /* Pods-SNModuleKitUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitUITests/Pods-SNModuleKitUITests.release.xcconfig"; sourceTree = "<group>"; };
 		CA3FA7D2645C12985A8AB291 /* Pods-SNModuleKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKitTests/Pods-SNModuleKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		D73B45D8D7444AE64678A050 /* Pods-SNModuleKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit.release.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F9BC9CF40B159A0E17F4338E /* libPods-SNModuleKit.a in Frameworks */,
+				87FF97BE0C610A5B8EC1BC47 /* Pods_SNModuleKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -127,7 +127,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C67D09704BDDB837EAA312A /* libPods-SNModuleKitTests.a in Frameworks */,
+				62DEC36B06B3041226FB9D44 /* Pods_SNModuleKitTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,7 +135,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED1190E97C6DDF5007A7EA05 /* libPods-SNModuleKitUITests.a in Frameworks */,
+				AFB08C3EF9285B36E67A0607 /* Pods_SNModuleKitUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,9 +398,9 @@
 		7710DC353DDA45016027B22B /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1238E610F450A637305FCCC0 /* libPods-SNModuleKit.a */,
-				BF594D2D214681877F18B518 /* libPods-SNModuleKitTests.a */,
-				6339F7A7F0DF2C1CBF1B0183 /* libPods-SNModuleKitUITests.a */,
+				1E943B3497A5D942B7F755BE /* Pods_SNModuleKit.framework */,
+				936E711FEA731E4B7AF1A13E /* Pods_SNModuleKitTests.framework */,
+				415B3EB0C466884B43019A7A /* Pods_SNModuleKitUITests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -440,7 +440,7 @@
 				5E0395971FB4AF2D00A5DFC2 /* Sources */,
 				5E0395981FB4AF2D00A5DFC2 /* Frameworks */,
 				5E0395991FB4AF2D00A5DFC2 /* Resources */,
-				D11A50234451636CD3362AEE /* [CP] Copy Pods Resources */,
+				8E1829664A9A4D0C994E29BD /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -587,6 +587,78 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
+		8E1829664A9A4D0C994E29BD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AFNetworking/AFNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/Aspects/Aspects.framework",
+				"${BUILT_PRODUCTS_DIR}/FMDB/FMDB.framework",
+				"${BUILT_PRODUCTS_DIR}/IQKeyboardManager/IQKeyboardManager.framework",
+				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/MJRefresh/MJRefresh.framework",
+				"${BUILT_PRODUCTS_DIR}/Masonry/Masonry.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveObjC/ReactiveObjC.framework",
+				"${BUILT_PRODUCTS_DIR}/SAMKeychain/SAMKeychain.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
+				"${BUILT_PRODUCTS_DIR}/SNAnimations/SNAnimations.framework",
+				"${BUILT_PRODUCTS_DIR}/SNBadgeView/SNBadgeView.framework",
+				"${BUILT_PRODUCTS_DIR}/SNDBManager/SNDBManager.framework",
+				"${BUILT_PRODUCTS_DIR}/SNDownTimer/SNDownTimer.framework",
+				"${BUILT_PRODUCTS_DIR}/SNFileManager/SNFileManager.framework",
+				"${BUILT_PRODUCTS_DIR}/SNFoundation/SNFoundation.framework",
+				"${BUILT_PRODUCTS_DIR}/SNImageBrowserViewController/SNImageBrowserViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SNMediatorKit/SNMediatorKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SNNetworking/SNNetworking.framework",
+				"${BUILT_PRODUCTS_DIR}/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SNPopupViewController/SNPopupViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SNScanViewController/SNScanViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/SNTool/SNTool.framework",
+				"${BUILT_PRODUCTS_DIR}/SNUIKit/SNUIKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SNWebViewController/SNWebViewController.framework",
+				"${BUILT_PRODUCTS_DIR}/WebViewJavascriptBridge/WebViewJavascriptBridge.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
+				"${BUILT_PRODUCTS_DIR}/pop/pop.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AFNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Aspects.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FMDB.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MJRefresh.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Masonry.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveObjC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SAMKeychain.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNAnimations.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNBadgeView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNDBManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNDownTimer.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNFileManager.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNFoundation.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNImageBrowserViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNMediatorKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNNetworking.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNPhotoCarmeraViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNPopupViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNScanViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNTool.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNUIKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SNWebViewController.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/WebViewJavascriptBridge.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/pop.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		9847CADE709A0F417D2C97D3 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -603,36 +675,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		D11A50234451636CD3362AEE /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit-resources.sh",
-				"${PODS_ROOT}/IQKeyboardManager/IQKeyboardManager/Resources/IQKeyboardManager.bundle",
-				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
-				"${PODS_ROOT}/SAMKeychain/Support/SAMKeychain.bundle",
-				"${PODS_ROOT}/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/SNPhotoCarmeraViewController/SNPhotoCarmera.bundle",
-				"${PODS_ROOT}/SNScanViewController/SNScanViewController/SNScanViewController/SNScanViewController.bundle",
-				"${PODS_ROOT}/SNTool/SNTool/SNTool/SNTool.bundle",
-				"${PODS_ROOT}/SNUIKit/SNUIKit/SNUIKit/SNUIKit.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/IQKeyboardManager.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/MJRefresh.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SAMKeychain.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SNPhotoCarmera.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SNScanViewController.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SNTool.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SNUIKit.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		EB4E9344C2716F3158F35990 /* [CP] Check Pods Manifest.lock */ = {
