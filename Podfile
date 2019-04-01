@@ -23,7 +23,7 @@ target 'SNModuleKit' do
 #
     pod 'IQKeyboardManager'
 #
-    pod 'lottie-ios'
+    pod 'lottie-ios', '~> 2.5.3'
 #
     pod 'FMDB/FTS‘
 #
