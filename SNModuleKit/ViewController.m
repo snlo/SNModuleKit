@@ -44,6 +44,7 @@
 //            
 //        } actionsStatement:@"取消",@"确认", nil];
 //    }];
+    
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         UIViewController * vc =
         [SNMediator mediateModule:@"Public" url:nil action:@"nativeFetchPublicViewController" params:nil shouldCacheTarget:NO];
