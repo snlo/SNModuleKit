@@ -26,6 +26,7 @@
 		5ECA36C920984C3D00E96217 /* PublicViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5ECA36C720984C3D00E96217 /* PublicViewController.xib */; };
 		62DEC36B06B3041226FB9D44 /* Pods_SNModuleKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 936E711FEA731E4B7AF1A13E /* Pods_SNModuleKitTests.framework */; };
 		87FF97BE0C610A5B8EC1BC47 /* Pods_SNModuleKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E943B3497A5D942B7F755BE /* Pods_SNModuleKit.framework */; };
+		9819820B2255ABF300816C4F /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9819820A2255ABF300816C4F /* Test.swift */; };
 		98297E9720AD972000BEBAF0 /* PublicProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 98297E9620AD972000BEBAF0 /* PublicProtocol.m */; };
 		982CC8B720A995360028B9D7 /* setupCodeSnippets in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B420A995360028B9D7 /* setupCodeSnippets */; };
 		982CC8B820A995360028B9D7 /* setupFile in Resources */ = {isa = PBXBuildFile; fileRef = 982CC8B520A995360028B9D7 /* setupFile */; };
@@ -97,6 +98,8 @@
 		5ECA36C720984C3D00E96217 /* PublicViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PublicViewController.xib; sourceTree = "<group>"; };
 		6B6BB833A830FC2D97F44867 /* Pods-SNModuleKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SNModuleKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SNModuleKit/Pods-SNModuleKit.debug.xcconfig"; sourceTree = "<group>"; };
 		936E711FEA731E4B7AF1A13E /* Pods_SNModuleKitTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SNModuleKitTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		981982092255ABF200816C4F /* SNModuleKit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SNModuleKit-Bridging-Header.h"; sourceTree = "<group>"; };
+		9819820A2255ABF300816C4F /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		98297E9620AD972000BEBAF0 /* PublicProtocol.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PublicProtocol.m; sourceTree = "<group>"; };
 		982CC8B320A98A160028B9D7 /* SNModuleComponentHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SNModuleComponentHeader.h; sourceTree = "<group>"; };
 		982CC8B420A995360028B9D7 /* setupCodeSnippets */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.script.sh; path = setupCodeSnippets; sourceTree = "<group>"; };
@@ -185,6 +188,7 @@
 				5E03959F1FB4AF2E00A5DFC2 /* AppDelegate.m */,
 				5E0395A11FB4AF2E00A5DFC2 /* ViewController.h */,
 				5E0395A21FB4AF2E00A5DFC2 /* ViewController.m */,
+				9819820A2255ABF300816C4F /* Test.swift */,
 				5ECA34A020983C1900E96217 /* ModulePublic */,
 				5EB0FFCD20993AC4003E8AF8 /* SNModuleKit */,
 				5E0395A41FB4AF2E00A5DFC2 /* Main.storyboard */,
@@ -193,6 +197,7 @@
 				5E0395AC1FB4AF2E00A5DFC2 /* Info.plist */,
 				5E0395AD1FB4AF2E00A5DFC2 /* main.m */,
 				5E0396521FB4D0CA00A5DFC2 /* PrefixHeader.pch */,
+				981982092255ABF200816C4F /* SNModuleKit-Bridging-Header.h */,
 			);
 			path = SNModuleKit;
 			sourceTree = "<group>";
@@ -500,6 +505,7 @@
 				TargetAttributes = {
 					5E03959A1FB4AF2D00A5DFC2 = {
 						CreatedOnToolsVersion = 9.1;
+						LastSwiftMigration = 1020;
 						ProvisioningStyle = Automatic;
 					};
 					5E0395B21FB4AF2E00A5DFC2 = {
@@ -519,6 +525,7 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				en,
 				Base,
 				"zh-Hans",
 			);
@@ -709,6 +716,7 @@
 				5E99AB4E20A5020B00616869 /* SNModuleConfig.m in Sources */,
 				5E0395A31FB4AF2E00A5DFC2 /* ViewController.m in Sources */,
 				5ECA36C820984C3D00E96217 /* PublicViewController.m in Sources */,
+				9819820B2255ABF300816C4F /* Test.swift in Sources */,
 				5E0395AE1FB4AF2E00A5DFC2 /* main.m in Sources */,
 				5E0395A01FB4AF2E00A5DFC2 /* AppDelegate.m in Sources */,
 			);
@@ -885,6 +893,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49VK52PYYX;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SNModuleKit/PrefixHeader.pch";
@@ -893,6 +902,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = snlo.SNModuleKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SNModuleKit/SNModuleKit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -903,6 +915,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 49VK52PYYX;
 				GCC_PREFIX_HEADER = "$(SRCROOT)/SNModuleKit/PrefixHeader.pch";
@@ -911,6 +924,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = snlo.SNModuleKit;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SNModuleKit/SNModuleKit-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -919,6 +934,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0B3B95ED9FB34F5264A5F263 /* Pods-SNModuleKitTests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SNModuleKitTests/Info.plist;
@@ -934,6 +950,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CA3FA7D2645C12985A8AB291 /* Pods-SNModuleKitTests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SNModuleKitTests/Info.plist;
@@ -949,6 +966,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = A7DE2F86137FD881069FE85F /* Pods-SNModuleKitUITests.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SNModuleKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -963,6 +981,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = C62560C0A811BD78706582D4 /* Pods-SNModuleKitUITests.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SNModuleKitUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

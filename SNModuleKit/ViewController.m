@@ -45,9 +45,15 @@
     
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         UIViewController * vc =
-        [SNMediator mediateModule:@"Public" url:nil action:@"nativeFetchPublicViewController" params:nil shouldCacheTarget:NO];
+        [SNMediator sn_Module:@"Public" url:nil action:@"nativeFetchPublicViewController" params:nil cacheTarget:NO];
         [self presentViewController:vc animated:YES completion:nil];
+        
     });
+    
+    //swift
+//    TestViewController * vcTest = [[TestViewController alloc] init];
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {

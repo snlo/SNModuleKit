@@ -26,43 +26,42 @@ PODS:
   - pop (1.0.12)
   - ReactiveObjC (3.1.0)
   - SAMKeychain (1.5.3)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
-  - SNAnimations (0.0.3)
-  - SNBadgeView (0.0.3):
-    - SNTool
-  - SNDBManager (0.0.4):
+  - SDWebImage (5.0.0):
+    - SDWebImage/Core (= 5.0.0)
+  - SDWebImage/Core (5.0.0)
+  - SNAnimations (0.0.4)
+  - SNBadgeView (0.0.4)
+  - SNDBManager (0.0.5):
     - FMDB/FTS
   - SNDownTimer (0.0.8)
   - SNFileManager (0.0.1)
   - SNFoundation (0.0.4)
-  - SNImageBrowserViewController (0.0.3):
+  - SNImageBrowserViewController (0.0.4):
     - pop
     - ReactiveObjC
     - SDWebImage
     - SNTool
-  - SNMediatorKit (0.1.8):
+  - SNMediatorKit (0.1.9):
     - SNTool
-  - SNNetworking (0.1.3):
+  - SNNetworking (0.1.4):
     - AFNetworking
     - SNFoundation
     - SNTool
-  - SNPhotoCarmeraViewController (0.0.6):
+  - SNPhotoCarmeraViewController (0.0.7):
     - SNTool
-  - SNPopupViewController (0.1.2):
+  - SNPopupViewController (0.1.3):
     - SNTool
-  - SNScanViewController (0.1.3):
+  - SNScanViewController (0.1.5):
     - Masonry
     - SNTool
-  - SNTool (0.1.5):
+  - SNTool (0.1.6):
     - MBProgressHUD
-  - SNUIKit (0.3.0):
+  - SNUIKit (0.3.1):
     - Aspects
     - Masonry
     - ReactiveObjC
     - SNTool
-  - SNWebViewController (0.1.4):
+  - SNWebViewController (0.1.5):
     - Aspects
     - ReactiveObjC
     - SNDownTimer
@@ -145,22 +144,22 @@ SPEC CHECKSUMS:
   pop: d582054913807fd11fd50bfe6a539d91c7e1a55a
   ReactiveObjC: 2a38ea15335de4119d8b17caf1db1484f61db902
   SAMKeychain: 483e1c9f32984d50ca961e26818a534283b4cd5c
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
-  SNAnimations: bf1ad62fcfd62311341f26fea4c1ba702ffb2a4f
-  SNBadgeView: 22655e5fc32a37a36e1f138ebd741e0545cf5076
-  SNDBManager: 33fd3b71ae33ef08f6eebe918bb4f5fea6fa57c0
+  SDWebImage: 5de80a0302de9e377e62f47d2fa1304efff0e55f
+  SNAnimations: 44da5ec77e711d37fc7415261bc7ab51d71e191a
+  SNBadgeView: 34e8909b8fc865ac8c966699f6669aee0a0d43d6
+  SNDBManager: 429167dd16de56267ca474d9a0885aa8a346cfde
   SNDownTimer: ff047bcda4943f3e519953200a433d993add7383
   SNFileManager: 5afd2c2268e1125fef814d97c65c58b94488bdfe
   SNFoundation: dc9691581e4e744e50b1505a53d659b1197073b5
-  SNImageBrowserViewController: c5f02681da343593cb6574d1b8bf0920139b682a
-  SNMediatorKit: d131b45411d43ea809f715bafb7e0b46ce2c3ee0
-  SNNetworking: 74af56e68c39d38995870205483e83ec5e0317e8
-  SNPhotoCarmeraViewController: 24f1b8a6e5d3e0615ff70005dd3552c1397708c2
-  SNPopupViewController: 7f5bec0315d1189662481c94bf66b08cab35bb7f
-  SNScanViewController: 60a7fd67ed73012b22137fe95e4af0255acb753f
-  SNTool: e00ae96648ce76dfd9e47f5995f17336255a95ad
-  SNUIKit: f7a293fe870eea78b662875e93f179e48772a437
-  SNWebViewController: 3050f0e330bfbb67bd84c2c204f3d4286844fef1
+  SNImageBrowserViewController: d6240aa83143f559c5cd53dc82bf035a11491dd6
+  SNMediatorKit: 43ce20558dfa012aaa255fa320eb9cb49b1a8ce5
+  SNNetworking: 9af16bced795cbd6a148937b92bcfd4969a7ee93
+  SNPhotoCarmeraViewController: 5e5d6debab3712092ac6b0117a6fee3da2736fb2
+  SNPopupViewController: fc7fd0507eec0a55a8d9e2f66583337c4e037e3f
+  SNScanViewController: 90a52910e87f687bb2d5852888eba8f7196a825d
+  SNTool: 8cb927cbbb026e16a77c744966107afc943e6f59
+  SNUIKit: c58964eac198b01402f353f9a3e4813b6544b6a4
+  SNWebViewController: c1c0fc1149a8e563b31591a602d9d4bbceec310f
   WebViewJavascriptBridge: 7f5bc4d3581e672e8f32bd0f812d54bc69bb8e29
 
 PODFILE CHECKSUM: 6cdab926a0f80338d25d1916a1ef3615143cd5ad
