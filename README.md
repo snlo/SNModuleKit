@@ -91,9 +91,10 @@ pod 'SNModuleKit', '~> 1.0'
 
 ##### Full版
 
-此版本专为开发团队所准备的，这也是新项目开始阶段的最佳选择。
+此版本专为开发团队所准备的，这也是新项目开始阶段的最佳选择。兼容Swift。
 
 ```yaml
+use_frameworks!
 pod 'SNModuleKit'
 ```
 

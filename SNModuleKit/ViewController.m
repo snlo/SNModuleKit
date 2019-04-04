@@ -21,12 +21,6 @@
 - (void)viewDidLoad {
 	[super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
-	
-//    git tag -d 0.4.0 0.0.8
-//    git push origin :refs/tags/0.0.8
-    
-//    pod spec lint SNModuleKit.podspec --verbose --use-libraries --allow-warnings
-    
     
 //    pod trunk push SNModuleKit.podspec --verbose --allow-warnings --use-libraries
     
