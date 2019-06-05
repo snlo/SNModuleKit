@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 #
 
 s.name         = "SNModuleKit"
-s.version      = "2.2.0"
+s.version      = "2.2.1"
 s.summary      = "A delightful iOS and OS X Project framework."
 
 # This description is used to generate tags and improve search results.
@@ -177,25 +177,25 @@ s.dependency 'AFNetworking'
 
 s.dependency 'IQKeyboardManager'
 
-s.dependency 'SNMediatorKit'
+s.dependency 'SNMediatorKit', '~> 0.1.7'
 
-s.dependency 'SNScanViewController'
-s.dependency 'SNPopupViewController'
-s.dependency 'SNPhotoCarmeraViewController'
-s.dependency 'SNBadgeView'
-s.dependency 'SNImageBrowserViewController'
-s.dependency 'SNWebViewController'
+s.dependency 'SNScanViewController', '~> 0.1.3'
+s.dependency 'SNPopupViewController', '~> 0.1.2'
+s.dependency 'SNPhotoCarmeraViewController', '~> 0.0.6'
+s.dependency 'SNBadgeView', '~> 0.0.3'
+s.dependency 'SNImageBrowserViewController', '~> 0.0.3'
+s.dependency 'SNWebViewController', '~> 0.1.4'
 
 
-s.dependency 'SNTool'
+s.dependency 'SNTool', '~> 0.1.4'
 
-s.dependency 'SNUIKit'
-s.dependency 'SNAnimations'
-s.dependency 'SNFoundation'
+s.dependency 'SNUIKit', '~> 0.3.0'
+s.dependency 'SNAnimations', '~> 0.0.3'
+s.dependency 'SNFoundation', '~> 0.0.4'
 
-s.dependency 'SNFileManager'
-s.dependency 'SNDBManager'
-s.dependency 'SNNetworking'
-s.dependency 'SNDownTimer'
+s.dependency 'SNFileManager', '~> 0.0.1'
+s.dependency 'SNDBManager', '~> 0.0.4'
+s.dependency 'SNNetworking', '~> 0.1.3'
+s.dependency 'SNDownTimer', '~> 0.0.8'
 
 end
