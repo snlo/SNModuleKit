@@ -6,7 +6,7 @@
 //  Copyright © 2018年 snlo. All rights reserved.
 //
 
-#ifndef SNModuleMiddlewareHeader_h
+#ifndef SNModuleMiddlewareHeader_hc
 #define SNModuleMiddlewareHeader_h
 
 #import <SNMediatorKit/SNMediatorKit.h> //模块间中间件
